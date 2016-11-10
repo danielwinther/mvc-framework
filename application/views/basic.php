@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<title>Basic View</title>
+</head>
+<body>
+	<div class="container">
+		<table class="table table-hover table-responsive row">
+			<h1>Showcases user model</h1>
+			<thead>
+				<tr>
+					<th>First name</th>
+					<th>Last name</th>
+					<th>Age</th>
+					<th>Email</th>
+					<th>Phone</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php 
+				foreach ($data['userArray'] as $user) {
+					echo 
+					"<tr><td>" . $user->getFirstName() . "</td>
+					<td>" . $user->getLastName() . "</td>
+					<td>" . $user->getAge() . "</td>
+					<td>" . $user->getEmail() . "</td>
+					<td>" . $user->getPhone() . "</td></tr>";
+				}
+				?>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

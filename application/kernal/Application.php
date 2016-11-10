@@ -3,7 +3,7 @@ class Application {
 	/**
 	* @var string $controller
 	*/
-	protected $controller = 'Home';
+	protected $controller = 'Basic';
 	/**
 	* @var string $index
 	*/
@@ -48,7 +48,7 @@ class Application {
 				exit();
 			}
 		}
-
+		
 		require_once '../application/controllers/' . $this->controller . '.php';
 		$this->controller = new $this->controller;
 
