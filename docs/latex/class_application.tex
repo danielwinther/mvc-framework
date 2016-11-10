@@ -1,0 +1,183 @@
+\hypertarget{class_application}{}\section{Application Class Reference}
+\label{class_application}\index{Application@{Application}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_application_a97620cd12b475b39007c29c63885a373}{\+\_\+\+\_\+construct} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_application_ac3007e038071f04135b5fcfcfdf9318c}{parse\+Url} ()
+\item 
+\hyperlink{class_application_aa434ce8a8cbcdd334e051004084edce9}{load} (\$url)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_application_aa3217a9bc7c7247a2807cd28ae2a3f1e}{\$controller} = \textquotesingle{}\hyperlink{class_home}{Home}\textquotesingle{}
+\item 
+\hyperlink{class_application_a35c1bd1b0587da413cb79a663dae84a6}{\$method} = \textquotesingle{}index\textquotesingle{}
+\item 
+\hyperlink{class_application_a9cb01d8979a55808cd1e1e5b74b1e3f6}{\$parameters} = \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 2 of file Application.\+php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_application_a97620cd12b475b39007c29c63885a373}{}\label{class_application_a97620cd12b475b39007c29c63885a373} 
+\index{Application@{Application}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!Application@{Application}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Application\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Initializes the application 
+
+Definition at line 19 of file Application.\+php.
+
+
+
+References load(), and parse\+Url().
+
+
+\begin{DoxyCode}
+19                                   \{
+20         $this->\hyperlink{class_application_aa434ce8a8cbcdd334e051004084edce9}{load}($this->\hyperlink{class_application_ac3007e038071f04135b5fcfcfdf9318c}{parseUrl}());
+21     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_application_aa434ce8a8cbcdd334e051004084edce9}{}\label{class_application_aa434ce8a8cbcdd334e051004084edce9} 
+\index{Application@{Application}!load@{load}}
+\index{load@{load}!Application@{Application}}
+\subsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily Application\+::load (\begin{DoxyParamCaption}\item[{}]{\$url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Loads a given controller, method and parameter based on the U\+RL
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$url} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 39 of file Application.\+php.
+
+
+
+References \$controller.
+
+
+
+Referenced by \+\_\+\+\_\+construct().
+
+
+\begin{DoxyCode}
+39                                   \{
+40         \textcolor{keywordflow}{if} (file\_exists(\textcolor{stringliteral}{'../application/controllers/'} . $url[0] . \textcolor{stringliteral}{'.php'})) \{
+41             $this->controller = $url[0];
+42             unset($url[0]);
+43 
+44             require\_once \textcolor{stringliteral}{'../application/controllers/'} . $this->controller . \textcolor{stringliteral}{'.php'};
+45             $this->controller = \textcolor{keyword}{new} \hyperlink{class_application_aa3217a9bc7c7247a2807cd28ae2a3f1e}{$this->controller};
+46         \}
+47         \textcolor{keywordflow}{else} \{
+48             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} \hyperlink{class_controller_not_found}{ControllerNotFound}(\textcolor{stringliteral}{'ControllerNotFound'}, \textcolor{stringliteral}{'Controller "'} . $this->
+      controller . \textcolor{stringliteral}{'" not found.'});
+49             exit();
+50         \}
+51 
+52         \textcolor{keywordflow}{if} ($url[1] == \textcolor{stringliteral}{''} || $url[1] == \textcolor{stringliteral}{'index'}) \{
+53             \textcolor{keywordflow}{if} (method\_exists($this->controller, $url[1])) \{
+54                 $this->method = $url[1];
+55                 unset($url[1]);
+56             \}
+57         \}
+58         \textcolor{keywordflow}{else} \{
+59             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} \hyperlink{class_method_not_found}{MethodNotFound}(\textcolor{stringliteral}{'MethodNotFound'}, \textcolor{stringliteral}{'Method "'} . $this->method . \textcolor{stringliteral}{'" not
+       found.'});
+60             exit();
+61         \}
+62 
+63         $this->parameters = $url ? array\_values($url) : [];
+64 
+65         call\_user\_func\_array([$this->controller, $this->method], $this->parameters);
+66     \}
+\end{DoxyCode}
+\hypertarget{class_application_ac3007e038071f04135b5fcfcfdf9318c}{}\label{class_application_ac3007e038071f04135b5fcfcfdf9318c} 
+\index{Application@{Application}!parse\+Url@{parse\+Url}}
+\index{parse\+Url@{parse\+Url}!Application@{Application}}
+\subsubsection{\texorpdfstring{parse\+Url()}{parseUrl()}}
+{\footnotesize\ttfamily Application\+::parse\+Url (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Parses a given U\+RL to make it read controllers, methods and parameters properly
+
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 28 of file Application.\+php.
+
+
+
+Referenced by \+\_\+\+\_\+construct().
+
+
+\begin{DoxyCode}
+28                                   \{
+29         \textcolor{keywordflow}{if} (isset($\_GET[\textcolor{stringliteral}{'url'}])) \{
+30             \textcolor{keywordflow}{return} explode(\textcolor{charliteral}{'/'}, filter\_var(rtrim($\_GET[\textcolor{stringliteral}{'url'}], \textcolor{charliteral}{'/'}), FILTER\_SANITIZE\_URL));
+31         \}
+32     \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_application_aa3217a9bc7c7247a2807cd28ae2a3f1e}{}\label{class_application_aa3217a9bc7c7247a2807cd28ae2a3f1e} 
+\index{Application@{Application}!\$controller@{\$controller}}
+\index{\$controller@{\$controller}!Application@{Application}}
+\subsubsection{\texorpdfstring{\$controller}{$controller}}
+{\footnotesize\ttfamily string Application\+::\$controller = \textquotesingle{}\hyperlink{class_home}{Home}\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 6 of file Application.\+php.
+
+
+
+Referenced by load().
+
+\hypertarget{class_application_a35c1bd1b0587da413cb79a663dae84a6}{}\label{class_application_a35c1bd1b0587da413cb79a663dae84a6} 
+\index{Application@{Application}!\$method@{\$method}}
+\index{\$method@{\$method}!Application@{Application}}
+\subsubsection{\texorpdfstring{\$method}{$method}}
+{\footnotesize\ttfamily Application\+::\$method = \textquotesingle{}index\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 10 of file Application.\+php.
+
+\hypertarget{class_application_a9cb01d8979a55808cd1e1e5b74b1e3f6}{}\label{class_application_a9cb01d8979a55808cd1e1e5b74b1e3f6} 
+\index{Application@{Application}!\$parameters@{\$parameters}}
+\index{\$parameters@{\$parameters}!Application@{Application}}
+\subsubsection{\texorpdfstring{\$parameters}{$parameters}}
+{\footnotesize\ttfamily Application\+::\$parameters = \mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 14 of file Application.\+php.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/xampp/htdocs/mvc-\/framework/application/kernal/\hyperlink{_application_8php}{Application.\+php}\end{DoxyCompactItemize}

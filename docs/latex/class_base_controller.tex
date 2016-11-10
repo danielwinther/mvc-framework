@@ -1,0 +1,106 @@
+\hypertarget{class_base_controller}{}\section{Base\+Controller Class Reference}
+\label{class_base_controller}\index{Base\+Controller@{Base\+Controller}}
+Inheritance diagram for Base\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_base_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_base_controller_a2c835b7c72f07e978eac1f6ed2e9341e}{view} (\$view, \$data=\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_base_controller_a31925ff6c6c23e4015d45a44c78a461b}{load\+Model} (\$model)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 2 of file Base\+Controller.\+php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_base_controller_a31925ff6c6c23e4015d45a44c78a461b}{}\label{class_base_controller_a31925ff6c6c23e4015d45a44c78a461b} 
+\index{Base\+Controller@{Base\+Controller}!load\+Model@{load\+Model}}
+\index{load\+Model@{load\+Model}!Base\+Controller@{Base\+Controller}}
+\subsubsection{\texorpdfstring{load\+Model()}{loadModel()}}
+{\footnotesize\ttfamily Base\+Controller\+::load\+Model (\begin{DoxyParamCaption}\item[{}]{\$model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Loads a given model into the controller
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$model} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\$model 
+\end{DoxyReturn}
+
+
+Definition at line 9 of file Base\+Controller.\+php.
+
+
+
+Referenced by Home\textbackslash{}index().
+
+
+\begin{DoxyCode}
+9                                          \{
+10         \textcolor{keywordflow}{if} (file\_exists(\textcolor{stringliteral}{'../application/models/'} . $model . \textcolor{stringliteral}{'.php'})) \{
+11             require\_once \textcolor{stringliteral}{'../application/models/'} . $model . \textcolor{stringliteral}{'.php'};
+12         \}
+13         \textcolor{keywordflow}{else} \{
+14             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} \hyperlink{class_model_not_found}{ModelNotFound}(\textcolor{stringliteral}{'ModelNotFound'}, \textcolor{stringliteral}{'Model "'} . $model . \textcolor{stringliteral}{'" not found.'});
+15             exit();
+16         \}
+17 
+18         \textcolor{keywordflow}{return} \textcolor{keyword}{new} $model();
+19     \}
+\end{DoxyCode}
+\hypertarget{class_base_controller_a2c835b7c72f07e978eac1f6ed2e9341e}{}\label{class_base_controller_a2c835b7c72f07e978eac1f6ed2e9341e} 
+\index{Base\+Controller@{Base\+Controller}!view@{view}}
+\index{view@{view}!Base\+Controller@{Base\+Controller}}
+\subsubsection{\texorpdfstring{view()}{view()}}
+{\footnotesize\ttfamily Base\+Controller\+::view (\begin{DoxyParamCaption}\item[{}]{\$view,  }\item[{}]{\$data = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+
+Loads a given view into the controller
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$view} & \\
+\hline
+ & {\em array} & data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 27 of file Base\+Controller.\+php.
+
+
+
+Referenced by Home\textbackslash{}index().
+
+
+\begin{DoxyCode}
+27                                             \{
+28         \textcolor{keywordflow}{if} (file\_exists(\textcolor{stringliteral}{'../application/views/'} . $view . \textcolor{stringliteral}{'.php'})) \{
+29             require\_once \textcolor{stringliteral}{'../application/views/'} . $view . \textcolor{stringliteral}{'.php'};
+30         \}
+31         \textcolor{keywordflow}{else} \{
+32             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} \hyperlink{class_view_not_found}{ViewNotFound}(\textcolor{stringliteral}{'ViewNotFound'}, \textcolor{stringliteral}{'View "'} . $view . \textcolor{stringliteral}{'" not found.'});
+33             exit();
+34         \}
+35     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/xampp/htdocs/mvc-\/framework/application/kernal/\hyperlink{_base_controller_8php}{Base\+Controller.\+php}\end{DoxyCompactItemize}

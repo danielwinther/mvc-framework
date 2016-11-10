@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['serialization_5fformat_5favoid_5funserializer',['SERIALIZATION_FORMAT_AVOID_UNSERIALIZER',['../class_doctrine_1_1_instantiator_1_1_instantiator.html#a95522fd1d3b686cb85a188b76640255d',1,'Doctrine::Instantiator::Instantiator']]],
+  ['serialization_5fformat_5fuse_5funserializer',['SERIALIZATION_FORMAT_USE_UNSERIALIZER',['../class_doctrine_1_1_instantiator_1_1_instantiator.html#a0cb9171baae490a8b18ef0c8ab83a122',1,'Doctrine::Instantiator::Instantiator']]],
+  ['small',['SMALL',['../class_p_h_p_unit___util___test.html#a59df6cf89f4e68f4a42e3ce1ad2c571c',1,'PHPUnit_Util_Test']]],
+  ['status_5ferror',['STATUS_ERROR',['../class_p_h_p_unit___runner___base_test_runner.html#a75e4a3652f73ee8e0ec8a87d1699e434',1,'PHPUnit_Runner_BaseTestRunner']]],
+  ['status_5ffailure',['STATUS_FAILURE',['../class_p_h_p_unit___runner___base_test_runner.html#aba879ef43ddf4104928bc1cdd3dc60be',1,'PHPUnit_Runner_BaseTestRunner']]],
+  ['status_5fincomplete',['STATUS_INCOMPLETE',['../class_p_h_p_unit___runner___base_test_runner.html#a7d7ab348b8c72f43c8a8cf3e5ec8dae9',1,'PHPUnit_Runner_BaseTestRunner']]],
+  ['status_5fpassed',['STATUS_PASSED',['../class_p_h_p_unit___runner___base_test_runner.html#a1c6d140f24bc6f339b3c58c0effe252f',1,'PHPUnit_Runner_BaseTestRunner']]],
+  ['status_5frisky',['STATUS_RISKY',['../class_p_h_p_unit___runner___base_test_runner.html#ad5c7f5ad26d446384e36e1414cb0543e',1,'PHPUnit_Runner_BaseTestRunner']]],
+  ['status_5fskipped',['STATUS_SKIPPED',['../class_p_h_p_unit___runner___base_test_runner.html#a8228e0018261bd5ef30ea9601d895e61',1,'PHPUnit_Runner_BaseTestRunner']]],
+  ['status_5fwarning',['STATUS_WARNING',['../class_p_h_p_unit___runner___base_test_runner.html#a442d3009e1375f2d7fc42e604393987a',1,'PHPUnit_Runner_BaseTestRunner']]],
+  ['stderr',['STDERR',['../class_sebastian_bergmann_1_1_environment_1_1_console.html#aae80dd92c9efa144255656a2e0a43a3a',1,'SebastianBergmann::Environment::Console']]],
+  ['stdin',['STDIN',['../class_sebastian_bergmann_1_1_environment_1_1_console.html#a25728cf5de5ef9b5b0a8122aef2d0d67',1,'SebastianBergmann::Environment::Console']]],
+  ['stdout',['STDOUT',['../class_sebastian_bergmann_1_1_environment_1_1_console.html#a5656f3304f3ba737bbac75d6f25016c7',1,'SebastianBergmann::Environment::Console']]],
+  ['success_5fexit',['SUCCESS_EXIT',['../class_p_h_p_unit___text_u_i___test_runner.html#af7c8887627bdd2fc368f57807743db0a',1,'PHPUnit_TextUI_TestRunner']]],
+  ['suffix',['SUFFIX',['../class_file___iterator.html#a7cc24bd682c141b7f07f0739d7c9a1f8',1,'File_Iterator']]],
+  ['suite_5fmethodname',['SUITE_METHODNAME',['../class_p_h_p_unit___runner___base_test_runner.html#a43e3e43e3a3762baad8e7e8213760cb6',1,'PHPUnit_Runner_BaseTestRunner']]]
+];
