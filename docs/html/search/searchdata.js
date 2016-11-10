@@ -1,9 +1,9 @@
 var indexSectionsWithContent =
 {
-  0: "$_abcghilmptuv",
+  0: "$_abcghilmprtuv",
   1: "abchmuv",
   2: "abchmtuv",
-  3: "_gilpv",
+  3: "_gilprt",
   4: "$"
 };
 

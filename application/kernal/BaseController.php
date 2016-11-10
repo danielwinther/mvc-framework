@@ -24,7 +24,7 @@ class BaseController {
 	* @param string $view
 	* @param array data
 	*/
-	public function view($view, $data = []) {
+	protected function renderView($view, $data = []) {
 		if (file_exists('../application/views/' . $view . '.php')) {
 			require_once '../application/views/' . $view . '.php';
 		}
@@ -33,4 +33,30 @@ class BaseController {
 			exit();
 		}
 	}
+
+	/**
+	* Redirects to given URL
+	*
+	* @param string $url
+	*/
+	protected function redirectUrl($url) {
+		header('Location: ' . $url);
+	}
+
+	/**
+	* Redirects to given controller and method
+	*
+	* @param string $controller
+	*/
+	protected function redirectController($controller) {
+		$atSign = explode('@', $controller);
+
+		if (strpos($controller, '@') !== false) {
+			header('Location:../' . $atSign[0] . '/' . $atSign[1]);
+		}
+		else {
+			header('Location:../' . $atSign[0] . '/index');
+		}
+	}
+
 }

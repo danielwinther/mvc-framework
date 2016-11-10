@@ -82,35 +82,39 @@ Referenced by \+\_\+\+\_\+construct().
 
 \begin{DoxyCode}
 39                                   \{
-40         \textcolor{keywordflow}{if} (file\_exists(\textcolor{stringliteral}{'../application/controllers/'} . $url[0] . \textcolor{stringliteral}{'.php'})) \{
-41             $this->controller = $url[0];
-42             unset($url[0]);
-43 
-44             require\_once \textcolor{stringliteral}{'../application/controllers/'} . $this->controller . \textcolor{stringliteral}{'.php'};
-45             $this->controller = \textcolor{keyword}{new} \hyperlink{class_application_aa3217a9bc7c7247a2807cd28ae2a3f1e}{$this->controller};
-46         \}
-47         \textcolor{keywordflow}{else} \{
-48             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} \hyperlink{class_controller_not_found}{ControllerNotFound}(\textcolor{stringliteral}{'ControllerNotFound'}, \textcolor{stringliteral}{'Controller "'} . $this->
-      controller . \textcolor{stringliteral}{'" not found.'});
-49             exit();
+40         \textcolor{keywordflow}{if} (isset($url[0])) \{
+41             \textcolor{keywordflow}{if} (file\_exists(\textcolor{stringliteral}{'../application/controllers/'} . $url[0] . \textcolor{stringliteral}{'.php'})) \{
+42                 $this->controller = $url[0];
+43                 unset($url[0]);
+44             \}
+45             \textcolor{keywordflow}{else} \{
+46                 $this->controller = $url[0];
+47                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} \hyperlink{class_controller_not_found}{ControllerNotFound}(\textcolor{stringliteral}{'ControllerNotFound'}, \textcolor{stringliteral}{'Controller "'} . 
+      $this->controller . \textcolor{stringliteral}{'" not found.'});
+48                 exit();
+49             \}
 50         \}
 51 
-52         \textcolor{keywordflow}{if} ($url[1] == \textcolor{stringliteral}{''} || $url[1] == \textcolor{stringliteral}{'index'}) \{
-53             \textcolor{keywordflow}{if} (method\_exists($this->controller, $url[1])) \{
-54                 $this->method = $url[1];
-55                 unset($url[1]);
-56             \}
-57         \}
-58         \textcolor{keywordflow}{else} \{
-59             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} \hyperlink{class_method_not_found}{MethodNotFound}(\textcolor{stringliteral}{'MethodNotFound'}, \textcolor{stringliteral}{'Method "'} . $this->method . \textcolor{stringliteral}{'" not
-       found.'});
-60             exit();
-61         \}
-62 
-63         $this->parameters = $url ? array\_values($url) : [];
-64 
-65         call\_user\_func\_array([$this->controller, $this->method], $this->parameters);
-66     \}
+52         require\_once \textcolor{stringliteral}{'../application/controllers/'} . $this->controller . \textcolor{stringliteral}{'.php'};
+53         $this->controller = \textcolor{keyword}{new} \hyperlink{class_application_aa3217a9bc7c7247a2807cd28ae2a3f1e}{$this->controller};
+54 
+55         \textcolor{keywordflow}{if} (isset($url[1])) \{
+56             \textcolor{keywordflow}{if} (method\_exists($this->controller, $url[1])) \{
+57                 $this->method = $url[1];
+58                 unset($url[1]);
+59             \}
+60             \textcolor{keywordflow}{else} \{
+61                 $this->method = $url[1];
+62                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} \hyperlink{class_method_not_found}{MethodNotFound}(\textcolor{stringliteral}{'MethodNotFound'}, \textcolor{stringliteral}{'Method "'} . $this->method . \textcolor{stringliteral}{'"
+       not found.'});
+63                 exit();
+64             \}
+65         \}
+66 
+67         $this->parameters = $url ? array\_values($url) : [];
+68 
+69         call\_user\_func\_array([$this->controller, $this->method], $this->parameters);
+70     \}
 \end{DoxyCode}
 \hypertarget{class_application_ac3007e038071f04135b5fcfcfdf9318c}{}\label{class_application_ac3007e038071f04135b5fcfcfdf9318c} 
 \index{Application@{Application}!parse\+Url@{parse\+Url}}

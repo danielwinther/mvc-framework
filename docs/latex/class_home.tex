@@ -9,7 +9,11 @@ Inheritance diagram for Home\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_home_a94a959c81a99ca7f13a5ed8cd07634b3}{index} (\$name=\textquotesingle{}\textquotesingle{})
+\hyperlink{class_home_ac664a1815e75ae32c2e18fac51cb2585}{index} (\$p1=\textquotesingle{}\textquotesingle{}, \$p2=\textquotesingle{}\textquotesingle{})
+\item 
+\hyperlink{class_home_ae007dc6f5e385f932058822aeb094644}{test} ()
+\item 
+\hyperlink{class_home_ad3fffcdc6c29ee47c82e72c20b227c7e}{test1} ()
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -22,11 +26,11 @@ Definition at line 2 of file Home.\+php.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_home_a94a959c81a99ca7f13a5ed8cd07634b3}{}\label{class_home_a94a959c81a99ca7f13a5ed8cd07634b3} 
+\hypertarget{class_home_ac664a1815e75ae32c2e18fac51cb2585}{}\label{class_home_ac664a1815e75ae32c2e18fac51cb2585} 
 \index{Home@{Home}!index@{index}}
 \index{index@{index}!Home@{Home}}
 \subsubsection{\texorpdfstring{index()}{index()}}
-{\footnotesize\ttfamily Home\+::index (\begin{DoxyParamCaption}\item[{}]{\$name = {\ttfamily \textquotesingle{}\textquotesingle{}} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Home\+::index (\begin{DoxyParamCaption}\item[{}]{\$p1 = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{}]{\$p2 = {\ttfamily \textquotesingle{}\textquotesingle{}} }\end{DoxyParamCaption})}
 
 
 
@@ -34,15 +38,51 @@ Definition at line 3 of file Home.\+php.
 
 
 
-References Base\+Controller\textbackslash{}load\+Model(), and Base\+Controller\textbackslash{}view().
+References Base\+Controller\textbackslash{}load\+Model(), and Base\+Controller\textbackslash{}render\+View().
 
 
 \begin{DoxyCode}
-3                                       \{
+3                                               \{
 4         $model = $this->\hyperlink{class_base_controller_a31925ff6c6c23e4015d45a44c78a461b}{loadModel}(\textcolor{stringliteral}{'User'});
 5 
-6         $this->\hyperlink{class_base_controller_a2c835b7c72f07e978eac1f6ed2e9341e}{view}(\textcolor{stringliteral}{'testss'}, [\textcolor{stringliteral}{'name'} => $model->lol()]);
+6         \textcolor{keywordflow}{return} $this->\hyperlink{class_base_controller_a2baad3faf609bcd81f81cf8e9713ec01}{renderView}(\textcolor{stringliteral}{'test'}, [\textcolor{stringliteral}{'name'} => $model, \textcolor{stringliteral}{'p1'} => $p1, \textcolor{stringliteral}{'p2'} => $p2]);
 7     \}
+\end{DoxyCode}
+\hypertarget{class_home_ae007dc6f5e385f932058822aeb094644}{}\label{class_home_ae007dc6f5e385f932058822aeb094644} 
+\index{Home@{Home}!test@{test}}
+\index{test@{test}!Home@{Home}}
+\subsubsection{\texorpdfstring{test()}{test()}}
+{\footnotesize\ttfamily Home\+::test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 8 of file Home.\+php.
+
+
+
+References Base\+Controller\textbackslash{}redirect\+Controller().
+
+
+\begin{DoxyCode}
+8                            \{
+9         $this->\hyperlink{class_base_controller_ad16dba8468d26e5ec0f30a415af257c0}{redirectController}(\textcolor{stringliteral}{'Home@test1'});
+10     \}
+\end{DoxyCode}
+\hypertarget{class_home_ad3fffcdc6c29ee47c82e72c20b227c7e}{}\label{class_home_ad3fffcdc6c29ee47c82e72c20b227c7e} 
+\index{Home@{Home}!test1@{test1}}
+\index{test1@{test1}!Home@{Home}}
+\subsubsection{\texorpdfstring{test1()}{test1()}}
+{\footnotesize\ttfamily Home\+::test1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 11 of file Home.\+php.
+
+
+\begin{DoxyCode}
+11                             \{
+12         echo \textcolor{stringliteral}{'test1'};
+13     \}
 \end{DoxyCode}
 
 

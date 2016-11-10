@@ -6,15 +6,16 @@ Inheritance diagram for Base\+Controller\+:\begin{figure}[H]
 \includegraphics[height=2.000000cm]{class_base_controller}
 \end{center}
 \end{figure}
-\subsection*{Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-\hyperlink{class_base_controller_a2c835b7c72f07e978eac1f6ed2e9341e}{view} (\$view, \$data=\mbox{[}$\,$\mbox{]})
-\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_base_controller_a31925ff6c6c23e4015d45a44c78a461b}{load\+Model} (\$model)
+\item 
+\hyperlink{class_base_controller_a2baad3faf609bcd81f81cf8e9713ec01}{render\+View} (\$view, \$data=\mbox{[}$\,$\mbox{]})
+\item 
+\hyperlink{class_base_controller_a73ab7b9209ca7fd12d9f8d2114c1c825}{redirect\+Url} (\$url)
+\item 
+\hyperlink{class_base_controller_ad16dba8468d26e5ec0f30a415af257c0}{redirect\+Controller} (\$controller)
 \end{DoxyCompactItemize}
 
 
@@ -64,11 +65,68 @@ Referenced by Home\textbackslash{}index().
 18         \textcolor{keywordflow}{return} \textcolor{keyword}{new} $model();
 19     \}
 \end{DoxyCode}
-\hypertarget{class_base_controller_a2c835b7c72f07e978eac1f6ed2e9341e}{}\label{class_base_controller_a2c835b7c72f07e978eac1f6ed2e9341e} 
-\index{Base\+Controller@{Base\+Controller}!view@{view}}
-\index{view@{view}!Base\+Controller@{Base\+Controller}}
-\subsubsection{\texorpdfstring{view()}{view()}}
-{\footnotesize\ttfamily Base\+Controller\+::view (\begin{DoxyParamCaption}\item[{}]{\$view,  }\item[{}]{\$data = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+\hypertarget{class_base_controller_ad16dba8468d26e5ec0f30a415af257c0}{}\label{class_base_controller_ad16dba8468d26e5ec0f30a415af257c0} 
+\index{Base\+Controller@{Base\+Controller}!redirect\+Controller@{redirect\+Controller}}
+\index{redirect\+Controller@{redirect\+Controller}!Base\+Controller@{Base\+Controller}}
+\subsubsection{\texorpdfstring{redirect\+Controller()}{redirectController()}}
+{\footnotesize\ttfamily Base\+Controller\+::redirect\+Controller (\begin{DoxyParamCaption}\item[{}]{\$controller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Redirects to given controller and method
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$controller} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 51 of file Base\+Controller.\+php.
+
+
+
+Referenced by Home\textbackslash{}test().
+
+
+\begin{DoxyCode}
+51                                                        \{
+52         $atSign = explode(\textcolor{charliteral}{'@'}, $controller);
+53 
+54         \textcolor{keywordflow}{if} (strpos($controller, \textcolor{charliteral}{'@'}) !== \textcolor{keyword}{false}) \{
+55             header(\textcolor{stringliteral}{'Location:../'} . $atSign[0] . \textcolor{charliteral}{'/'} . $atSign[1]);
+56         \}
+57         \textcolor{keywordflow}{else} \{
+58             header(\textcolor{stringliteral}{'Location:../'} . $atSign[0] . \textcolor{stringliteral}{'/index'});
+59         \}
+60     \}
+\end{DoxyCode}
+\hypertarget{class_base_controller_a73ab7b9209ca7fd12d9f8d2114c1c825}{}\label{class_base_controller_a73ab7b9209ca7fd12d9f8d2114c1c825} 
+\index{Base\+Controller@{Base\+Controller}!redirect\+Url@{redirect\+Url}}
+\index{redirect\+Url@{redirect\+Url}!Base\+Controller@{Base\+Controller}}
+\subsubsection{\texorpdfstring{redirect\+Url()}{redirectUrl()}}
+{\footnotesize\ttfamily Base\+Controller\+::redirect\+Url (\begin{DoxyParamCaption}\item[{}]{\$url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Redirects to given U\+RL
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$url} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 42 of file Base\+Controller.\+php.
+
+
+\begin{DoxyCode}
+42                                          \{
+43         header(\textcolor{stringliteral}{'Location: '} . $url);
+44     \}
+\end{DoxyCode}
+\hypertarget{class_base_controller_a2baad3faf609bcd81f81cf8e9713ec01}{}\label{class_base_controller_a2baad3faf609bcd81f81cf8e9713ec01} 
+\index{Base\+Controller@{Base\+Controller}!render\+View@{render\+View}}
+\index{render\+View@{render\+View}!Base\+Controller@{Base\+Controller}}
+\subsubsection{\texorpdfstring{render\+View()}{renderView()}}
+{\footnotesize\ttfamily Base\+Controller\+::render\+View (\begin{DoxyParamCaption}\item[{}]{\$view,  }\item[{}]{\$data = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 Loads a given view into the controller
 
@@ -89,7 +147,7 @@ Referenced by Home\textbackslash{}index().
 
 
 \begin{DoxyCode}
-27                                             \{
+27                                                      \{
 28         \textcolor{keywordflow}{if} (file\_exists(\textcolor{stringliteral}{'../application/views/'} . $view . \textcolor{stringliteral}{'.php'})) \{
 29             require\_once \textcolor{stringliteral}{'../application/views/'} . $view . \textcolor{stringliteral}{'.php'};
 30         \}

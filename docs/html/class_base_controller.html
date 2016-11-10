@@ -59,7 +59,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="class_base_controller-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -76,15 +75,16 @@ Inheritance diagram for BaseController:</div>
 </map>
  </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a2c835b7c72f07e978eac1f6ed2e9341e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_controller.html#a2c835b7c72f07e978eac1f6ed2e9341e">view</a> ($view, $data=[])</td></tr>
-<tr class="separator:a2c835b7c72f07e978eac1f6ed2e9341e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a31925ff6c6c23e4015d45a44c78a461b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_controller.html#a31925ff6c6c23e4015d45a44c78a461b">loadModel</a> ($model)</td></tr>
 <tr class="separator:a31925ff6c6c23e4015d45a44c78a461b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2baad3faf609bcd81f81cf8e9713ec01"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_controller.html#a2baad3faf609bcd81f81cf8e9713ec01">renderView</a> ($view, $data=[])</td></tr>
+<tr class="separator:a2baad3faf609bcd81f81cf8e9713ec01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73ab7b9209ca7fd12d9f8d2114c1c825"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_controller.html#a73ab7b9209ca7fd12d9f8d2114c1c825">redirectUrl</a> ($url)</td></tr>
+<tr class="separator:a73ab7b9209ca7fd12d9f8d2114c1c825"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad16dba8468d26e5ec0f30a415af257c0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_controller.html#ad16dba8468d26e5ec0f30a415af257c0">redirectController</a> ($controller)</td></tr>
+<tr class="separator:ad16dba8468d26e5ec0f30a415af257c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -129,14 +129,89 @@ Protected Member Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a2c835b7c72f07e978eac1f6ed2e9341e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c835b7c72f07e978eac1f6ed2e9341e">&sect;&nbsp;</a></span>view()</h2>
+<a id="ad16dba8468d26e5ec0f30a415af257c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad16dba8468d26e5ec0f30a415af257c0">&sect;&nbsp;</a></span>redirectController()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">BaseController::view </td>
+          <td class="memname">BaseController::redirectController </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$controller</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Redirects to given controller and method</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$controller</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_base_controller_8php_source.html#l00051">51</a> of file <a class="el" href="_base_controller_8php_source.html">BaseController.php</a>.</p>
+
+<p>Referenced by <a class="el" href="_home_8php_source.html#l00008">Home\test()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                                       {</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        $atSign = explode(<span class="charliteral">&#39;@&#39;</span>, $controller);</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">if</span> (strpos($controller, <span class="charliteral">&#39;@&#39;</span>) !== <span class="keyword">false</span>) {</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            header(<span class="stringliteral">&#39;Location:../&#39;</span> . $atSign[0] . <span class="charliteral">&#39;/&#39;</span> . $atSign[1]);</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">else</span> {</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            header(<span class="stringliteral">&#39;Location:../&#39;</span> . $atSign[0] . <span class="stringliteral">&#39;/index&#39;</span>);</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div></div><!-- fragment -->
+</div>
+</div>
+<a id="a73ab7b9209ca7fd12d9f8d2114c1c825"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73ab7b9209ca7fd12d9f8d2114c1c825">&sect;&nbsp;</a></span>redirectUrl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BaseController::redirectUrl </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$url</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Redirects to given URL</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$url</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_base_controller_8php_source.html#l00042">42</a> of file <a class="el" href="_base_controller_8php_source.html">BaseController.php</a>.</p>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                         {</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        header(<span class="stringliteral">&#39;Location: &#39;</span> . $url);</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div></div><!-- fragment -->
+</div>
+</div>
+<a id="a2baad3faf609bcd81f81cf8e9713ec01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2baad3faf609bcd81f81cf8e9713ec01">&sect;&nbsp;</a></span>renderView()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BaseController::renderView </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>$view</em>, </td>
@@ -153,6 +228,11 @@ Protected Member Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Loads a given view into the controller</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -166,7 +246,7 @@ Protected Member Functions</h2></td></tr>
 <p>Definition at line <a class="el" href="_base_controller_8php_source.html#l00027">27</a> of file <a class="el" href="_base_controller_8php_source.html">BaseController.php</a>.</p>
 
 <p>Referenced by <a class="el" href="_home_8php_source.html#l00003">Home\index()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                                            {</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">if</span> (file_exists(<span class="stringliteral">&#39;../application/views/&#39;</span> . $view . <span class="stringliteral">&#39;.php&#39;</span>)) {</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            require_once <span class="stringliteral">&#39;../application/views/&#39;</span> . $view . <span class="stringliteral">&#39;.php&#39;</span>;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">else</span> {</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_view_not_found.html">ViewNotFound</a>(<span class="stringliteral">&#39;ViewNotFound&#39;</span>, <span class="stringliteral">&#39;View &quot;&#39;</span> . $view . <span class="stringliteral">&#39;&quot; not found.&#39;</span>);</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            exit();</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div><div class="ttc" id="class_view_not_found_html"><div class="ttname"><a href="class_view_not_found.html">ViewNotFound</a></div><div class="ttdef"><b>Definition:</b> <a href="_view_not_found_8php_source.html#l00002">ViewNotFound.php:2</a></div></div>
+<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                                                     {</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">if</span> (file_exists(<span class="stringliteral">&#39;../application/views/&#39;</span> . $view . <span class="stringliteral">&#39;.php&#39;</span>)) {</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            require_once <span class="stringliteral">&#39;../application/views/&#39;</span> . $view . <span class="stringliteral">&#39;.php&#39;</span>;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">else</span> {</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_view_not_found.html">ViewNotFound</a>(<span class="stringliteral">&#39;ViewNotFound&#39;</span>, <span class="stringliteral">&#39;View &quot;&#39;</span> . $view . <span class="stringliteral">&#39;&quot; not found.&#39;</span>);</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            exit();</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div><div class="ttc" id="class_view_not_found_html"><div class="ttname"><a href="class_view_not_found.html">ViewNotFound</a></div><div class="ttdef"><b>Definition:</b> <a href="_view_not_found_8php_source.html#l00002">ViewNotFound.php:2</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
