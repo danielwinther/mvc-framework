@@ -11,8 +11,8 @@ class BaseController {
 			require_once '../application/models/' . $model . '.php';
 		}
 		else {
-			throw new ModelNotFound('ModelNotFound', 'Model "' . $model . '" not found.');
-			exit();
+			//throw new ModelNotFound('ModelNotFound', 'Model "' . $model . '" not found.');
+			//exit();
 		}
 
 		return new $model();
@@ -22,7 +22,7 @@ class BaseController {
 	* Loads a given view into the controller
 	*
 	* @param string $view
-	* @param array data
+	* @param array $data
 	*/
 	protected function renderView($view, $data = []) {
 		if (file_exists('../application/views/' . $view . '.php')) {
