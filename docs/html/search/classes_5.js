@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['user',['User',['../class_user.html',1,'']]]
+  ['viewnotfound',['ViewNotFound',['../class_view_not_found.html',1,'']]]
 ];

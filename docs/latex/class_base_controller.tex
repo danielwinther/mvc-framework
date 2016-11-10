@@ -49,7 +49,7 @@ Definition at line 9 of file Base\+Controller.\+php.
 
 
 
-Referenced by Home\textbackslash{}index().
+Referenced by Basic\textbackslash{}index(), and Basic\textbackslash{}return\+Model().
 
 
 \begin{DoxyCode}
@@ -58,8 +58,8 @@ Referenced by Home\textbackslash{}index().
 11             require\_once \textcolor{stringliteral}{'../application/models/'} . $model . \textcolor{stringliteral}{'.php'};
 12         \}
 13         \textcolor{keywordflow}{else} \{
-14             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} \hyperlink{class_model_not_found}{ModelNotFound}(\textcolor{stringliteral}{'ModelNotFound'}, \textcolor{stringliteral}{'Model "'} . $model . \textcolor{stringliteral}{'" not found.'});
-15             exit();
+14             \textcolor{comment}{//throw new ModelNotFound('ModelNotFound', 'Model "' . $model . '" not found.');}
+15             \textcolor{comment}{//exit();}
 16         \}
 17 
 18         \textcolor{keywordflow}{return} \textcolor{keyword}{new} $model();
@@ -81,10 +81,6 @@ string & {\em \$controller} & \\
 
 
 Definition at line 51 of file Base\+Controller.\+php.
-
-
-
-Referenced by Home\textbackslash{}test().
 
 
 \begin{DoxyCode}
@@ -143,7 +139,7 @@ Definition at line 27 of file Base\+Controller.\+php.
 
 
 
-Referenced by Home\textbackslash{}index().
+Referenced by Basic\textbackslash{}index().
 
 
 \begin{DoxyCode}

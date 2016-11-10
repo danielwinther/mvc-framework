@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['index',['index',['../class_home.html#ac664a1815e75ae32c2e18fac51cb2585',1,'Home']]]
+  ['index',['index',['../class_basic.html#ac7cd2823d250de784f74ff852972e269',1,'Basic']]]
 ];

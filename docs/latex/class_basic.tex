@@ -1,0 +1,129 @@
+\hypertarget{class_basic}{}\section{Basic Class Reference}
+\label{class_basic}\index{Basic@{Basic}}
+Inheritance diagram for Basic\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_basic}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_basic_ac7cd2823d250de784f74ff852972e269}{index} ()
+\item 
+\hyperlink{class_basic_a68b47cdce3c867df841f6a29b8de624b}{return\+Model} ()
+\item 
+\hyperlink{class_basic_a00d093f162848a1bd2e6e48d7cd68ab0}{return\+String} ()
+\item 
+\hyperlink{class_basic_ade94a138ee91270bc419445603df2ec7}{return\+Int} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 2 of file Basic.\+php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_basic_ac7cd2823d250de784f74ff852972e269}{}\label{class_basic_ac7cd2823d250de784f74ff852972e269} 
+\index{Basic@{Basic}!index@{index}}
+\index{index@{index}!Basic@{Basic}}
+\subsubsection{\texorpdfstring{index()}{index()}}
+{\footnotesize\ttfamily Basic\+::index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file Basic.\+php.
+
+
+
+References Base\+Controller\textbackslash{}load\+Model(), and Base\+Controller\textbackslash{}render\+View().
+
+
+\begin{DoxyCode}
+3                             \{
+4         $user1 = $this->\hyperlink{class_base_controller_a31925ff6c6c23e4015d45a44c78a461b}{loadModel}(\textcolor{stringliteral}{'User'});
+5         $user1->setFirstName(\textcolor{stringliteral}{'Daniel Winther'});
+6         $user1->setLastName(\textcolor{stringliteral}{'Jensen'});
+7         $user1->setAge(24);
+8         $user1->setEmail(\textcolor{stringliteral}{'daniel@mail.dk'});
+9         $user1->setPhone(\textcolor{stringliteral}{'88888888'});
+10 
+11         $user2 = $this->\hyperlink{class_base_controller_a31925ff6c6c23e4015d45a44c78a461b}{loadModel}(\textcolor{stringliteral}{'User'});
+12         $user2->setFirstName(\textcolor{stringliteral}{'Benjamin Elzamouri'});
+13         $user2->setLastName(\textcolor{stringliteral}{'Jensen'});
+14         $user2->setAge(20);
+15         $user2->setEmail(\textcolor{stringliteral}{'benjamin@mail.dk'});
+16         $user2->setPhone(\textcolor{stringliteral}{'12345678'});
+17 
+18 
+19         $userArray = [];
+20         array\_push($userArray, $user1);
+21         array\_push($userArray, $user2);
+22 
+23         \textcolor{keywordflow}{return} $this->\hyperlink{class_base_controller_a2baad3faf609bcd81f81cf8e9713ec01}{renderView}(\textcolor{stringliteral}{'basic'}, [\textcolor{stringliteral}{'userArray'} => $userArray]);
+24     \}
+\end{DoxyCode}
+\hypertarget{class_basic_ade94a138ee91270bc419445603df2ec7}{}\label{class_basic_ade94a138ee91270bc419445603df2ec7} 
+\index{Basic@{Basic}!return\+Int@{return\+Int}}
+\index{return\+Int@{return\+Int}!Basic@{Basic}}
+\subsubsection{\texorpdfstring{return\+Int()}{returnInt()}}
+{\footnotesize\ttfamily Basic\+::return\+Int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 34 of file Basic.\+php.
+
+
+\begin{DoxyCode}
+34                                 \{
+35         \textcolor{keywordflow}{return} 24;
+36     \}
+\end{DoxyCode}
+\hypertarget{class_basic_a68b47cdce3c867df841f6a29b8de624b}{}\label{class_basic_a68b47cdce3c867df841f6a29b8de624b} 
+\index{Basic@{Basic}!return\+Model@{return\+Model}}
+\index{return\+Model@{return\+Model}!Basic@{Basic}}
+\subsubsection{\texorpdfstring{return\+Model()}{returnModel()}}
+{\footnotesize\ttfamily Basic\+::return\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 25 of file Basic.\+php.
+
+
+
+References Base\+Controller\textbackslash{}load\+Model().
+
+
+\begin{DoxyCode}
+25                                   \{
+26         $user = $this->\hyperlink{class_base_controller_a31925ff6c6c23e4015d45a44c78a461b}{loadModel}(\textcolor{stringliteral}{'User'});
+27         $user->setFirstName(\textcolor{stringliteral}{'daniel'});
+28 
+29         \textcolor{keywordflow}{return} $user;
+30     \}
+\end{DoxyCode}
+\hypertarget{class_basic_a00d093f162848a1bd2e6e48d7cd68ab0}{}\label{class_basic_a00d093f162848a1bd2e6e48d7cd68ab0} 
+\index{Basic@{Basic}!return\+String@{return\+String}}
+\index{return\+String@{return\+String}!Basic@{Basic}}
+\subsubsection{\texorpdfstring{return\+String()}{returnString()}}
+{\footnotesize\ttfamily Basic\+::return\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 31 of file Basic.\+php.
+
+
+\begin{DoxyCode}
+31                                    \{
+32         \textcolor{keywordflow}{return} \textcolor{stringliteral}{'daniel'};
+33     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/xampp/htdocs/mvc-\/framework/application/controllers/\hyperlink{controllers_2_basic_8php}{Basic.\+php}\end{DoxyCompactItemize}

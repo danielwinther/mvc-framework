@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['home',['Home',['../class_home.html',1,'']]],
-  ['home_2ephp',['Home.php',['../_home_8php.html',1,'']]]
+  ['index',['index',['../class_basic.html#ac7cd2823d250de784f74ff852972e269',1,'Basic']]]
 ];

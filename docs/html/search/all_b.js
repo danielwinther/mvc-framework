@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['redirectcontroller',['redirectController',['../class_base_controller.html#ad16dba8468d26e5ec0f30a415af257c0',1,'BaseController']]],
-  ['redirecturl',['redirectUrl',['../class_base_controller.html#a73ab7b9209ca7fd12d9f8d2114c1c825',1,'BaseController']]],
-  ['renderview',['renderView',['../class_base_controller.html#a2baad3faf609bcd81f81cf8e9713ec01',1,'BaseController']]]
+  ['setage',['setAge',['../class_user.html#a2c89f54beabff9157106c24878b70bca',1,'User']]],
+  ['setemail',['setEmail',['../class_user.html#a018ae17e436e09134922835cdd3235a7',1,'User']]],
+  ['setfirstname',['setFirstName',['../class_user.html#a3c626d0aca50df67aa89793615b7ffd1',1,'User']]],
+  ['setlastname',['setLastName',['../class_user.html#acbe8bdd002179a3bc115ec7a9afb7e0b',1,'User']]],
+  ['setphone',['setPhone',['../class_user.html#a81a82307eef393fb41f0b3b76375472c',1,'User']]]
 ];
