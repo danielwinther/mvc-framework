@@ -1,10 +1,19 @@
 <?php
 class User {
+	private $id;
 	private $firstName;
 	private $lastName;
 	private $age;
 	private $email;
 	private $phone;
+
+	public function getId(){
+		return $this->id;
+	}
+
+	public function setId($id){
+		$this->id = $id;
+	}
 
 	public function getFirstName(){
 		return $this->firstName;

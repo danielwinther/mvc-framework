@@ -9,7 +9,8 @@
 <body>
 	<div class="container">
 		<table class="table table-hover table-responsive row">
-			<h1>Showcases user model</h1>
+			<h1 class="row">Showcases user model</h1>
+			<hr class="row">
 			<thead>
 				<tr>
 					<th>First name</th>
@@ -23,7 +24,7 @@
 				<?php 
 				foreach ($data['userArray'] as $user) {
 					echo 
-					"<tr><td>" . $user->getFirstName() . "</td>
+					"<tr><td><a href='user/" . $user->getId() . "'>" . $user->getFirstName() . "</a></td>
 					<td>" . $user->getLastName() . "</td>
 					<td>" . $user->getAge() . "</td>
 					<td>" . $user->getEmail() . "</td>
