@@ -4,18 +4,19 @@ class BaseController {
 	* Loads a given model into the controller
 	*
 	* @param string $model
-	* @return $model
+	* @param array $constructor
+	* @return object $model
 	*/
-	protected function loadModel($model) {
-		if (file_exists('../application/models/' . $model . '.php')) {
-			require_once '../application/models/' . $model . '.php';
+	protected function loadModel($model, $constructor = []) {
+		if (file_exists(realpath(__DIR__ . '/..') . '/models/' . $model . '.php')) {
+			require_once realpath(__DIR__ . '/..') . '/models/' . $model . '.php';
 		}
 		else {
-			//throw new ModelNotFound('ModelNotFound', 'Model "' . $model . '" not found.');
-			//exit();
+			throw new ModelNotFound('ModelNotFound', 'Model "' . $model . '" not found.');
+			exit();
 		}
 
-		return new $model();
+		return new $model($constructor);
 	}
 
 	/**
@@ -25,8 +26,8 @@ class BaseController {
 	* @param array $data
 	*/
 	protected function renderView($view, $data = []) {
-		if (file_exists('../application/views/' . $view . '.php')) {
-			require_once '../application/views/' . $view . '.php';
+		if (file_exists(realpath(__DIR__ . '/..') . '/views/' . $view . '.php')) {
+			require_once realpath(__DIR__ . '/..') . '/views/' . $view . '.php';
 		}
 		else {
 			throw new ViewNotFound('ViewNotFound', 'View "' . $view . '" not found.');

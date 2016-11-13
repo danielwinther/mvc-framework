@@ -282,12 +282,12 @@ class UserTest extends PHPUnit_Framework_TestCase
 	}
 	public function testEmailIsGreaterThanOneHundred()
 	{
-		$test = '0popsSUXxYfIfBr9NG7CXL8Zz6luW1tnnT1984l1rLbIc50zjQ32Isa8BORoZ1yJ@mail.dk';
+		$test = '0popsSUXxYfIfBr9NG7CXL8Zz6luW1tnnT1984l1rLbIc50zjQ32Isa8BORoZ1yKJ@mail.dk';
 
 		try {
 			$this->user->setEmail($test);
 			$this->assertEquals($this->user->getEmail(), $test);
-		} catch (OutOfRangeException $e) {
+		} catch (InvalidArgumentException $e) {
 			
 		}
 	}

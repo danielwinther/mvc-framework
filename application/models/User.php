@@ -7,6 +7,12 @@ class User {
 	private $email;
 	private $phone;
 
+	public function __construct($parameters = []) {
+		foreach($parameters as $key => $value) {
+			$this->$key = $value;
+		}
+	}
+
 	public function getId(){
 		return $this->id;
 	}

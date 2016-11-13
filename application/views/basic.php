@@ -24,7 +24,7 @@
 				<?php 
 				foreach ($data['userArray'] as $user) {
 					echo 
-					"<tr><td><a href='user/" . $user->getId() . "'>" . $user->getFirstName() . "</a></td>
+					"<tr><td><a href='basic/user/" . $user->getId() . "'>" . $user->getFirstName() . "</a></td>
 					<td>" . $user->getLastName() . "</td>
 					<td>" . $user->getAge() . "</td>
 					<td>" . $user->getEmail() . "</td>

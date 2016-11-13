@@ -21,7 +21,7 @@
 				</ul>
 			</div>
 		</div>
-		<a href="/mvc-framework/public/Basic/index" class="btn btn-primary btn-block">
+		<a href="/mvc-framework/public/basic" class="btn btn-primary btn-block">
 		<span class="glyphicon glyphicon-arrow-left"></span> Return to list of users
 		</a>
 	</div>

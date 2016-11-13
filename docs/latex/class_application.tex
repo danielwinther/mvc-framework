@@ -83,7 +83,7 @@ Referenced by \+\_\+\+\_\+construct().
 \begin{DoxyCode}
 39                                   \{
 40         \textcolor{keywordflow}{if} (isset($url[0])) \{
-41             \textcolor{keywordflow}{if} (file\_exists(\textcolor{stringliteral}{'../application/controllers/'} . $url[0] . \textcolor{stringliteral}{'.php'})) \{
+41             \textcolor{keywordflow}{if} (file\_exists(realpath(\_\_DIR\_\_ . \textcolor{stringliteral}{'/..'}) . \textcolor{stringliteral}{'/controllers/'} . $url[0] . \textcolor{stringliteral}{'.php'})) \{
 42                 $this->controller = $url[0];
 43                 unset($url[0]);
 44             \}
@@ -95,7 +95,7 @@ Referenced by \+\_\+\+\_\+construct().
 49             \}
 50         \}
 51         
-52         require\_once \textcolor{stringliteral}{'../application/controllers/'} . $this->controller . \textcolor{stringliteral}{'.php'};
+52         require\_once realpath(\_\_DIR\_\_ . \textcolor{stringliteral}{'/..'}) . \textcolor{stringliteral}{'/controllers/'} . $this->controller . \textcolor{stringliteral}{'.php'};
 53         $this->controller = \textcolor{keyword}{new} \hyperlink{class_application_aa3217a9bc7c7247a2807cd28ae2a3f1e}{$this->controller};
 54 
 55         \textcolor{keywordflow}{if} (isset($url[1])) \{

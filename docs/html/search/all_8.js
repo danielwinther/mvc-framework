@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['methodnotfound',['MethodNotFound',['../class_method_not_found.html',1,'']]],
-  ['methodnotfound_2ephp',['MethodNotFound.php',['../_method_not_found_8php.html',1,'']]],
-  ['modelnotfound',['ModelNotFound',['../class_model_not_found.html',1,'']]],
-  ['modelnotfound_2ephp',['ModelNotFound.php',['../_model_not_found_8php.html',1,'']]]
+  ['load',['load',['../class_application.html#aa434ce8a8cbcdd334e051004084edce9',1,'Application']]],
+  ['loadmodel',['loadModel',['../class_base_controller.html#a710080f75b12adc69eb506ee63cffe6b',1,'BaseController']]]
 ];

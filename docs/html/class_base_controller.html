@@ -77,8 +77,8 @@ Inheritance diagram for BaseController:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a31925ff6c6c23e4015d45a44c78a461b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_controller.html#a31925ff6c6c23e4015d45a44c78a461b">loadModel</a> ($model)</td></tr>
-<tr class="separator:a31925ff6c6c23e4015d45a44c78a461b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a710080f75b12adc69eb506ee63cffe6b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_controller.html#a710080f75b12adc69eb506ee63cffe6b">loadModel</a> ($model, $constructor=[])</td></tr>
+<tr class="separator:a710080f75b12adc69eb506ee63cffe6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2baad3faf609bcd81f81cf8e9713ec01"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_controller.html#a2baad3faf609bcd81f81cf8e9713ec01">renderView</a> ($view, $data=[])</td></tr>
 <tr class="separator:a2baad3faf609bcd81f81cf8e9713ec01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73ab7b9209ca7fd12d9f8d2114c1c825"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_controller.html#a73ab7b9209ca7fd12d9f8d2114c1c825">redirectUrl</a> ($url)</td></tr>
@@ -90,8 +90,8 @@ Protected Member Functions</h2></td></tr>
 <div class="textblock">
 <p>Definition at line <a class="el" href="_base_controller_8php_source.html#l00002">2</a> of file <a class="el" href="_base_controller_8php_source.html">BaseController.php</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a31925ff6c6c23e4015d45a44c78a461b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31925ff6c6c23e4015d45a44c78a461b">&sect;&nbsp;</a></span>loadModel()</h2>
+<a id="a710080f75b12adc69eb506ee63cffe6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a710080f75b12adc69eb506ee63cffe6b">&sect;&nbsp;</a></span>loadModel()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -103,8 +103,18 @@ Protected Member Functions</h2></td></tr>
           <td class="memname">BaseController::loadModel </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$model</em></td><td>)</td>
+          <td class="paramname"><em>$model</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$constructor</em> = <code>[]</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -117,15 +127,17 @@ Protected Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramtype">string</td><td class="paramname">$model</td><td></td></tr>
+    <tr><td class="paramtype">array</td><td class="paramname">$constructor</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>$model </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>object $model </dd></dl>
 
-<p>Definition at line <a class="el" href="_base_controller_8php_source.html#l00009">9</a> of file <a class="el" href="_base_controller_8php_source.html">BaseController.php</a>.</p>
+<p>Definition at line <a class="el" href="_base_controller_8php_source.html#l00010">10</a> of file <a class="el" href="_base_controller_8php_source.html">BaseController.php</a>.</p>
 
-<p>Referenced by <a class="el" href="controllers_2_basic_8php_source.html#l00003">Basic\index()</a>, and <a class="el" href="controllers_2_basic_8php_source.html#l00025">Basic\returnModel()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                                         {</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keywordflow">if</span> (file_exists(<span class="stringliteral">&#39;../application/models/&#39;</span> . $model . <span class="stringliteral">&#39;.php&#39;</span>)) {</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            require_once <span class="stringliteral">&#39;../application/models/&#39;</span> . $model . <span class="stringliteral">&#39;.php&#39;</span>;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        }</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keywordflow">else</span> {</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <span class="comment">//throw new ModelNotFound(&#39;ModelNotFound&#39;, &#39;Model &quot;&#39; . $model . &#39;&quot; not found.&#39;);</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            <span class="comment">//exit();</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        }</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">new</span> $model();</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    }</div></div><!-- fragment -->
+<p>Referenced by <a class="el" href="controllers_2_basic_8php_source.html#l00003">Basic\initializeData()</a>, and <a class="el" href="controllers_2_basic_8php_source.html#l00026">Basic\returnModel()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                                                            {</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keywordflow">if</span> (file_exists(realpath(__DIR__ . <span class="stringliteral">&#39;/..&#39;</span>) . <span class="stringliteral">&#39;/models/&#39;</span> . $model . <span class="stringliteral">&#39;.php&#39;</span>)) {</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            require_once realpath(__DIR__ . <span class="stringliteral">&#39;/..&#39;</span>) . <span class="stringliteral">&#39;/models/&#39;</span> . $model . <span class="stringliteral">&#39;.php&#39;</span>;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        }</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordflow">else</span> {</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_model_not_found.html">ModelNotFound</a>(<span class="stringliteral">&#39;ModelNotFound&#39;</span>, <span class="stringliteral">&#39;Model &quot;&#39;</span> . $model . <span class="stringliteral">&#39;&quot; not found.&#39;</span>);</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            exit();</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        }</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">new</span> $model($constructor);</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    }</div><div class="ttc" id="class_model_not_found_html"><div class="ttname"><a href="class_model_not_found.html">ModelNotFound</a></div><div class="ttdef"><b>Definition:</b> <a href="_model_not_found_8php_source.html#l00002">ModelNotFound.php:2</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad16dba8468d26e5ec0f30a415af257c0"></a>
@@ -159,8 +171,8 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_base_controller_8php_source.html#l00051">51</a> of file <a class="el" href="_base_controller_8php_source.html">BaseController.php</a>.</p>
-<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                                       {</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        $atSign = explode(<span class="charliteral">&#39;@&#39;</span>, $controller);</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">if</span> (strpos($controller, <span class="charliteral">&#39;@&#39;</span>) !== <span class="keyword">false</span>) {</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            header(<span class="stringliteral">&#39;Location:../&#39;</span> . $atSign[0] . <span class="charliteral">&#39;/&#39;</span> . $atSign[1]);</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">else</span> {</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            header(<span class="stringliteral">&#39;Location:../&#39;</span> . $atSign[0] . <span class="stringliteral">&#39;/index&#39;</span>);</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_base_controller_8php_source.html#l00052">52</a> of file <a class="el" href="_base_controller_8php_source.html">BaseController.php</a>.</p>
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                                       {</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        $atSign = explode(<span class="charliteral">&#39;@&#39;</span>, $controller);</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">if</span> (strpos($controller, <span class="charliteral">&#39;@&#39;</span>) !== <span class="keyword">false</span>) {</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            header(<span class="stringliteral">&#39;Location:../&#39;</span> . $atSign[0] . <span class="charliteral">&#39;/&#39;</span> . $atSign[1]);</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">else</span> {</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            header(<span class="stringliteral">&#39;Location:../&#39;</span> . $atSign[0] . <span class="stringliteral">&#39;/index&#39;</span>);</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div></div><!-- fragment -->
 </div>
 </div>
 <a id="a73ab7b9209ca7fd12d9f8d2114c1c825"></a>
@@ -194,8 +206,8 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_base_controller_8php_source.html#l00042">42</a> of file <a class="el" href="_base_controller_8php_source.html">BaseController.php</a>.</p>
-<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                         {</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        header(<span class="stringliteral">&#39;Location: &#39;</span> . $url);</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_base_controller_8php_source.html#l00043">43</a> of file <a class="el" href="_base_controller_8php_source.html">BaseController.php</a>.</p>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                         {</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        header(<span class="stringliteral">&#39;Location: &#39;</span> . $url);</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div></div><!-- fragment -->
 </div>
 </div>
 <a id="a2baad3faf609bcd81f81cf8e9713ec01"></a>
@@ -240,10 +252,10 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_base_controller_8php_source.html#l00027">27</a> of file <a class="el" href="_base_controller_8php_source.html">BaseController.php</a>.</p>
+<p>Definition at line <a class="el" href="_base_controller_8php_source.html#l00028">28</a> of file <a class="el" href="_base_controller_8php_source.html">BaseController.php</a>.</p>
 
-<p>Referenced by <a class="el" href="controllers_2_basic_8php_source.html#l00003">Basic\index()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                                                     {</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">if</span> (file_exists(<span class="stringliteral">&#39;../application/views/&#39;</span> . $view . <span class="stringliteral">&#39;.php&#39;</span>)) {</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            require_once <span class="stringliteral">&#39;../application/views/&#39;</span> . $view . <span class="stringliteral">&#39;.php&#39;</span>;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">else</span> {</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_view_not_found.html">ViewNotFound</a>(<span class="stringliteral">&#39;ViewNotFound&#39;</span>, <span class="stringliteral">&#39;View &quot;&#39;</span> . $view . <span class="stringliteral">&#39;&quot; not found.&#39;</span>);</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            exit();</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div><div class="ttc" id="class_view_not_found_html"><div class="ttname"><a href="class_view_not_found.html">ViewNotFound</a></div><div class="ttdef"><b>Definition:</b> <a href="_view_not_found_8php_source.html#l00002">ViewNotFound.php:2</a></div></div>
+<p>Referenced by <a class="el" href="controllers_2_basic_8php_source.html#l00015">Basic\index()</a>, and <a class="el" href="controllers_2_basic_8php_source.html#l00018">Basic\user()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                                     {</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">if</span> (file_exists(realpath(__DIR__ . <span class="stringliteral">&#39;/..&#39;</span>) . <span class="stringliteral">&#39;/views/&#39;</span> . $view . <span class="stringliteral">&#39;.php&#39;</span>)) {</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            require_once realpath(__DIR__ . <span class="stringliteral">&#39;/..&#39;</span>) . <span class="stringliteral">&#39;/views/&#39;</span> . $view . <span class="stringliteral">&#39;.php&#39;</span>;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">else</span> {</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_view_not_found.html">ViewNotFound</a>(<span class="stringliteral">&#39;ViewNotFound&#39;</span>, <span class="stringliteral">&#39;View &quot;&#39;</span> . $view . <span class="stringliteral">&#39;&quot; not found.&#39;</span>);</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            exit();</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div><div class="ttc" id="class_view_not_found_html"><div class="ttname"><a href="class_view_not_found.html">ViewNotFound</a></div><div class="ttdef"><b>Definition:</b> <a href="_view_not_found_8php_source.html#l00002">ViewNotFound.php:2</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
