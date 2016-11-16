@@ -7,5 +7,5 @@ foreach (glob(realpath(__DIR__) . '/exceptions/*.php') as $exception) {
     require_once $exception;
 }
 
-require_once realpath(__DIR__) . '/kernal/Application.php';
-require_once realpath(__DIR__) . '/kernal/BaseController.php';
+require_once realpath(__DIR__) . '/kernel/Application.php';
+require_once realpath(__DIR__) . '/kernel/BaseController.php';
