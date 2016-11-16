@@ -1,5 +1,5 @@
 <?php
-require_once '/../../application/kernal/BaseController.php';
+require_once '/../../application/kernel/BaseController.php';
 require_once '/../../application/controllers/Basic.php';
 
 class BasicTest extends PHPUnit_Framework_TestCase
