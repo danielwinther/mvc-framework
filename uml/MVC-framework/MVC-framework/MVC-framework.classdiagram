@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="61ada110-4a31-4c96-aec1-56fb54d613de" name="MVC-framework" linkedPackageId="955a9481-5199-41fd-bc4f-1a29a6717141" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="fa487977-f957-4c06-9ef4-e30d3f588c39" name="Application">
+        <ownedCommentsInternal>
+          <comment Id="f09058d9-d129-46a6-92a9-67dbe0f71574">
+            <elementDefinition Id="94603b5b-1e20-46f8-abe4-eeaa03f63099" />
+            <body>Root-mappen for hele systemet</body>
+          </comment>
+        </ownedCommentsInternal>
+        <elementDefinition Id="7b7a4e89-be48-43e6-bc5d-14dd03c43a33" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <package Id="b87eac6b-f754-4c4c-b649-9bfeecf85936" name="Models">
+              <ownedCommentsInternal>
+                <comment Id="4ebe911f-80c5-4bc4-b480-b0c7aafa7d25">
+                  <elementDefinition Id="fa7a8f5b-bd56-49ee-950d-86f1a5900779" />
+                  <body>Model-laget</body>
+                </comment>
+              </ownedCommentsInternal>
+              <elementDefinition Id="9df744e4-f8a5-49e3-9c41-49a1017036fc" />
+              <packagedElements>
+                <packageHasNamedElement>
+                  <class Id="376a9f52-22a7-4114-9c9a-d6b326057f4d" name="Model" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="f0a01239-650a-4a00-b308-823b5406ebfb" />
+                  </class>
+                </packageHasNamedElement>
+              </packagedElements>
+            </package>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <package Id="743d602f-a065-4b6e-bfc2-d880aadbd70d" name="Views">
+              <ownedCommentsInternal>
+                <comment Id="b6476515-bb86-45db-90e8-56990017f67f">
+                  <elementDefinition Id="2103e083-3577-4f79-9085-f4bfc40a120d" />
+                  <body>Views-laget</body>
+                </comment>
+              </ownedCommentsInternal>
+              <elementDefinition Id="9474fb73-80ff-4407-95be-3e674a593dc8" />
+              <packagedElements>
+                <packageHasNamedElement>
+                  <class Id="7b544b6d-1059-4fde-b97d-13d81ad4f069" name="Index.php" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="d27e6712-69c5-4804-955b-5121bf69f477" />
+                  </class>
+                </packageHasNamedElement>
+              </packagedElements>
+            </package>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <package Id="6062653c-929e-4a2b-b622-1a6bbcc3d3c4" name="Controllers">
+              <ownedCommentsInternal>
+                <comment Id="d2ce7dc8-93d8-4836-b726-4bff910540d3">
+                  <elementDefinition Id="9732f48b-fe00-47ba-acff-9b4edc116e98" />
+                  <body>Controller-laget</body>
+                </comment>
+              </ownedCommentsInternal>
+              <elementDefinition Id="231c2127-d45b-45b1-838d-110b0f2f574d" />
+              <packagedElements>
+                <packageHasNamedElement>
+                  <class Id="91a43337-59bf-4adb-a387-0453bd2129b2" name="Controller" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="849092f2-86db-40af-af41-983312af2f1c" />
+                  </class>
+                </packageHasNamedElement>
+              </packagedElements>
+            </package>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <package Id="88b2e6b3-f2e0-42b9-a914-04ffbca1d1ad" name="Config">
+              <ownedCommentsInternal>
+                <comment Id="f2f1ba94-1f92-421e-a03d-023626138a42">
+                  <elementDefinition Id="8dcada6e-44a2-4be9-ad37-9301763dff1e" />
+                  <body>Config-mappen bestående af systemets standard konfigurationer</body>
+                </comment>
+              </ownedCommentsInternal>
+              <elementDefinition Id="f0f8673e-cfd3-4068-aeb3-d1b54ded5581" />
+              <packagedElements>
+                <packageHasNamedElement>
+                  <class Id="8cb72659-65fb-49ce-9a1f-ab0dd6ee354c" name="Database" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="84ae35b2-5911-41df-aec9-b6d3030f1d27" />
+                  </class>
+                </packageHasNamedElement>
+              </packagedElements>
+            </package>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <package Id="599c8eac-fccd-4606-b1dc-ccf9b1c83ff3" name="Kernel">
+              <ownedCommentsInternal>
+                <comment Id="b5ae7277-4bfa-4d4d-88aa-b2a815d25f34">
+                  <elementDefinition Id="12e7a517-71cd-4c68-a2a3-fdbb75a91959" />
+                  <body>Kernekomponenter af frameworket</body>
+                </comment>
+              </ownedCommentsInternal>
+              <elementDefinition Id="a6cce384-c976-4675-92d8-cd98389c5d61" />
+              <packagedElements>
+                <packageHasNamedElement>
+                  <class Id="9387c9ea-d3c5-403a-a8f7-7ad13701bc3d" name="Application" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="027ce822-e113-42f0-8563-c005435d8e6d" />
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="ce3a2dd6-5c55-4200-9272-6b793cd4793e" name="BaseController" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="3786349a-628d-42ad-8893-798cd3cb72d7" />
+                    <generalsInternal>
+                      <generalization Id="325b8e78-8a33-47d6-8bbb-0d449111df27" isSubstitutable="false">
+                        <classMoniker Id="91a43337-59bf-4adb-a387-0453bd2129b2" LastKnownName="Controller" />
+                        <elementDefinition Id="19d58daf-e103-4d24-aaf6-818ceba73cdf" />
+                      </generalization>
+                    </generalsInternal>
+                  </class>
+                </packageHasNamedElement>
+              </packagedElements>
+            </package>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <package Id="3f59aa37-1e70-4aac-b1f2-e33215c60f11" name="Libraries">
+              <ownedCommentsInternal>
+                <comment Id="b24da282-d0f4-489a-85b6-87dded9188b4">
+                  <elementDefinition Id="551d6ad9-412e-498f-a105-6b8cc6a9b709" />
+                  <body>Forskellige hjælpebiblioteker</body>
+                </comment>
+              </ownedCommentsInternal>
+              <elementDefinition Id="7605ffb6-4893-49b4-94ff-deeb2fa3c79c" />
+            </package>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <package Id="d93147c6-14e8-4f1e-a28b-ae47c4b36180" name="Exceptions">
+              <ownedCommentsInternal>
+                <comment Id="de60506f-f918-4cd0-9a9a-c4ebccbe540e">
+                  <elementDefinition Id="e0658134-b491-4571-a827-422a51f79ded" />
+                  <body>Forskellige Exceptions</body>
+                </comment>
+              </ownedCommentsInternal>
+              <elementDefinition Id="c97f85ae-8318-4650-b762-be49e85cc4c8" />
+            </package>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="34129c59-f62b-432f-a62f-cfe5f8e1a7d8" name="Tests">
+        <ownedCommentsInternal>
+          <comment Id="96b3e33f-49e5-46fc-ae33-7a7601b20286">
+            <elementDefinition Id="e4325cb5-9e62-4a7e-822d-cd8a5c64e871" />
+            <body>Div. test cases</body>
+          </comment>
+        </ownedCommentsInternal>
+        <elementDefinition Id="afaaed05-034d-4f76-bec4-0a3fd23251dd" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <package Id="1bbeb993-14f6-4090-bf9d-089a060edc16" name="Controllers">
+              <elementDefinition Id="8c05011e-6ee0-4f51-bff8-e1ca2d16b037" />
+            </package>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <package Id="1e4e2d23-796c-4b6e-bdda-8c62d7734505" name="Models">
+              <elementDefinition Id="460f029e-4662-4572-8607-4e1b64b0d41e" />
+            </package>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="35d912ee-cf0a-481d-abff-0c0b932ce29b" name="Public">
+        <ownedCommentsInternal>
+          <comment Id="a4798c5c-d28e-4797-82b0-71299e28a2b0">
+            <elementDefinition Id="4880e844-44cc-4ef0-9111-4e00b6e7ad64" />
+            <body>Offentlige ressourcer- HTML, CSS, Billder, JS osv.</body>
+          </comment>
+        </ownedCommentsInternal>
+        <elementDefinition Id="9d1ddfc4-2031-4ebc-a9cf-26dfdaf5ab88" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <package Id="3c3cfd80-2f36-45e3-be6e-44fb95d45972" name="Img">
+              <elementDefinition Id="bbfedb1d-b053-4abf-a06a-62ce164c3775" />
+            </package>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <package Id="7a50faf0-c80d-4259-aaa4-b26ca0fb74f1" name="JS">
+              <elementDefinition Id="a05ff9aa-7159-4921-ba80-4be187b58b2e" />
+            </package>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <package Id="f9ac4e79-e0ec-4f41-b249-fc4b71eb020d" name="CSS">
+              <elementDefinition Id="1ee5234c-669d-44c4-b2d1-1313489a8e62" />
+            </package>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="01d9df02-f817-4fcb-8eaf-69a7e486dea3" name="Vendor">
+        <ownedCommentsInternal>
+          <comment Id="498afe8d-c735-4adb-8e76-90522fa1429e">
+            <elementDefinition Id="598c310c-45f3-4a16-913b-5a24b5ad5724" />
+            <body>Div. eksterne bibliotekter</body>
+          </comment>
+        </ownedCommentsInternal>
+        <elementDefinition Id="591e5920-07cd-442a-a5a3-12994d1bd690" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <package Id="27396f85-305b-403f-98f0-8a1598923093" name="PHPUnit">
+              <elementDefinition Id="56541592-f649-47cd-b366-fed810614c48" />
+            </package>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="9259aa90-52db-423f-8990-f345cc82b841" name="Docs">
+        <ownedCommentsInternal>
+          <comment Id="c3c14c7b-9fca-4a6b-a961-76f29e740555">
+            <elementDefinition Id="35c4d064-554a-4ac4-b943-dfdbddf9f40a" />
+            <body>Dokumentation for frameworket</body>
+          </comment>
+        </ownedCommentsInternal>
+        <elementDefinition Id="c93e168c-b7b1-40d4-9e3a-6b7153c08664" />
+      </package>
+    </logicalClassDesignerModelHasPackages>
+  </packagedElements>
+  <package Id="955a9481-5199-41fd-bc4f-1a29a6717141" name="MVC-framework">
+    <elementDefinition Id="42459742-9698-488c-995a-71b0a1a32647" />
+    <profileInstances>
+      <packageHasProfileInstances Id="40c3b28e-f89a-45e8-bb2d-c8011960c797">
+        <profileInstance Id="af376c95-b6be-49ae-9137-12716a96107c" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="8e6f4213-05e3-4682-afd4-a6f9ed52deab">
+        <profileInstance Id="201f05d9-4d71-4322-b9f0-22016672bc08" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>

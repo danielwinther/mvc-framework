@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="7b7a4e89-be48-43e6-bc5d-14dd03c43a33"
+  name="Application" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="94603b5b-1e20-46f8-abe4-eeaa03f63099">
+      <body>Root-mappen for hele systemet</body>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="9df744e4-f8a5-49e3-9c41-49a1017036fc"
+        LastKnownName="Models"
+        LastKnownLocation="Package_1411.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="91fd5277-8a65-4f7a-bcad-3151f09fc24c"
+        LastKnownName="Public"
+        LastKnownLocation="Package_1421.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="9474fb73-80ff-4407-95be-3e674a593dc8"
+        LastKnownName="Views"
+        LastKnownLocation="Package3_1411.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="231c2127-d45b-45b1-838d-110b0f2f574d"
+        LastKnownName="Controllers"
+        LastKnownLocation="Package_1412.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="f0f8673e-cfd3-4068-aeb3-d1b54ded5581"
+        LastKnownName="Config"
+        LastKnownLocation="Package_1422.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="a6cce384-c976-4675-92d8-cd98389c5d61"
+        LastKnownName="Kernel"
+        LastKnownLocation="Package_1430.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="7605ffb6-4893-49b4-94ff-deeb2fa3c79c"
+        LastKnownName="Libraries"
+        LastKnownLocation="Package_1433.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="c97f85ae-8318-4650-b762-be49e85cc4c8"
+        LastKnownName="Exceptions"
+        LastKnownLocation="Package_2217.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

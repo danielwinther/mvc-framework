@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="9d1ddfc4-2031-4ebc-a9cf-26dfdaf5ab88"
+  name="Public" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="4880e844-44cc-4ef0-9111-4e00b6e7ad64">
+      <body>Offentlige ressourcer- HTML, CSS, Billder, JS osv.</body>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="bbfedb1d-b053-4abf-a06a-62ce164c3775"
+        LastKnownName="Img"
+        LastKnownLocation="Package2_1421.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="a05ff9aa-7159-4921-ba80-4be187b58b2e"
+        LastKnownName="Js"
+        LastKnownLocation="Package3_1421.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="1ee5234c-669d-44c4-b2d1-1313489a8e62"
+        LastKnownName="CSS"
+        LastKnownLocation="Package1_1421.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

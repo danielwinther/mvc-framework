@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="9df744e4-f8a5-49e3-9c41-49a1017036fc"
+  name="Models" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="fa7a8f5b-bd56-49ee-950d-86f1a5900779">
+      <body>Model-laget</body>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="b0bd40f1-1091-4006-b4cf-f47cc6aa676e"
+        LastKnownName="Views"
+        LastKnownLocation="Package1_1411.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="46f743f5-713e-4d5b-b799-47948cf07cad"
+        name="BaseModel"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f0a01239-650a-4a00-b308-823b5406ebfb"
+        name="Model"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="bed02c62-59c3-4cb1-800f-5eb82e845bdb"
+            isSubstitutable="false">
+            <classMoniker
+              Id="46f743f5-713e-4d5b-b799-47948cf07cad"
+              LastKnownName="BaseModel"
+              LastKnownLocation="Package_1411.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
