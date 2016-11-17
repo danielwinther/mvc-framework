@@ -3,23 +3,23 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_application_a97620cd12b475b39007c29c63885a373}{\+\_\+\+\_\+construct} ()
+\hyperlink{class_application_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct} ()
 \end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_application_ac3007e038071f04135b5fcfcfdf9318c}{parse\+Url} ()
+\hyperlink{class_application_a354b02f944f9accd1eefa779cfcc1cc8}{parse\+Url} ()
 \item 
-\hyperlink{class_application_aa434ce8a8cbcdd334e051004084edce9}{load} (\$url)
+\hyperlink{class_application_ae3eeda1d8c99497a02792cc1a66c7d15}{load} (\$url)
 \end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_application_aa3217a9bc7c7247a2807cd28ae2a3f1e}{\$controller} = \textquotesingle{}\hyperlink{class_basic}{Basic}\textquotesingle{}
+\hyperlink{class_application_a0eb1786d89f8acef683a1fbeeeb87518}{\$controller} = \textquotesingle{}\hyperlink{class_basic}{Basic}\textquotesingle{}
 \item 
-\hyperlink{class_application_a35c1bd1b0587da413cb79a663dae84a6}{\$method} = \textquotesingle{}index\textquotesingle{}
+\hyperlink{class_application_a12661b2fc0f57f97e30a1620889ce9c6}{\$method} = \textquotesingle{}index\textquotesingle{}
 \item 
-\hyperlink{class_application_a9cb01d8979a55808cd1e1e5b74b1e3f6}{\$parameters} = \mbox{[}$\,$\mbox{]}
+\hyperlink{class_application_ab79d246480c4ac3a0db6bbceca92ad32}{\$parameters} = \mbox{[}$\,$\mbox{]}
 \end{DoxyCompactItemize}
 
 
@@ -31,11 +31,11 @@ Definition at line 2 of file Application.\+php.
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_application_a97620cd12b475b39007c29c63885a373}{}\label{class_application_a97620cd12b475b39007c29c63885a373} 
+\hypertarget{class_application_a095c5d389db211932136b53f25f39685}{}\label{class_application_a095c5d389db211932136b53f25f39685} 
 \index{Application@{Application}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
 \index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!Application@{Application}}
 \subsubsection{\texorpdfstring{\+\_\+\+\_\+construct()}{\_\_construct()}}
-{\footnotesize\ttfamily Application\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 Initializes the application 
 
@@ -48,17 +48,17 @@ References load(), and parse\+Url().
 
 \begin{DoxyCode}
 19                                   \{
-20         $this->\hyperlink{class_application_aa434ce8a8cbcdd334e051004084edce9}{load}($this->\hyperlink{class_application_ac3007e038071f04135b5fcfcfdf9318c}{parseUrl}());
+20         $this->\hyperlink{class_application_ae3eeda1d8c99497a02792cc1a66c7d15}{load}($this->\hyperlink{class_application_a354b02f944f9accd1eefa779cfcc1cc8}{parseUrl}());
 21     \}
 \end{DoxyCode}
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_application_aa434ce8a8cbcdd334e051004084edce9}{}\label{class_application_aa434ce8a8cbcdd334e051004084edce9} 
+\hypertarget{class_application_ae3eeda1d8c99497a02792cc1a66c7d15}{}\label{class_application_ae3eeda1d8c99497a02792cc1a66c7d15} 
 \index{Application@{Application}!load@{load}}
 \index{load@{load}!Application@{Application}}
 \subsubsection{\texorpdfstring{load()}{load()}}
-{\footnotesize\ttfamily Application\+::load (\begin{DoxyParamCaption}\item[{}]{\$url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily load (\begin{DoxyParamCaption}\item[{}]{\$url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 Loads a given controller, method and parameter based on the U\+RL
 
@@ -96,7 +96,7 @@ Referenced by \+\_\+\+\_\+construct().
 50         \}
 51         
 52         require\_once realpath(\_\_DIR\_\_ . \textcolor{stringliteral}{'/..'}) . \textcolor{stringliteral}{'/controllers/'} . $this->controller . \textcolor{stringliteral}{'.php'};
-53         $this->controller = \textcolor{keyword}{new} \hyperlink{class_application_aa3217a9bc7c7247a2807cd28ae2a3f1e}{$this->controller};
+53         $this->controller = \textcolor{keyword}{new} \hyperlink{class_application_a0eb1786d89f8acef683a1fbeeeb87518}{$this->controller};
 54 
 55         \textcolor{keywordflow}{if} (isset($url[1])) \{
 56             \textcolor{keywordflow}{if} (method\_exists($this->controller, $url[1])) \{
@@ -116,11 +116,11 @@ Referenced by \+\_\+\+\_\+construct().
 69         call\_user\_func\_array([$this->controller, $this->method], $this->parameters);
 70     \}
 \end{DoxyCode}
-\hypertarget{class_application_ac3007e038071f04135b5fcfcfdf9318c}{}\label{class_application_ac3007e038071f04135b5fcfcfdf9318c} 
+\hypertarget{class_application_a354b02f944f9accd1eefa779cfcc1cc8}{}\label{class_application_a354b02f944f9accd1eefa779cfcc1cc8} 
 \index{Application@{Application}!parse\+Url@{parse\+Url}}
 \index{parse\+Url@{parse\+Url}!Application@{Application}}
 \subsubsection{\texorpdfstring{parse\+Url()}{parseUrl()}}
-{\footnotesize\ttfamily Application\+::parse\+Url (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily parse\+Url (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 Parses a given U\+RL to make it read controllers, methods and parameters properly
 
@@ -145,12 +145,12 @@ Referenced by \+\_\+\+\_\+construct().
 \end{DoxyCode}
 
 
-\subsection{Member Data Documentation}
-\hypertarget{class_application_aa3217a9bc7c7247a2807cd28ae2a3f1e}{}\label{class_application_aa3217a9bc7c7247a2807cd28ae2a3f1e} 
+\subsection{Field Documentation}
+\hypertarget{class_application_a0eb1786d89f8acef683a1fbeeeb87518}{}\label{class_application_a0eb1786d89f8acef683a1fbeeeb87518} 
 \index{Application@{Application}!\$controller@{\$controller}}
 \index{\$controller@{\$controller}!Application@{Application}}
 \subsubsection{\texorpdfstring{\$controller}{$controller}}
-{\footnotesize\ttfamily string Application\+::\$controller = \textquotesingle{}\hyperlink{class_basic}{Basic}\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily string \$controller = \textquotesingle{}\hyperlink{class_basic}{Basic}\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -160,21 +160,21 @@ Definition at line 6 of file Application.\+php.
 
 Referenced by load().
 
-\hypertarget{class_application_a35c1bd1b0587da413cb79a663dae84a6}{}\label{class_application_a35c1bd1b0587da413cb79a663dae84a6} 
+\hypertarget{class_application_a12661b2fc0f57f97e30a1620889ce9c6}{}\label{class_application_a12661b2fc0f57f97e30a1620889ce9c6} 
 \index{Application@{Application}!\$method@{\$method}}
 \index{\$method@{\$method}!Application@{Application}}
 \subsubsection{\texorpdfstring{\$method}{$method}}
-{\footnotesize\ttfamily Application\+::\$method = \textquotesingle{}index\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily \$method = \textquotesingle{}index\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
 Definition at line 10 of file Application.\+php.
 
-\hypertarget{class_application_a9cb01d8979a55808cd1e1e5b74b1e3f6}{}\label{class_application_a9cb01d8979a55808cd1e1e5b74b1e3f6} 
+\hypertarget{class_application_ab79d246480c4ac3a0db6bbceca92ad32}{}\label{class_application_ab79d246480c4ac3a0db6bbceca92ad32} 
 \index{Application@{Application}!\$parameters@{\$parameters}}
 \index{\$parameters@{\$parameters}!Application@{Application}}
 \subsubsection{\texorpdfstring{\$parameters}{$parameters}}
-{\footnotesize\ttfamily Application\+::\$parameters = \mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily \$parameters = \mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 

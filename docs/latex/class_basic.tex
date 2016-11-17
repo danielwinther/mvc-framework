@@ -9,17 +9,17 @@ Inheritance diagram for Basic\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_basic_a9d1fa71862cb93e3a2e89806c32520a5}{initialize\+Data} ()
+\hyperlink{class_basic_a8e1839f9e7441ef2a15a3f5ca8fa6f8e}{initialize\+Data} ()
 \item 
-\hyperlink{class_basic_ac7cd2823d250de784f74ff852972e269}{index} ()
+\hyperlink{class_basic_a149eb92716c1084a935e04a8d95f7347}{index} ()
 \item 
-\hyperlink{class_basic_a64bf4d807057c1060a0f402c2cbe4fef}{user} (\$id=\textquotesingle{}\textquotesingle{})
+\hyperlink{class_basic_a6603546e99f9519b86989be128736ad6}{user} (\$id=\textquotesingle{}\textquotesingle{})
 \item 
-\hyperlink{class_basic_a68b47cdce3c867df841f6a29b8de624b}{return\+Model} ()
+\hyperlink{class_basic_a7cb6a02987f0faaef2ee4aff9198907e}{return\+Model} ()
 \item 
-\hyperlink{class_basic_a00d093f162848a1bd2e6e48d7cd68ab0}{return\+String} ()
+\hyperlink{class_basic_a5bb666dcea19a9561c2047cfa25936bd}{return\+String} ()
 \item 
-\hyperlink{class_basic_ade94a138ee91270bc419445603df2ec7}{return\+Int} ()
+\hyperlink{class_basic_a8d2918087022004ef5ad62d8f76a73d7}{return\+Int} ()
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -32,11 +32,11 @@ Definition at line 2 of file Basic.\+php.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_basic_ac7cd2823d250de784f74ff852972e269}{}\label{class_basic_ac7cd2823d250de784f74ff852972e269} 
+\hypertarget{class_basic_a149eb92716c1084a935e04a8d95f7347}{}\label{class_basic_a149eb92716c1084a935e04a8d95f7347} 
 \index{Basic@{Basic}!index@{index}}
 \index{index@{index}!Basic@{Basic}}
 \subsubsection{\texorpdfstring{index()}{index()}}
-{\footnotesize\ttfamily Basic\+::index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -49,15 +49,15 @@ References initialize\+Data(), and Base\+Controller\textbackslash{}render\+View(
 
 \begin{DoxyCode}
 15                             \{
-16         \textcolor{keywordflow}{return} $this->\hyperlink{class_base_controller_a2baad3faf609bcd81f81cf8e9713ec01}{renderView}(\textcolor{stringliteral}{'basic'}, [\textcolor{stringliteral}{'userArray'} => $this->
-      \hyperlink{class_basic_a9d1fa71862cb93e3a2e89806c32520a5}{initializeData}()]);
+16         \textcolor{keywordflow}{return} $this->\hyperlink{class_base_controller_aa0c49b95cd8e5ff8ff61b4a2c35bf1eb}{renderView}(\textcolor{stringliteral}{'basic'}, [\textcolor{stringliteral}{'userArray'} => $this->
+      \hyperlink{class_basic_a8e1839f9e7441ef2a15a3f5ca8fa6f8e}{initializeData}()]);
 17     \}
 \end{DoxyCode}
-\hypertarget{class_basic_a9d1fa71862cb93e3a2e89806c32520a5}{}\label{class_basic_a9d1fa71862cb93e3a2e89806c32520a5} 
+\hypertarget{class_basic_a8e1839f9e7441ef2a15a3f5ca8fa6f8e}{}\label{class_basic_a8e1839f9e7441ef2a15a3f5ca8fa6f8e} 
 \index{Basic@{Basic}!initialize\+Data@{initialize\+Data}}
 \index{initialize\+Data@{initialize\+Data}!Basic@{Basic}}
 \subsubsection{\texorpdfstring{initialize\+Data()}{initializeData()}}
-{\footnotesize\ttfamily Basic\+::initialize\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily initialize\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -74,10 +74,10 @@ Referenced by index(), and user().
 
 \begin{DoxyCode}
 3                                      \{
-4         $user1 = $this->\hyperlink{class_base_controller_a710080f75b12adc69eb506ee63cffe6b}{loadModel}(\textcolor{stringliteral}{'User'}, [\textcolor{stringliteral}{'id'} => 1, \textcolor{stringliteral}{'firstName'} => \textcolor{stringliteral}{'Daniel Winther'}, \textcolor{stringliteral}{'lastName'} 
+4         $user1 = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'User'}, [\textcolor{stringliteral}{'id'} => 1, \textcolor{stringliteral}{'firstName'} => \textcolor{stringliteral}{'Daniel Winther'}, \textcolor{stringliteral}{'lastName'} 
       => \textcolor{stringliteral}{'Jensen'}, \textcolor{stringliteral}{'age'} => 24, \textcolor{stringliteral}{'email'} => \textcolor{stringliteral}{'daniel@mail.dk'}, \textcolor{stringliteral}{'phone'} => \textcolor{stringliteral}{'88888888'}]);
 5 
-6         $user2 = $this->\hyperlink{class_base_controller_a710080f75b12adc69eb506ee63cffe6b}{loadModel}(\textcolor{stringliteral}{'User'}, [\textcolor{stringliteral}{'id'} => 2, \textcolor{stringliteral}{'firstName'} => \textcolor{stringliteral}{'Benjamin Elzamouri'}, \textcolor{stringliteral}{'
+6         $user2 = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'User'}, [\textcolor{stringliteral}{'id'} => 2, \textcolor{stringliteral}{'firstName'} => \textcolor{stringliteral}{'Benjamin Elzamouri'}, \textcolor{stringliteral}{'
       lastName'} => \textcolor{stringliteral}{'Jensen'}, \textcolor{stringliteral}{'age'} => 20, \textcolor{stringliteral}{'email'} => \textcolor{stringliteral}{'benjamin@mail.dk'}, \textcolor{stringliteral}{'phone'} => \textcolor{stringliteral}{'55555555'}]);
 7         $userArray = [];
 8 
@@ -87,11 +87,11 @@ Referenced by index(), and user().
 12         \textcolor{keywordflow}{return} $userArray;
 13     \}
 \end{DoxyCode}
-\hypertarget{class_basic_ade94a138ee91270bc419445603df2ec7}{}\label{class_basic_ade94a138ee91270bc419445603df2ec7} 
+\hypertarget{class_basic_a8d2918087022004ef5ad62d8f76a73d7}{}\label{class_basic_a8d2918087022004ef5ad62d8f76a73d7} 
 \index{Basic@{Basic}!return\+Int@{return\+Int}}
 \index{return\+Int@{return\+Int}!Basic@{Basic}}
 \subsubsection{\texorpdfstring{return\+Int()}{returnInt()}}
-{\footnotesize\ttfamily Basic\+::return\+Int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily return\+Int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -103,11 +103,11 @@ Definition at line 35 of file Basic.\+php.
 36         \textcolor{keywordflow}{return} 24;
 37     \}
 \end{DoxyCode}
-\hypertarget{class_basic_a68b47cdce3c867df841f6a29b8de624b}{}\label{class_basic_a68b47cdce3c867df841f6a29b8de624b} 
+\hypertarget{class_basic_a7cb6a02987f0faaef2ee4aff9198907e}{}\label{class_basic_a7cb6a02987f0faaef2ee4aff9198907e} 
 \index{Basic@{Basic}!return\+Model@{return\+Model}}
 \index{return\+Model@{return\+Model}!Basic@{Basic}}
 \subsubsection{\texorpdfstring{return\+Model()}{returnModel()}}
-{\footnotesize\ttfamily Basic\+::return\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily return\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -120,17 +120,17 @@ References Base\+Controller\textbackslash{}load\+Model().
 
 \begin{DoxyCode}
 26                                   \{
-27         $user = $this->\hyperlink{class_base_controller_a710080f75b12adc69eb506ee63cffe6b}{loadModel}(\textcolor{stringliteral}{'User'});
+27         $user = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'User'});
 28         $user->setFirstName(\textcolor{stringliteral}{'daniel'});
 29 
 30         \textcolor{keywordflow}{return} $user;
 31     \}
 \end{DoxyCode}
-\hypertarget{class_basic_a00d093f162848a1bd2e6e48d7cd68ab0}{}\label{class_basic_a00d093f162848a1bd2e6e48d7cd68ab0} 
+\hypertarget{class_basic_a5bb666dcea19a9561c2047cfa25936bd}{}\label{class_basic_a5bb666dcea19a9561c2047cfa25936bd} 
 \index{Basic@{Basic}!return\+String@{return\+String}}
 \index{return\+String@{return\+String}!Basic@{Basic}}
 \subsubsection{\texorpdfstring{return\+String()}{returnString()}}
-{\footnotesize\ttfamily Basic\+::return\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily return\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -142,11 +142,11 @@ Definition at line 32 of file Basic.\+php.
 33         \textcolor{keywordflow}{return} \textcolor{stringliteral}{'daniel'};
 34     \}
 \end{DoxyCode}
-\hypertarget{class_basic_a64bf4d807057c1060a0f402c2cbe4fef}{}\label{class_basic_a64bf4d807057c1060a0f402c2cbe4fef} 
+\hypertarget{class_basic_a6603546e99f9519b86989be128736ad6}{}\label{class_basic_a6603546e99f9519b86989be128736ad6} 
 \index{Basic@{Basic}!user@{user}}
 \index{user@{user}!Basic@{Basic}}
 \subsubsection{\texorpdfstring{user()}{user()}}
-{\footnotesize\ttfamily Basic\+::user (\begin{DoxyParamCaption}\item[{}]{\$id = {\ttfamily \textquotesingle{}\textquotesingle{}} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily user (\begin{DoxyParamCaption}\item[{}]{\$id = {\ttfamily \textquotesingle{}\textquotesingle{}} }\end{DoxyParamCaption})}
 
 
 
@@ -159,9 +159,9 @@ References initialize\+Data(), and Base\+Controller\textbackslash{}render\+View(
 
 \begin{DoxyCode}
 18                                    \{
-19         \textcolor{keywordflow}{foreach} ($this->\hyperlink{class_basic_a9d1fa71862cb93e3a2e89806c32520a5}{initializeData}() as $user ) \{
+19         \textcolor{keywordflow}{foreach} ($this->\hyperlink{class_basic_a8e1839f9e7441ef2a15a3f5ca8fa6f8e}{initializeData}() as $user ) \{
 20             \textcolor{keywordflow}{if} ($user->getId() == $id) \{
-21                 \textcolor{keywordflow}{return} $this->\hyperlink{class_base_controller_a2baad3faf609bcd81f81cf8e9713ec01}{renderView}(\textcolor{stringliteral}{'basic\_detail'}, [\textcolor{stringliteral}{'user'} => $user]);
+21                 \textcolor{keywordflow}{return} $this->\hyperlink{class_base_controller_aa0c49b95cd8e5ff8ff61b4a2c35bf1eb}{renderView}(\textcolor{stringliteral}{'basic\_detail'}, [\textcolor{stringliteral}{'user'} => $user]);
 22             \}
 23         \}
 24     \}
