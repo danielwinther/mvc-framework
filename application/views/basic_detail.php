@@ -4,7 +4,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<title>Basic View - detail</title>
+	<title>Basic - detail</title>
 </head>
 <body>
 	<div class="container">
@@ -21,7 +21,7 @@
 				</ul>
 			</div>
 		</div>
-		<a href="/mvc-framework/public/basic" class="btn btn-primary btn-block">
+		<a href="/mvc-framework/public/Basic" class="btn btn-primary btn-block">
 		<span class="glyphicon glyphicon-arrow-left"></span> Return to list of users
 		</a>
 	</div>

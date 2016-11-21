@@ -3,21 +3,28 @@ class Application {
 	/**
 	* @var string $controller
 	*/
-	protected $controller = 'Basic';
+	protected $controller;
 	/**
 	* @var string $index
 	*/
-	protected $method = 'index';
+	protected $method;
 	/**
 	* @var array parameters
 	*/
-	protected $parameters = [];
+	protected $parameter;
 
 	/**
 	* Initializes the application
 	*/
 	public function __construct() {
+		$config = initializeConfig();
+		$this->controller = $config['defaultController'];
+		$this->method = $config['defaultMethod'];
+		$this->parameter = $config['defaultParameters'];
+
 		$this->load($this->parseUrl());
+		$database = databaseConfig();
+		$this->databaseConnection($database['hostname'], $database['databaseName'], $database['username'], $database['password']);
 	}
 
 	/**
@@ -67,5 +74,31 @@ class Application {
 		$this->parameters = $url ? array_values($url) : [];
 
 		call_user_func_array([$this->controller, $this->method], $this->parameters);
+	}
+	/**
+	* Initiliaze database connection
+	*
+	* @param string $host
+	* @param string $databaseName 
+	* @param string $username
+	* @param string $password
+	*/
+	protected function databaseConnection($host, $databaseName, $username, $password) {
+		try
+		{
+			$pdo = new PDO('mysql:host=' . $host . ';dbname=' . $databaseName, $username, $password);
+
+			/*$sth = $pdo->prepare('SELECT * FROM User');
+			$sth->execute();
+			$yellow = $sth->fetchAll();
+
+			print_r($yellow);*/
+
+		}
+		catch (PDOException $exception)
+		{
+			throw new PDOException($exception->getMessage());
+			exit();
+		}
 	}
 }
