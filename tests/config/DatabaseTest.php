@@ -65,6 +65,20 @@ class DatabaseTest extends PHPUnit_Framework_TestCase
 			
 		}
 	}
+	public function testConfigCorrectCharset() {
+		$test = 'utf8';
+
+		$this->assertEquals($this->database['charset'], $test);
+	}
+	public function testConfigWrongCharset() {
+		$test = 'utf1';
+
+		try {
+			$this->assertEquals($this->database['charset'], $test);
+		} catch (Exception $e) {
+			
+		}
+	}
 	public function testConfigCorrectPrefix() {
 		$test = '';
 

@@ -5,21 +5,14 @@
 \item 
 \hyperlink{class_application_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct} ()
 \end{DoxyCompactItemize}
-\subsection*{Protected Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-\hyperlink{class_application_a354b02f944f9accd1eefa779cfcc1cc8}{parse\+Url} ()
-\item 
-\hyperlink{class_application_ae3eeda1d8c99497a02792cc1a66c7d15}{load} (\$url)
-\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_application_a0eb1786d89f8acef683a1fbeeeb87518}{\$controller} = \textquotesingle{}\hyperlink{class_basic}{Basic}\textquotesingle{}
+\hyperlink{class_application_a0eb1786d89f8acef683a1fbeeeb87518}{\$controller}
 \item 
-\hyperlink{class_application_a12661b2fc0f57f97e30a1620889ce9c6}{\$method} = \textquotesingle{}index\textquotesingle{}
+\hyperlink{class_application_a12661b2fc0f57f97e30a1620889ce9c6}{\$method}
 \item 
-\hyperlink{class_application_ab79d246480c4ac3a0db6bbceca92ad32}{\$parameters} = \mbox{[}$\,$\mbox{]}
+\hyperlink{class_application_aaa59205ae9efcb66a11d385fe346253a}{\$parameter}
 \end{DoxyCompactItemize}
 
 
@@ -43,105 +36,21 @@ Definition at line 19 of file Application.\+php.
 
 
 
-References load(), and parse\+Url().
+References \$controller, database\+Config(), and initialize\+Config().
 
 
 \begin{DoxyCode}
 19                                   \{
-20         $this->\hyperlink{class_application_ae3eeda1d8c99497a02792cc1a66c7d15}{load}($this->\hyperlink{class_application_a354b02f944f9accd1eefa779cfcc1cc8}{parseUrl}());
-21     \}
-\end{DoxyCode}
-
-
-\subsection{Member Function Documentation}
-\hypertarget{class_application_ae3eeda1d8c99497a02792cc1a66c7d15}{}\label{class_application_ae3eeda1d8c99497a02792cc1a66c7d15} 
-\index{Application@{Application}!load@{load}}
-\index{load@{load}!Application@{Application}}
-\subsubsection{\texorpdfstring{load()}{load()}}
-{\footnotesize\ttfamily load (\begin{DoxyParamCaption}\item[{}]{\$url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
-
-Loads a given controller, method and parameter based on the U\+RL
-
-
-\begin{DoxyParams}[1]{Parameters}
-string & {\em \$url} & \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 39 of file Application.\+php.
-
-
-
-References \$controller.
-
-
-
-Referenced by \+\_\+\+\_\+construct().
-
-
-\begin{DoxyCode}
-39                                   \{
-40         \textcolor{keywordflow}{if} (isset($url[0])) \{
-41             \textcolor{keywordflow}{if} (file\_exists(realpath(\_\_DIR\_\_ . \textcolor{stringliteral}{'/..'}) . \textcolor{stringliteral}{'/controllers/'} . $url[0] . \textcolor{stringliteral}{'.php'})) \{
-42                 $this->controller = $url[0];
-43                 unset($url[0]);
-44             \}
-45             \textcolor{keywordflow}{else} \{
-46                 $this->controller = $url[0];
-47                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} \hyperlink{class_controller_not_found}{ControllerNotFound}(\textcolor{stringliteral}{'ControllerNotFound'}, \textcolor{stringliteral}{'Controller "'} . 
-      $this->controller . \textcolor{stringliteral}{'" not found.'});
-48                 exit();
-49             \}
-50         \}
-51         
-52         require\_once realpath(\_\_DIR\_\_ . \textcolor{stringliteral}{'/..'}) . \textcolor{stringliteral}{'/controllers/'} . $this->controller . \textcolor{stringliteral}{'.php'};
-53         $this->controller = \textcolor{keyword}{new} \hyperlink{class_application_a0eb1786d89f8acef683a1fbeeeb87518}{$this->controller};
-54 
-55         \textcolor{keywordflow}{if} (isset($url[1])) \{
-56             \textcolor{keywordflow}{if} (method\_exists($this->controller, $url[1])) \{
-57                 $this->method = $url[1];
-58                 unset($url[1]);
-59             \}
-60             \textcolor{keywordflow}{else} \{
-61                 $this->method = $url[1];
-62                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} \hyperlink{class_method_not_found}{MethodNotFound}(\textcolor{stringliteral}{'MethodNotFound'}, \textcolor{stringliteral}{'Method "'} . $this->method . \textcolor{stringliteral}{'"
-       not found.'});
-63                 exit();
-64             \}
-65         \}
-66 
-67         $this->parameters = $url ? array\_values($url) : [];
-68 
-69         call\_user\_func\_array([$this->controller, $this->method], $this->parameters);
-70     \}
-\end{DoxyCode}
-\hypertarget{class_application_a354b02f944f9accd1eefa779cfcc1cc8}{}\label{class_application_a354b02f944f9accd1eefa779cfcc1cc8} 
-\index{Application@{Application}!parse\+Url@{parse\+Url}}
-\index{parse\+Url@{parse\+Url}!Application@{Application}}
-\subsubsection{\texorpdfstring{parse\+Url()}{parseUrl()}}
-{\footnotesize\ttfamily parse\+Url (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
-
-Parses a given U\+RL to make it read controllers, methods and parameters properly
-
-\begin{DoxyReturn}{Returns}
-string 
-\end{DoxyReturn}
-
-
-Definition at line 28 of file Application.\+php.
-
-
-
-Referenced by \+\_\+\+\_\+construct().
-
-
-\begin{DoxyCode}
-28                                   \{
-29         \textcolor{keywordflow}{if} (isset($\_GET[\textcolor{stringliteral}{'url'}])) \{
-30             \textcolor{keywordflow}{return} explode(\textcolor{charliteral}{'/'}, filter\_var(rtrim($\_GET[\textcolor{stringliteral}{'url'}], \textcolor{charliteral}{'/'}), FILTER\_SANITIZE\_URL));
-31         \}
-32     \}
+20         $config = \hyperlink{config_8php_afeb1d281d402615776fdb0320a5b8d05}{initializeConfig}();
+21         $this->controller = $config[\textcolor{stringliteral}{'defaultController'}];
+22         $this->method = $config[\textcolor{stringliteral}{'defaultMethod'}];
+23         $this->parameter = $config[\textcolor{stringliteral}{'defaultParameters'}];
+24 
+25         $this->load($this->parseUrl());
+26         $database = \hyperlink{database_8php_a87165585cf80e6b4d470b694f7dea4d3}{databaseConfig}();
+27         $this->databaseConnection($database[\textcolor{stringliteral}{'hostname'}], $database[\textcolor{stringliteral}{'databaseName'}], $database[\textcolor{stringliteral}{'charset'}], 
+      $database[\textcolor{stringliteral}{'username'}], $database[\textcolor{stringliteral}{'password'}]);
+28     \}
 \end{DoxyCode}
 
 
@@ -150,7 +59,7 @@ Referenced by \+\_\+\+\_\+construct().
 \index{Application@{Application}!\$controller@{\$controller}}
 \index{\$controller@{\$controller}!Application@{Application}}
 \subsubsection{\texorpdfstring{\$controller}{$controller}}
-{\footnotesize\ttfamily string \$controller = \textquotesingle{}\hyperlink{class_basic}{Basic}\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily string \$controller\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -158,23 +67,23 @@ Definition at line 6 of file Application.\+php.
 
 
 
-Referenced by load().
+Referenced by \+\_\+\+\_\+construct().
 
 \hypertarget{class_application_a12661b2fc0f57f97e30a1620889ce9c6}{}\label{class_application_a12661b2fc0f57f97e30a1620889ce9c6} 
 \index{Application@{Application}!\$method@{\$method}}
 \index{\$method@{\$method}!Application@{Application}}
 \subsubsection{\texorpdfstring{\$method}{$method}}
-{\footnotesize\ttfamily \$method = \textquotesingle{}index\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily \$method\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
 Definition at line 10 of file Application.\+php.
 
-\hypertarget{class_application_ab79d246480c4ac3a0db6bbceca92ad32}{}\label{class_application_ab79d246480c4ac3a0db6bbceca92ad32} 
-\index{Application@{Application}!\$parameters@{\$parameters}}
-\index{\$parameters@{\$parameters}!Application@{Application}}
-\subsubsection{\texorpdfstring{\$parameters}{$parameters}}
-{\footnotesize\ttfamily \$parameters = \mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+\hypertarget{class_application_aaa59205ae9efcb66a11d385fe346253a}{}\label{class_application_aaa59205ae9efcb66a11d385fe346253a} 
+\index{Application@{Application}!\$parameter@{\$parameter}}
+\index{\$parameter@{\$parameter}!Application@{Application}}
+\subsubsection{\texorpdfstring{\$parameter}{$parameter}}
+{\footnotesize\ttfamily \$parameter\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 

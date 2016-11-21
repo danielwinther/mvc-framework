@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['methodnotfound',['MethodNotFound',['../class_method_not_found.html',1,'']]],
-  ['methodnotfound_2ephp',['MethodNotFound.php',['../_method_not_found_8php.html',1,'']]],
-  ['modelnotfound',['ModelNotFound',['../class_model_not_found.html',1,'']]],
-  ['modelnotfound_2ephp',['ModelNotFound.php',['../_model_not_found_8php.html',1,'']]]
+  ['loadmodel',['loadModel',['../class_base_controller.html#a5fa8890bd3a9d20f5c0cc2377dc49eb1',1,'BaseController']]]
 ];

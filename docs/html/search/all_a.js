@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['parseurl',['parseUrl',['../class_application.html#a354b02f944f9accd1eefa779cfcc1cc8',1,'Application']]]
+  ['methodnotfound',['MethodNotFound',['../class_method_not_found.html',1,'']]],
+  ['methodnotfound_2ephp',['MethodNotFound.php',['../_method_not_found_8php.html',1,'']]],
+  ['modelnotfound',['ModelNotFound',['../class_model_not_found.html',1,'']]],
+  ['modelnotfound_2ephp',['ModelNotFound.php',['../_model_not_found_8php.html',1,'']]]
 ];

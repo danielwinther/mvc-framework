@@ -24,7 +24,7 @@ class Application {
 
 		$this->load($this->parseUrl());
 		$database = databaseConfig();
-		$this->databaseConnection($database['hostname'], $database['databaseName'], $database['username'], $database['password']);
+		$this->databaseConnection($database['hostname'], $database['databaseName'], $database['charset'], $database['username'], $database['password']);
 	}
 
 	/**
@@ -32,7 +32,7 @@ class Application {
 	*
 	* @return string
 	*/
-	protected function parseUrl() {
+	private function parseUrl() {
 		if (isset($_GET['url'])) {
 			return explode('/', filter_var(rtrim($_GET['url'], '/'), FILTER_SANITIZE_URL));
 		}
@@ -43,7 +43,7 @@ class Application {
 	*
 	* @param string $url
 	*/
-	protected function load($url) {
+	private function load($url) {
 		if (isset($url[0])) {
 			if (file_exists(realpath(__DIR__ . '/..') . '/controllers/' . $url[0] . '.php')) {
 				$this->controller = $url[0];
@@ -75,25 +75,28 @@ class Application {
 
 		call_user_func_array([$this->controller, $this->method], $this->parameters);
 	}
+
 	/**
 	* Initiliaze database connection
 	*
 	* @param string $host
-	* @param string $databaseName 
+	* @param string $databaseName
+	* @param string $charset
 	* @param string $username
 	* @param string $password
 	*/
-	protected function databaseConnection($host, $databaseName, $username, $password) {
+	private function databaseConnection($host, $databaseName, $charset, $username, $password) {
 		try
 		{
-			$pdo = new PDO('mysql:host=' . $host . ';dbname=' . $databaseName, $username, $password);
+			$pdo = new PDO('mysql:host=' . $host . ';dbname=' . $databaseName . ';charset=' . $charset, $username, $password, array(
+				PDO::ATTR_PERSISTENT => true
+			));
 
-			/*$sth = $pdo->prepare('SELECT * FROM User');
+			$sth = $pdo->prepare('SELECT * FROM users');
 			$sth->execute();
-			$yellow = $sth->fetchAll();
+			$res = $sth->fetchAll();
 
-			print_r($yellow);*/
-
+			print_r($res[0]['FirstName']);
 		}
 		catch (PDOException $exception)
 		{

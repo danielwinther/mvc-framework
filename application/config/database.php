@@ -8,6 +8,7 @@ function databaseConfig() {
 		'username' => 'root',
 		'password' => '',
 		'databaseName' => 'mvc-framework',
+		'charset' => 'utf8',
 		'prefix' => '',
 	];
 }
