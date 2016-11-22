@@ -3,7 +3,7 @@ var indexSectionsWithContent =
   0: "$_abcdfgilmrsuv",
   1: "abcmuv",
   2: "abcdmuv",
-  3: "_dgilrsu",
+  3: "_gilrsu",
   4: "$f"
 };
 

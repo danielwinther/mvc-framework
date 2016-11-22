@@ -36,7 +36,7 @@ Definition at line 19 of file Application.\+php.
 
 
 
-References \$controller, database\+Config(), and initialize\+Config().
+References \$controller, and initialize\+Config().
 
 
 \begin{DoxyCode}
@@ -47,10 +47,7 @@ References \$controller, database\+Config(), and initialize\+Config().
 23         $this->parameter = $config[\textcolor{stringliteral}{'defaultParameters'}];
 24 
 25         $this->load($this->parseUrl());
-26         $database = \hyperlink{database_8php_a87165585cf80e6b4d470b694f7dea4d3}{databaseConfig}();
-27         $this->databaseConnection($database[\textcolor{stringliteral}{'hostname'}], $database[\textcolor{stringliteral}{'databaseName'}], $database[\textcolor{stringliteral}{'charset'}], 
-      $database[\textcolor{stringliteral}{'username'}], $database[\textcolor{stringliteral}{'password'}]);
-28     \}
+26     \}
 \end{DoxyCode}
 
 

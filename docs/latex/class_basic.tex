@@ -9,8 +9,6 @@ Inheritance diagram for Basic\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_basic_a8e1839f9e7441ef2a15a3f5ca8fa6f8e}{initialize\+Data} ()
-\item 
 \hyperlink{class_basic_a149eb92716c1084a935e04a8d95f7347}{index} ()
 \item 
 \hyperlink{class_basic_a6603546e99f9519b86989be128736ad6}{user} (\$id=\textquotesingle{}\textquotesingle{})
@@ -40,52 +38,20 @@ Definition at line 2 of file Basic.\+php.
 
 
 
-Definition at line 15 of file Basic.\+php.
-
-
-
-References initialize\+Data(), and Base\+Controller\textbackslash{}render\+View().
-
-
-\begin{DoxyCode}
-15                             \{
-16         \textcolor{keywordflow}{return} $this->\hyperlink{class_base_controller_aa0c49b95cd8e5ff8ff61b4a2c35bf1eb}{renderView}(\textcolor{stringliteral}{'basic'}, [\textcolor{stringliteral}{'userArray'} => $this->
-      \hyperlink{class_basic_a8e1839f9e7441ef2a15a3f5ca8fa6f8e}{initializeData}()]);
-17     \}
-\end{DoxyCode}
-\hypertarget{class_basic_a8e1839f9e7441ef2a15a3f5ca8fa6f8e}{}\label{class_basic_a8e1839f9e7441ef2a15a3f5ca8fa6f8e} 
-\index{Basic@{Basic}!initialize\+Data@{initialize\+Data}}
-\index{initialize\+Data@{initialize\+Data}!Basic@{Basic}}
-\subsubsection{\texorpdfstring{initialize\+Data()}{initializeData()}}
-{\footnotesize\ttfamily initialize\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
 Definition at line 3 of file Basic.\+php.
 
 
 
-References Base\+Controller\textbackslash{}load\+Model().
-
-
-
-Referenced by index(), and user().
+References Base\+Controller\textbackslash{}load\+Model(), and Base\+Controller\textbackslash{}render\+View().
 
 
 \begin{DoxyCode}
-3                                      \{
-4         $user1 = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'User'}, [\textcolor{stringliteral}{'id'} => 1, \textcolor{stringliteral}{'firstName'} => \textcolor{stringliteral}{'Daniel Winther'}, \textcolor{stringliteral}{'lastName'} 
-      => \textcolor{stringliteral}{'Jensen'}, \textcolor{stringliteral}{'age'} => 24, \textcolor{stringliteral}{'email'} => \textcolor{stringliteral}{'daniel@mail.dk'}, \textcolor{stringliteral}{'phone'} => \textcolor{stringliteral}{'88888888'}]);
-5 
-6         $user2 = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'User'}, [\textcolor{stringliteral}{'id'} => 2, \textcolor{stringliteral}{'firstName'} => \textcolor{stringliteral}{'Benjamin Elzamouri'}, \textcolor{stringliteral}{'
-      lastName'} => \textcolor{stringliteral}{'Jensen'}, \textcolor{stringliteral}{'age'} => 20, \textcolor{stringliteral}{'email'} => \textcolor{stringliteral}{'benjamin@mail.dk'}, \textcolor{stringliteral}{'phone'} => \textcolor{stringliteral}{'55555555'}]);
-7         $userArray = [];
-8 
-9         array\_push($userArray, $user1);
-10         array\_push($userArray, $user2);
-11 
-12         \textcolor{keywordflow}{return} $userArray;
-13     \}
+3                             \{
+4         $users = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'Users'});
+5         $users = Users::all();
+6 
+7         \textcolor{keywordflow}{return} $this->\hyperlink{class_base_controller_aa0c49b95cd8e5ff8ff61b4a2c35bf1eb}{renderView}(\textcolor{stringliteral}{'basic'}, [\textcolor{stringliteral}{'userArray'} => $users]);
+8     \}
 \end{DoxyCode}
 \hypertarget{class_basic_a8d2918087022004ef5ad62d8f76a73d7}{}\label{class_basic_a8d2918087022004ef5ad62d8f76a73d7} 
 \index{Basic@{Basic}!return\+Int@{return\+Int}}
@@ -95,13 +61,13 @@ Referenced by index(), and user().
 
 
 
-Definition at line 35 of file Basic.\+php.
+Definition at line 25 of file Basic.\+php.
 
 
 \begin{DoxyCode}
-35                                 \{
-36         \textcolor{keywordflow}{return} 24;
-37     \}
+25                                 \{
+26         \textcolor{keywordflow}{return} 24;
+27     \}
 \end{DoxyCode}
 \hypertarget{class_basic_a7cb6a02987f0faaef2ee4aff9198907e}{}\label{class_basic_a7cb6a02987f0faaef2ee4aff9198907e} 
 \index{Basic@{Basic}!return\+Model@{return\+Model}}
@@ -111,7 +77,7 @@ Definition at line 35 of file Basic.\+php.
 
 
 
-Definition at line 26 of file Basic.\+php.
+Definition at line 16 of file Basic.\+php.
 
 
 
@@ -119,12 +85,12 @@ References Base\+Controller\textbackslash{}load\+Model().
 
 
 \begin{DoxyCode}
-26                                   \{
-27         $user = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'User'});
-28         $user->setFirstName(\textcolor{stringliteral}{'daniel'});
-29 
-30         \textcolor{keywordflow}{return} $user;
-31     \}
+16                                   \{
+17         $user = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'User'});
+18         $user->setFirstName(\textcolor{stringliteral}{'daniel'});
+19 
+20         \textcolor{keywordflow}{return} $user;
+21     \}
 \end{DoxyCode}
 \hypertarget{class_basic_a5bb666dcea19a9561c2047cfa25936bd}{}\label{class_basic_a5bb666dcea19a9561c2047cfa25936bd} 
 \index{Basic@{Basic}!return\+String@{return\+String}}
@@ -134,13 +100,13 @@ References Base\+Controller\textbackslash{}load\+Model().
 
 
 
-Definition at line 32 of file Basic.\+php.
+Definition at line 22 of file Basic.\+php.
 
 
 \begin{DoxyCode}
-32                                    \{
-33         \textcolor{keywordflow}{return} \textcolor{stringliteral}{'daniel'};
-34     \}
+22                                    \{
+23         \textcolor{keywordflow}{return} \textcolor{stringliteral}{'daniel'};
+24     \}
 \end{DoxyCode}
 \hypertarget{class_basic_a6603546e99f9519b86989be128736ad6}{}\label{class_basic_a6603546e99f9519b86989be128736ad6} 
 \index{Basic@{Basic}!user@{user}}
@@ -150,21 +116,20 @@ Definition at line 32 of file Basic.\+php.
 
 
 
-Definition at line 18 of file Basic.\+php.
+Definition at line 9 of file Basic.\+php.
 
 
 
-References initialize\+Data(), and Base\+Controller\textbackslash{}render\+View().
+References Base\+Controller\textbackslash{}load\+Model(), and Base\+Controller\textbackslash{}render\+View().
 
 
 \begin{DoxyCode}
-18                                    \{
-19         \textcolor{keywordflow}{foreach} ($this->\hyperlink{class_basic_a8e1839f9e7441ef2a15a3f5ca8fa6f8e}{initializeData}() as $user ) \{
-20             \textcolor{keywordflow}{if} ($user->getId() == $id) \{
-21                 \textcolor{keywordflow}{return} $this->\hyperlink{class_base_controller_aa0c49b95cd8e5ff8ff61b4a2c35bf1eb}{renderView}(\textcolor{stringliteral}{'basic\_detail'}, [\textcolor{stringliteral}{'user'} => $user]);
-22             \}
-23         \}
-24     \}
+9                                    \{
+10         $user = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'Users'});
+11         $user = Users::find($id);
+12 
+13         \textcolor{keywordflow}{return} $this->\hyperlink{class_base_controller_aa0c49b95cd8e5ff8ff61b4a2c35bf1eb}{renderView}(\textcolor{stringliteral}{'basic\_detail'}, [\textcolor{stringliteral}{'user'} => $user]);
+14     \}
 \end{DoxyCode}
 
 

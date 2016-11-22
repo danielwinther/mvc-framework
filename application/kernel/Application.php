@@ -23,8 +23,6 @@ class Application {
 		$this->parameter = $config['defaultParameters'];
 
 		$this->load($this->parseUrl());
-		$database = databaseConfig();
-		$this->databaseConnection($database['hostname'], $database['databaseName'], $database['charset'], $database['username'], $database['password']);
 	}
 
 	/**
@@ -74,34 +72,5 @@ class Application {
 		$this->parameters = $url ? array_values($url) : [];
 
 		call_user_func_array([$this->controller, $this->method], $this->parameters);
-	}
-
-	/**
-	* Initiliaze database connection
-	*
-	* @param string $host
-	* @param string $databaseName
-	* @param string $charset
-	* @param string $username
-	* @param string $password
-	*/
-	private function databaseConnection($host, $databaseName, $charset, $username, $password) {
-		try
-		{
-			$pdo = new PDO('mysql:host=' . $host . ';dbname=' . $databaseName . ';charset=' . $charset, $username, $password, array(
-				PDO::ATTR_PERSISTENT => true
-			));
-
-			$sth = $pdo->prepare('SELECT * FROM users');
-			$sth->execute();
-			$res = $sth->fetchAll();
-
-			print_r($res[0]['FirstName']);
-		}
-		catch (PDOException $exception)
-		{
-			throw new PDOException($exception->getMessage());
-			exit();
-		}
 	}
 }

@@ -11,13 +11,13 @@
 		<h1 class="row">Showcases user model</h1>
 		<hr class="row">
 		<div class="panel panel-info row">
-			<div class="panel-heading"><?php echo $data['user']->getFirstName(); ?></div>
+			<div class="panel-heading"><?php echo $data['user']->firstName; ?></div>
 			<div class="panel-body">
 				<ul class="list-group">
-					<li class="list-group-item"><strong>Name:</strong> <?php echo $data['user']->getFirstName() . ' ' . $data['user']->getLastName(); ?></li>
-					<li class="list-group-item"><strong>Age:</strong> <?php echo $data['user']->getAge(); ?></li>
-					<li class="list-group-item"><strong>Email:</strong> <?php echo $data['user']->getEmail(); ?></li>
-					<li class="list-group-item"><strong>Phone:</strong> <?php echo $data['user']->getPhone(); ?></li>
+					<li class="list-group-item"><strong>Name:</strong> <?php echo $data['user']->firstName . ' ' . $data['user']->lastName; ?></li>
+					<li class="list-group-item"><strong>Age:</strong> <?php echo $data['user']->age; ?></li>
+					<li class="list-group-item"><strong>Email:</strong> <?php echo $data['user']->email; ?></li>
+					<li class="list-group-item"><strong>Phone:</strong> <?php echo $data['user']->phone; ?></li>
 				</ul>
 			</div>
 		</div>
