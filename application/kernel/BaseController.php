@@ -26,13 +26,15 @@ class BaseController {
 	* @param array $data
 	*/
 	protected function renderView($view, $data = []) {
-		if (file_exists(realpath(__DIR__ . '/..') . '/views/' . $view . '.php')) {
-			require_once realpath(__DIR__ . '/..') . '/views/' . $view . '.php';
-		}
-		else {
-			throw new ViewNotFound('ViewNotFound', 'View "' . $view . '" not found.');
-			exit();
-		}
+		$loader = new Twig_Loader_Filesystem(realpath(__DIR__ . '/..') . '/views');
+		$twig = new Twig_Environment($loader, [
+			'debug' => true,
+			]);
+		$twig->addExtension(new Twig_Extension_Debug());
+
+		return $twig->render($view . '.php', [
+			'data' => $data
+			]);
 	}
 
 	/**

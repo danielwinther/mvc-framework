@@ -82,20 +82,20 @@ string & {\em \$controller} & \\
 \end{DoxyParams}
 
 
-Definition at line 52 of file Base\+Controller.\+php.
+Definition at line 54 of file Base\+Controller.\+php.
 
 
 \begin{DoxyCode}
-52                                                        \{
-53         $atSign = explode(\textcolor{charliteral}{'@'}, $controller);
-54 
-55         \textcolor{keywordflow}{if} (strpos($controller, \textcolor{charliteral}{'@'}) !== \textcolor{keyword}{false}) \{
-56             header(\textcolor{stringliteral}{'Location:../'} . $atSign[0] . \textcolor{charliteral}{'/'} . $atSign[1]);
-57         \}
-58         \textcolor{keywordflow}{else} \{
-59             header(\textcolor{stringliteral}{'Location:../'} . $atSign[0] . \textcolor{stringliteral}{'/index'});
-60         \}
-61     \}
+54                                                        \{
+55         $atSign = explode(\textcolor{charliteral}{'@'}, $controller);
+56 
+57         \textcolor{keywordflow}{if} (strpos($controller, \textcolor{charliteral}{'@'}) !== \textcolor{keyword}{false}) \{
+58             header(\textcolor{stringliteral}{'Location:../'} . $atSign[0] . \textcolor{charliteral}{'/'} . $atSign[1]);
+59         \}
+60         \textcolor{keywordflow}{else} \{
+61             header(\textcolor{stringliteral}{'Location:../'} . $atSign[0] . \textcolor{stringliteral}{'/index'});
+62         \}
+63     \}
 \end{DoxyCode}
 \hypertarget{class_base_controller_a9f95c7503770ed9c974005b363ec3d00}{}\label{class_base_controller_a9f95c7503770ed9c974005b363ec3d00} 
 \index{Base\+Controller@{Base\+Controller}!redirect\+Url@{redirect\+Url}}
@@ -112,13 +112,13 @@ string & {\em \$url} & \\
 \end{DoxyParams}
 
 
-Definition at line 43 of file Base\+Controller.\+php.
+Definition at line 45 of file Base\+Controller.\+php.
 
 
 \begin{DoxyCode}
-43                                          \{
-44         header(\textcolor{stringliteral}{'Location: '} . $url);
-45     \}
+45                                          \{
+46         header(\textcolor{stringliteral}{'Location: '} . $url);
+47     \}
 \end{DoxyCode}
 \hypertarget{class_base_controller_aa0c49b95cd8e5ff8ff61b4a2c35bf1eb}{}\label{class_base_controller_aa0c49b95cd8e5ff8ff61b4a2c35bf1eb} 
 \index{Base\+Controller@{Base\+Controller}!render\+View@{render\+View}}
@@ -146,14 +146,16 @@ Referenced by Basic\textbackslash{}index(), and Basic\textbackslash{}user().
 
 \begin{DoxyCode}
 28                                                      \{
-29         \textcolor{keywordflow}{if} (file\_exists(realpath(\_\_DIR\_\_ . \textcolor{stringliteral}{'/..'}) . \textcolor{stringliteral}{'/views/'} . $view . \textcolor{stringliteral}{'.php'})) \{
-30             require\_once realpath(\_\_DIR\_\_ . \textcolor{stringliteral}{'/..'}) . \textcolor{stringliteral}{'/views/'} . $view . \textcolor{stringliteral}{'.php'};
-31         \}
-32         \textcolor{keywordflow}{else} \{
-33             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} \hyperlink{class_view_not_found}{ViewNotFound}(\textcolor{stringliteral}{'ViewNotFound'}, \textcolor{stringliteral}{'View "'} . $view . \textcolor{stringliteral}{'" not found.'});
-34             exit();
-35         \}
-36     \}
+29         $loader = \textcolor{keyword}{new} Twig\_Loader\_Filesystem(realpath(\_\_DIR\_\_ . \textcolor{stringliteral}{'/..'}) . \textcolor{stringliteral}{'/views'});
+30         $twig = \textcolor{keyword}{new} Twig\_Environment($loader, [
+31             \textcolor{stringliteral}{'debug'} => \textcolor{keyword}{true},
+32             ]);
+33         $twig->addExtension(\textcolor{keyword}{new} Twig\_Extension\_Debug());
+34 
+35         \textcolor{keywordflow}{return} $twig->render($view . \textcolor{stringliteral}{'.php'}, [
+36             \textcolor{stringliteral}{'data'} => $data
+37             ]);
+38     \}
 \end{DoxyCode}
 
 

@@ -50,7 +50,7 @@ References Base\+Controller\textbackslash{}load\+Model(), and Base\+Controller\t
 4         $users = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'Users'});
 5         $users = Users::all();
 6 
-7         \textcolor{keywordflow}{return} $this->\hyperlink{class_base_controller_aa0c49b95cd8e5ff8ff61b4a2c35bf1eb}{renderView}(\textcolor{stringliteral}{'basic'}, [\textcolor{stringliteral}{'userArray'} => $users]);
+7         echo $this->\hyperlink{class_base_controller_aa0c49b95cd8e5ff8ff61b4a2c35bf1eb}{renderView}(\textcolor{stringliteral}{'basic'}, [\textcolor{stringliteral}{'userArray'} => $users]);
 8     \}
 \end{DoxyCode}
 \hypertarget{class_basic_a8d2918087022004ef5ad62d8f76a73d7}{}\label{class_basic_a8d2918087022004ef5ad62d8f76a73d7} 
@@ -128,7 +128,7 @@ References Base\+Controller\textbackslash{}load\+Model(), and Base\+Controller\t
 10         $user = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'Users'});
 11         $user = Users::find($id);
 12 
-13         \textcolor{keywordflow}{return} $this->\hyperlink{class_base_controller_aa0c49b95cd8e5ff8ff61b4a2c35bf1eb}{renderView}(\textcolor{stringliteral}{'basic\_detail'}, [\textcolor{stringliteral}{'user'} => $user]);
+13         echo $this->\hyperlink{class_base_controller_aa0c49b95cd8e5ff8ff61b4a2c35bf1eb}{renderView}(\textcolor{stringliteral}{'basic\_detail'}, [\textcolor{stringliteral}{'user'} => $user]);
 14     \}
 \end{DoxyCode}
 

@@ -4,13 +4,13 @@ class Basic extends BaseController {
 		$users = $this->loadModel('Users');
 		$users = Users::all();
 
-		return $this->renderView('basic', ['userArray' => $users]);
+		echo $this->renderView('basic', ['userArray' => $users]);
 	}
 	public function user($id = '') {
 		$user = $this->loadModel('Users');
 		$user = Users::find($id);
 
-		return $this->renderView('basic_detail', ['user' => $user]);
+		echo $this->renderView('basic_detail', ['user' => $user]);
 	}
 
 	public function returnModel() {
