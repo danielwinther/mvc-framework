@@ -2,7 +2,7 @@
 class Basic extends BaseController {
 	public function index() {
 		$users = $this->loadModel('Users');
-		$users = Users::all();
+		$users = Users::all()->sortBy("firstName");
 
 		echo $this->renderView('basic', ['userArray' => $users]);
 	}
