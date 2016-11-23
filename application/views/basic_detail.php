@@ -18,6 +18,7 @@
 	</div>
 </div>
 <div class="row">
+	<a href="/mvc-framework/public/Basic" class="btn btn-default btn-lg btn-block">
 		<span class="glyphicon glyphicon-arrow-left"></span> Return to list of users
 	</a>
 </div>
