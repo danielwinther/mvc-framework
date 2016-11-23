@@ -12,9 +12,14 @@
 <body>
 	<div class="container">
 		<div class="page-header row">
-		<h1>MVC framework</h1>
+			<h1>MVC framework</h1>
 		</div>
 		{% block content %}{% endblock %}
+		<div class="row">
+			{% block footer %}
+			<h5 class="pull-right"><em>&copy; Copyright {{'now'|date('Y')}}</em></h5>
+			{% endblock %}
+		</div>
 	</div>
 </body>
 </html>

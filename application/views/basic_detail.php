@@ -17,7 +17,8 @@
 		<img class="img-responsive col-md-2" src="{{data['user'].avatar}}" alt="{{data['user'].firstName}}">
 	</div>
 </div>
-<a href="/mvc-framework/public/Basic" class="btn btn-primary btn-block">
-	<span class="glyphicon glyphicon-arrow-left"></span> Return to list of users
-</a>
+<div class="row">
+		<span class="glyphicon glyphicon-arrow-left"></span> Return to list of users
+	</a>
+</div>
 {% endblock %}
