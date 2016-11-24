@@ -12,6 +12,12 @@ class Basic extends BaseController {
 
 		echo $this->renderView('basic_detail', ['user' => $user]);
 	}
+	public function scrapeWebsite() {
+		$scrape = $this->scrape(self::GET, 'http://ekstrabladet.dk/');
+		$scrape = $scrape->find('title', 0)->innertext;
+
+		return $scrape;
+	}
 
 	public function returnModel() {
 		$user = $this->loadModel('User');
@@ -28,7 +34,7 @@ class Basic extends BaseController {
 	public function returnParameter($parameter = '') {
 		return $parameter;
 	}
-	public function returnSeveralParameters($parameter1 = '', $parameter2 = '') {
-		return $parameter1 + $parameter2;
+	public function returnTwoParameters($parameter1 = '', $parameter2 = '') {
+		return $parameter1 . $parameter2;
 	}
 }

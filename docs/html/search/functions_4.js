@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['redirectcontroller',['redirectController',['../class_base_controller.html#a85ddb683efc64655be063b697f631beb',1,'BaseController']]],
-  ['redirecturl',['redirectUrl',['../class_base_controller.html#a9f95c7503770ed9c974005b363ec3d00',1,'BaseController']]],
-  ['renderview',['renderView',['../class_base_controller.html#aa0c49b95cd8e5ff8ff61b4a2c35bf1eb',1,'BaseController']]],
-  ['returnint',['returnInt',['../class_basic.html#a8d2918087022004ef5ad62d8f76a73d7',1,'Basic']]],
-  ['returnmodel',['returnModel',['../class_basic.html#a7cb6a02987f0faaef2ee4aff9198907e',1,'Basic']]],
-  ['returnstring',['returnString',['../class_basic.html#a5bb666dcea19a9561c2047cfa25936bd',1,'Basic']]]
+  ['file_5fget_5fhtml',['file_get_html',['../simple__html__dom_8php.html#af2164941db8b68168c1105687e179d27',1,'simple_html_dom.php']]],
+  ['find',['find',['../classsimple__html__dom__node.html#afbf375e355aa32c25f7e389a04ddced0',1,'simple_html_dom_node\find()'],['../classsimple__html__dom.html#afbf375e355aa32c25f7e389a04ddced0',1,'simple_html_dom\find()']]],
+  ['find_5fancestor_5ftag',['find_ancestor_tag',['../classsimple__html__dom__node.html#a03d7c0efb45d013cc1421612c719e867',1,'simple_html_dom_node']]],
+  ['first_5fchild',['first_child',['../classsimple__html__dom__node.html#ade851eb21476ec16857ed56d166f6afc',1,'simple_html_dom_node']]],
+  ['firstchild',['firstChild',['../classsimple__html__dom__node.html#a2e7ff3e4db465652634f86004ccb83db',1,'simple_html_dom_node\firstChild()'],['../classsimple__html__dom.html#a2e7ff3e4db465652634f86004ccb83db',1,'simple_html_dom\firstChild()']]]
 ];

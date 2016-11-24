@@ -1,6 +1,7 @@
 <?php
 require_once '/../../application/kernel/BaseController.php';
 require_once '/../../application/controllers/Basic.php';
+require_once '/../../application/libraries/simple_html_dom.php';
 
 class BasicTest extends PHPUnit_Framework_TestCase
 {
@@ -40,9 +41,32 @@ class BasicTest extends PHPUnit_Framework_TestCase
 
 		$this->assertEquals($this->basic->returnParameter('daniel'), $test);
 	}
-	public function testReturnSeveralParameters() {
-		$test = 10;
+	public function testReturnTwoParameters() {
+		$test = 'daniel';
 
-		$this->assertEquals($this->basic->returnSeveralParameters(5, 5), $test);
+		$this->assertEquals($this->basic->returnTwoParameters('dan', 'iel'), $test);
+	}
+	public function testReturnWrongParameters() {
+		$test = 'daniel';
+
+		try {
+			$this->assertEquals($this->basic->returnTwoParameters('dan'), $test);
+		} catch (Exception $e) {
+			
+		}
+	}
+	public function testScrapeGetCorrect() {
+		$test = 'Nyheder, sport og underholdning – Ekstra Bladet';
+
+		$this->assertEquals($this->basic->scrapeWebsite(), $test);
+	}
+	public function testScrapeGetWrong() {
+		$test = 'Ekstra Bladet';
+
+		try {
+			$this->assertEquals($this->basic->scrapeWebsite(), $test);
+		} catch (Exception $e) {
+			
+		}
 	}
 }

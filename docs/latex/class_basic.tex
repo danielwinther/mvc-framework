@@ -13,11 +13,17 @@ Inheritance diagram for Basic\+:\begin{figure}[H]
 \item 
 \hyperlink{class_basic_a6603546e99f9519b86989be128736ad6}{user} (\$id=\textquotesingle{}\textquotesingle{})
 \item 
+\hyperlink{class_basic_a48ffe9a27b91ce968b2bcf5e0a9d4069}{scrape\+Website} ()
+\item 
 \hyperlink{class_basic_a7cb6a02987f0faaef2ee4aff9198907e}{return\+Model} ()
 \item 
 \hyperlink{class_basic_a5bb666dcea19a9561c2047cfa25936bd}{return\+String} ()
 \item 
 \hyperlink{class_basic_a8d2918087022004ef5ad62d8f76a73d7}{return\+Int} ()
+\item 
+\hyperlink{class_basic_ac380e8a432563c6affcfddd43384c1d2}{return\+Parameter} (\$parameter=\textquotesingle{}\textquotesingle{})
+\item 
+\hyperlink{class_basic_a2ef87b96abcca966a41e34d077fcc38e}{return\+Two\+Parameters} (\$parameter1=\textquotesingle{}\textquotesingle{}, \$parameter2=\textquotesingle{}\textquotesingle{})
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -48,7 +54,7 @@ References Base\+Controller\textbackslash{}load\+Model(), and Base\+Controller\t
 \begin{DoxyCode}
 3                             \{
 4         $users = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'Users'});
-5         $users = Users::all();
+5         $users = Users::all()->sortBy(\textcolor{stringliteral}{"firstName"});
 6 
 7         echo $this->\hyperlink{class_base_controller_aa0c49b95cd8e5ff8ff61b4a2c35bf1eb}{renderView}(\textcolor{stringliteral}{'basic'}, [\textcolor{stringliteral}{'userArray'} => $users]);
 8     \}
@@ -61,13 +67,13 @@ References Base\+Controller\textbackslash{}load\+Model(), and Base\+Controller\t
 
 
 
-Definition at line 25 of file Basic.\+php.
+Definition at line 31 of file Basic.\+php.
 
 
 \begin{DoxyCode}
-25                                 \{
-26         \textcolor{keywordflow}{return} 24;
-27     \}
+31                                 \{
+32         \textcolor{keywordflow}{return} 24;
+33     \}
 \end{DoxyCode}
 \hypertarget{class_basic_a7cb6a02987f0faaef2ee4aff9198907e}{}\label{class_basic_a7cb6a02987f0faaef2ee4aff9198907e} 
 \index{Basic@{Basic}!return\+Model@{return\+Model}}
@@ -77,7 +83,7 @@ Definition at line 25 of file Basic.\+php.
 
 
 
-Definition at line 16 of file Basic.\+php.
+Definition at line 22 of file Basic.\+php.
 
 
 
@@ -85,12 +91,28 @@ References Base\+Controller\textbackslash{}load\+Model().
 
 
 \begin{DoxyCode}
-16                                   \{
-17         $user = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'User'});
-18         $user->setFirstName(\textcolor{stringliteral}{'daniel'});
-19 
-20         \textcolor{keywordflow}{return} $user;
-21     \}
+22                                   \{
+23         $user = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'User'});
+24         $user->setFirstName(\textcolor{stringliteral}{'daniel'});
+25 
+26         \textcolor{keywordflow}{return} $user;
+27     \}
+\end{DoxyCode}
+\hypertarget{class_basic_ac380e8a432563c6affcfddd43384c1d2}{}\label{class_basic_ac380e8a432563c6affcfddd43384c1d2} 
+\index{Basic@{Basic}!return\+Parameter@{return\+Parameter}}
+\index{return\+Parameter@{return\+Parameter}!Basic@{Basic}}
+\subsubsection{\texorpdfstring{return\+Parameter()}{returnParameter()}}
+{\footnotesize\ttfamily return\+Parameter (\begin{DoxyParamCaption}\item[{}]{\$parameter = {\ttfamily \textquotesingle{}\textquotesingle{}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 34 of file Basic.\+php.
+
+
+\begin{DoxyCode}
+34                                                      \{
+35         \textcolor{keywordflow}{return} $parameter;
+36     \}
 \end{DoxyCode}
 \hypertarget{class_basic_a5bb666dcea19a9561c2047cfa25936bd}{}\label{class_basic_a5bb666dcea19a9561c2047cfa25936bd} 
 \index{Basic@{Basic}!return\+String@{return\+String}}
@@ -100,13 +122,52 @@ References Base\+Controller\textbackslash{}load\+Model().
 
 
 
-Definition at line 22 of file Basic.\+php.
+Definition at line 28 of file Basic.\+php.
 
 
 \begin{DoxyCode}
-22                                    \{
-23         \textcolor{keywordflow}{return} \textcolor{stringliteral}{'daniel'};
-24     \}
+28                                    \{
+29         \textcolor{keywordflow}{return} \textcolor{stringliteral}{'daniel'};
+30     \}
+\end{DoxyCode}
+\hypertarget{class_basic_a2ef87b96abcca966a41e34d077fcc38e}{}\label{class_basic_a2ef87b96abcca966a41e34d077fcc38e} 
+\index{Basic@{Basic}!return\+Two\+Parameters@{return\+Two\+Parameters}}
+\index{return\+Two\+Parameters@{return\+Two\+Parameters}!Basic@{Basic}}
+\subsubsection{\texorpdfstring{return\+Two\+Parameters()}{returnTwoParameters()}}
+{\footnotesize\ttfamily return\+Two\+Parameters (\begin{DoxyParamCaption}\item[{}]{\$parameter1 = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{}]{\$parameter2 = {\ttfamily \textquotesingle{}\textquotesingle{}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 37 of file Basic.\+php.
+
+
+\begin{DoxyCode}
+37                                                                             \{
+38         \textcolor{keywordflow}{return} $parameter1 . $parameter2;
+39     \}
+\end{DoxyCode}
+\hypertarget{class_basic_a48ffe9a27b91ce968b2bcf5e0a9d4069}{}\label{class_basic_a48ffe9a27b91ce968b2bcf5e0a9d4069} 
+\index{Basic@{Basic}!scrape\+Website@{scrape\+Website}}
+\index{scrape\+Website@{scrape\+Website}!Basic@{Basic}}
+\subsubsection{\texorpdfstring{scrape\+Website()}{scrapeWebsite()}}
+{\footnotesize\ttfamily scrape\+Website (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 15 of file Basic.\+php.
+
+
+
+References Base\+Controller\textbackslash{}scrape().
+
+
+\begin{DoxyCode}
+15                                     \{
+16         $scrape = $this->\hyperlink{class_base_controller_ae4f5f67da98c9ef6b1df8d3eb61158df}{scrape}(self::GET, \textcolor{stringliteral}{'http://ekstrabladet.dk/'});
+17         $scrape = $scrape->find(\textcolor{stringliteral}{'title'}, 0)->innertext;
+18 
+19         \textcolor{keywordflow}{return} $scrape;
+20     \}
 \end{DoxyCode}
 \hypertarget{class_basic_a6603546e99f9519b86989be128736ad6}{}\label{class_basic_a6603546e99f9519b86989be128736ad6} 
 \index{Basic@{Basic}!user@{user}}

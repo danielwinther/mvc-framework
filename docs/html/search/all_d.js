@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['user',['User',['../class_user.html',1,'User'],['../class_basic.html#a6603546e99f9519b86989be128736ad6',1,'Basic\user()']]],
-  ['user_2ephp',['User.php',['../_user_8php.html',1,'']]],
-  ['users',['Users',['../class_users.html',1,'']]],
-  ['users_2ephp',['Users.php',['../_users_8php.html',1,'']]]
+  ['outertext',['outertext',['../classsimple__html__dom__node.html#a64d25961093a3b4c7b9b26a6d56c5831',1,'simple_html_dom_node']]]
 ];

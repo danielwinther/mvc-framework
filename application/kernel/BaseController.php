@@ -1,5 +1,8 @@
 <?php
 class BaseController {
+	const GET = null;
+	const POST = null;
+
 	/**
 	* Loads a given model into the controller
 	*
@@ -62,4 +65,24 @@ class BaseController {
 		}
 	}
 
+	/**
+	* Scrapes HTML from the given URL
+	*
+	* @param string $url
+	* @return string $html
+	*/
+	public function scrape($action, $url) {
+		switch ($action) {
+			case self::GET:
+			$html = new simple_html_dom();
+			$html->load_file($url);
+			break;
+			
+			case self::POST:
+			echo "POST";
+			break;
+		}
+
+		return $html;
+	}
 }

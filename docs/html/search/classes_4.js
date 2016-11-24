@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['user',['User',['../class_user.html',1,'']]],
-  ['users',['Users',['../class_users.html',1,'']]]
+  ['simple_5fhtml_5fdom',['simple_html_dom',['../classsimple__html__dom.html',1,'']]],
+  ['simple_5fhtml_5fdom_5fnode',['simple_html_dom_node',['../classsimple__html__dom__node.html',1,'']]]
 ];

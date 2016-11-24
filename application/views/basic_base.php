@@ -2,6 +2,7 @@
 <html>
 <head>
 	{% block head %}
+	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="/mvc-framework/public/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/mvc-framework/public/css/bootstrap-theme.min.css">
 	<script type="text/javascript" src="/mvc-framework/public/js/jquery.min.js"></script>
