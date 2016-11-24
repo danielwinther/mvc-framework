@@ -35,4 +35,14 @@ class BasicTest extends PHPUnit_Framework_TestCase
 
 		$this->assertEquals($this->basic->returnInt(), $test);
 	}
+	public function testReturnParameter() {
+		$test = 'daniel';
+
+		$this->assertEquals($this->basic->returnParameter('daniel'), $test);
+	}
+	public function testReturnSeveralParameters() {
+		$test = 10;
+
+		$this->assertEquals($this->basic->returnSeveralParameters(5, 5), $test);
+	}
 }

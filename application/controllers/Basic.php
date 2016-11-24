@@ -25,4 +25,10 @@ class Basic extends BaseController {
 	public function returnInt() {
 		return 24;
 	}
+	public function returnParameter($parameter = '') {
+		return $parameter;
+	}
+	public function returnSeveralParameters($parameter1 = '', $parameter2 = '') {
+		return $parameter1 + $parameter2;
+	}
 }
