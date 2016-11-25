@@ -2,6 +2,8 @@
 class BaseController {
 	const GET = null;
 	const POST = null;
+	const UPDATE = null;
+	const DELETE = null;
 
 	/**
 	* Loads a given model into the controller
@@ -66,9 +68,10 @@ class BaseController {
 	}
 
 	/**
-	* Scrapes HTML from the given URL
+	* Scrapes HTML source code from the given URL
 	*
 	* @param string $url
+	* @param const $action
 	* @return string $html
 	*/
 	public function scrape($action, $url) {
@@ -77,9 +80,15 @@ class BaseController {
 			$html = new simple_html_dom();
 			$html->load_file($url);
 			break;
-			
+
 			case self::POST:
-			echo "POST";
+			echo 'post';
+
+			case self::UPDATE:
+			echo 'update';
+
+			case self::DELETE:
+			echo 'delete';
 			break;
 		}
 
