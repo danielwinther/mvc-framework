@@ -1,10 +1,5 @@
 <?php
 class BaseController {
-	const GET = null;
-	const POST = null;
-	const UPDATE = null;
-	const DELETE = null;
-
 	/**
 	* Loads a given model into the controller
 	*
@@ -49,6 +44,7 @@ class BaseController {
 	*/
 	protected function redirectUrl($url) {
 		header('Location: ' . $url);
+		die();
 	}
 
 	/**
@@ -60,38 +56,72 @@ class BaseController {
 		$atSign = explode('@', $controller);
 
 		if (strpos($controller, '@') !== false) {
-			header('Location:../' . $atSign[0] . '/' . $atSign[1]);
+			header('Location:' . realpath(__DIR__ . '/..') . $atSign[0] . '/' . $atSign[1]);
 		}
 		else {
-			header('Location:../' . $atSign[0] . '/index');
+			$config = initializeConfig();
+			header('Location:'. realpath(__DIR__ . '/..') . $atSign[0] . '/' . $config['defaultMethod']);
 		}
+		die();
 	}
 
 	/**
 	* Scrapes HTML source code from the given URL
 	*
 	* @param string $url
-	* @param const $action
+	* @param string $action
+	* @param curl $curl
 	* @return string $html
 	*/
-	public function scrape($action, $url) {
-		switch ($action) {
-			case self::GET:
-			$html = new simple_html_dom();
-			$html->load_file($url);
-			break;
+	public function scrape($action, $url, $curl = null) {
+		$html = new simple_html_dom();
 
-			case self::POST:
-			echo 'post';
-
-			case self::UPDATE:
-			echo 'update';
-
-			case self::DELETE:
-			echo 'delete';
+		switch (strtoupper($action)) {
+			case 'GET':
+			if ($curl) {
+				curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1); 
+				curl_setopt($curl, CURLOPT_POST, 0);
+				curl_setopt($curl, CURLOPT_URL, $url);
+				$html = str_get_html(curl_exec($curl));
+				curl_close($curl);
+			}
+			else {
+				$html->load_file($url);
+			}
 			break;
 		}
 
 		return $html;
+	}
+
+	/**
+	*
+	* @param string $url
+	* @param array $postData
+	* @return $curl
+	*/
+	public function session($url, $postData) {
+		$curl = curl_init();
+
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1); 
+
+		curl_setopt($curl, CURLOPT_URL, $url);
+		$cookie = dirname(__FILE__) . '/cookies.txt';
+		$timeout = 30;
+
+		curl_setopt($curl, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36');
+		curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
+		curl_setopt($curl, CURLOPT_TIMEOUT, 10); 
+		curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, $timeout);
+		curl_setopt($curl, CURLOPT_COOKIEJAR, $cookie);
+		curl_setopt($curl, CURLOPT_COOKIEFILE, $cookie);
+
+		curl_setopt($curl, CURLOPT_POST, 1); 
+		curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($postData));     
+		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+		unlink($cookie);
+		curl_exec($curl);
+
+		return $curl;
 	}
 }

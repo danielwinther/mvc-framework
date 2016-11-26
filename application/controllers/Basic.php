@@ -1,8 +1,9 @@
 <?php
+use Goutte\Client;
 class Basic extends BaseController {
 	public function index() {
 		$users = $this->loadModel('Users');
-		$users = Users::all()->sortBy("firstName");
+		$users = Users::all()->sortBy('firstName');
 
 		echo $this->renderView('basic', ['userArray' => $users]);
 	}
@@ -13,10 +14,12 @@ class Basic extends BaseController {
 		echo $this->renderView('basic_detail', ['user' => $user]);
 	}
 	public function scrapeWebsite() {
-		$scrape = $this->scrape(self::GET, 'http://ekstrabladet.dk/');
-		$scrape = $scrape->find('title', 0)->innertext;
+		/*$curl = $this->session('https://m.facebook.com/login.php', ['email' => '', 'pass' => '', '_fb_noscript' => 'true']);
+		$html = $this->scrape('GET', 'https://m.facebook.com/danieldk1992/friends/', $curl);*/
 
-		return $scrape;
+		$html = $this->scrape('GET', 'http://ekstrabladet.dk/');
+
+		return $html->getElementByTagName('title')->plaintext;
 	}
 
 	public function returnModel() {
@@ -30,6 +33,12 @@ class Basic extends BaseController {
 	}
 	public function returnInt() {
 		return 24;
+	}
+	public function redirectToUrl() {
+		$this->redirectUrl(__DIR__ . '/returnString');
+	}
+	public function redirectToController() {
+		$this->redirectController('Basic');
 	}
 	public function returnParameter($parameter = '') {
 		return $parameter;
