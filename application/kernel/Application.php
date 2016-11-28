@@ -4,10 +4,12 @@ class Application {
 	* @var string $controller
 	*/
 	protected $controller;
+
 	/**
 	* @var string $index
 	*/
 	protected $method;
+
 	/**
 	* @var array parameters
 	*/
@@ -37,7 +39,7 @@ class Application {
 	}
 
 	/**
-	* Loads a given controller, method and parameter based on the URL
+	* Loads a given controller, method and parameter based on the given URL
 	*
 	* @param string $url
 	*/

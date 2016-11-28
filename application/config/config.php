@@ -8,5 +8,6 @@ function initializeConfig() {
 		'defaultMethod' => 'index',
 		'defaultParameters' => [],
 		'defaultCharset' => 'UTF-8',
+		'errorReporting' => error_reporting(E_ALL)
 	];
 }

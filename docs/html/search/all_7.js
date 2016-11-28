@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['get',['GET',['../class_base_controller.html#a036e3adfeab59b468951a7ebb383f953',1,'BaseController']]],
   ['get_5fdisplay_5fsize',['get_display_size',['../classsimple__html__dom__node.html#a29f9eadb33488a28542a01215970faca',1,'simple_html_dom_node']]],
   ['getage',['getAge',['../class_user.html#aa45b65846565bea3073f766710582a3f',1,'User']]],
   ['getallattributes',['getAllAttributes',['../classsimple__html__dom__node.html#a87ba362b0d72b64e0da6f095c5c40ba5',1,'simple_html_dom_node']]],

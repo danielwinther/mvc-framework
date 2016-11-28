@@ -5,7 +5,7 @@ var indexSectionsWithContent =
   2: "p",
   3: "abcdmsuv",
   4: "_acdfghilmnoprstux",
-  5: "$dfghmp"
+  5: "$dfhm"
 };
 
 var indexSectionNames =

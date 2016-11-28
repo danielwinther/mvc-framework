@@ -1,10 +1,11 @@
 var searchData=
 [
   ['save',['save',['../classsimple__html__dom.html#a6e80614bedc0513a210906c36f608fa8',1,'simple_html_dom']]],
-  ['scrape',['scrape',['../class_base_controller.html#ae4f5f67da98c9ef6b1df8d3eb61158df',1,'BaseController']]],
+  ['scrape',['scrape',['../class_base_controller.html#abd4f25604b09a96c254491df97612cc3',1,'BaseController']]],
   ['scrapewebsite',['scrapeWebsite',['../class_basic.html#a48ffe9a27b91ce968b2bcf5e0a9d4069',1,'Basic']]],
   ['search_5fnoise',['search_noise',['../classsimple__html__dom.html#a7bcdfb5fa10cf704553ff32f5f5d693f',1,'simple_html_dom']]],
   ['seek',['seek',['../classsimple__html__dom__node.html#a55c896ff710c8cb226a17ff3d6e0c17a',1,'simple_html_dom_node']]],
+  ['session',['session',['../class_base_controller.html#a259a554926fc05640c8c711c340cdeac',1,'BaseController']]],
   ['set_5fcallback',['set_callback',['../classsimple__html__dom.html#a40e8b7bf2a1b1acc56b82f9221fb9266',1,'simple_html_dom']]],
   ['setage',['setAge',['../class_user.html#adc5038de9cf66737c3ec367ed6271176',1,'User']]],
   ['setattribute',['setAttribute',['../classsimple__html__dom__node.html#a545f43e4d937e0e272a4bafe8b411d55',1,'simple_html_dom_node']]],

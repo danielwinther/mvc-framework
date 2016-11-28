@@ -95,6 +95,7 @@ class BaseController {
 	}
 
 	/**
+	* Initializes session with cURL and saves session cookies in file for later retrieval
 	*
 	* @param string $url
 	* @param array $postData
