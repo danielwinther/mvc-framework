@@ -73,7 +73,7 @@ class BaseController {
 	* @param curl $curl
 	* @return string $html
 	*/
-	public function scrape($action, $url, $curl = null) {
+	protected function scrape($action, $url, $curl = null) {
 		$html = new simple_html_dom();
 
 		switch (strtoupper($action)) {
@@ -101,7 +101,7 @@ class BaseController {
 	* @param array $postData
 	* @return $curl
 	*/
-	public function session($url, $postData) {
+	protected function session($url, $postData) {
 		$curl = curl_init();
 
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1); 
