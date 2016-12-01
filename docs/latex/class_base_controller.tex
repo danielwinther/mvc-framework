@@ -6,13 +6,6 @@ Inheritance diagram for Base\+Controller\+:\begin{figure}[H]
 \includegraphics[height=2.000000cm]{class_base_controller}
 \end{center}
 \end{figure}
-\subsection*{Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-\hyperlink{class_base_controller_abd4f25604b09a96c254491df97612cc3}{scrape} (\$action, \$url, \$curl=null)
-\item 
-\hyperlink{class_base_controller_a259a554926fc05640c8c711c340cdeac}{session} (\$url, \$post\+Data)
-\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -23,6 +16,10 @@ Inheritance diagram for Base\+Controller\+:\begin{figure}[H]
 \hyperlink{class_base_controller_a9f95c7503770ed9c974005b363ec3d00}{redirect\+Url} (\$url)
 \item 
 \hyperlink{class_base_controller_a85ddb683efc64655be063b697f631beb}{redirect\+Controller} (\$controller)
+\item 
+\hyperlink{class_base_controller_abd4f25604b09a96c254491df97612cc3}{scrape} (\$action, \$url, \$curl=null)
+\item 
+\hyperlink{class_base_controller_a259a554926fc05640c8c711c340cdeac}{session} (\$url, \$post\+Data)
 \end{DoxyCompactItemize}
 
 
@@ -183,7 +180,7 @@ Referenced by Basic\textbackslash{}index(), and Basic\textbackslash{}user().
 \index{Base\+Controller@{Base\+Controller}!scrape@{scrape}}
 \index{scrape@{scrape}!Base\+Controller@{Base\+Controller}}
 \subsubsection{\texorpdfstring{scrape()}{scrape()}}
-{\footnotesize\ttfamily scrape (\begin{DoxyParamCaption}\item[{}]{\$action,  }\item[{}]{\$url,  }\item[{}]{\$curl = {\ttfamily null} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily scrape (\begin{DoxyParamCaption}\item[{}]{\$action,  }\item[{}]{\$url,  }\item[{}]{\$curl = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 Scrapes H\+T\+ML source code from the given U\+RL
 
@@ -213,7 +210,7 @@ Referenced by Basic\textbackslash{}scrape\+Website().
 
 
 \begin{DoxyCode}
-76                                                         \{
+76                                                            \{
 77         $html = \textcolor{keyword}{new} \hyperlink{classsimple__html__dom}{simple\_html\_dom}();
 78 
 79         \textcolor{keywordflow}{switch} (strtoupper($action)) \{
@@ -238,7 +235,7 @@ Referenced by Basic\textbackslash{}scrape\+Website().
 \index{Base\+Controller@{Base\+Controller}!session@{session}}
 \index{session@{session}!Base\+Controller@{Base\+Controller}}
 \subsubsection{\texorpdfstring{session()}{session()}}
-{\footnotesize\ttfamily session (\begin{DoxyParamCaption}\item[{}]{\$url,  }\item[{}]{\$post\+Data }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily session (\begin{DoxyParamCaption}\item[{}]{\$url,  }\item[{}]{\$post\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 Initializes session with c\+U\+RL and saves session cookies in file for later retrieval
 
@@ -258,7 +255,7 @@ Definition at line 104 of file Base\+Controller.\+php.
 
 
 \begin{DoxyCode}
-104                                              \{
+104                                                 \{
 105         $curl = curl\_init();
 106 
 107         curl\_setopt($curl, CURLOPT\_RETURNTRANSFER, 1); 
