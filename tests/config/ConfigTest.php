@@ -65,4 +65,18 @@ class ConfigTest extends PHPUnit_Framework_TestCase
 			
 		}
 	}
+	public function testConfigCorrectSalt() {
+		$test = 'tw%zdRv%qgq@w#@HqK@FS)OT(3N2&e222l)Gg2wjyRvCtU*X)rbyS$lq@sfq3g#g';
+
+		$this->assertEquals($this->config['salt'], $test);
+	}
+	public function testConfigWrongSalt() {
+		$test = 'tw%zdRv%qgq@w#@HqK@FS)OT(3N2&e222l)Gg2wjyRvCtU*X)rbyS$lq@sfq3g#gaa';
+
+		try {
+			$this->assertEquals($this->config['salt'], $test);
+		} catch (Exception $e) {
+			
+		}
+	}
 }

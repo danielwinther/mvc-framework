@@ -55,7 +55,7 @@ class BasicTest extends PHPUnit_Framework_TestCase
 			
 		}
 	}
-	public function testScrapeGetCorrect() {
+	/*public function testScrapeGetCorrect() {
 		$test = 'Nyheder, sport og underholdning – Ekstra Bladet';
 
 		$this->assertEquals($this->basic->scrapeWebsite(), $test);
@@ -65,6 +65,20 @@ class BasicTest extends PHPUnit_Framework_TestCase
 
 		try {
 			$this->assertEquals($this->basic->scrapeWebsite(), $test);
+		} catch (Exception $e) {
+			
+		}
+	}*/
+	public function testHashCorrect() {
+		$test = 'cfcd208495d565ef66e7dff9f98764da';
+
+		$this->assertEquals($this->basic->hashString('daniel'), $test);
+	}
+	public function testHashWrong() {
+		$test = 'cfcd208495d565ef66e7dff9f98764daa';
+
+		try {
+			$this->assertEquals($this->basic->hashString('daniel'), $test);
 		} catch (Exception $e) {
 			
 		}

@@ -125,4 +125,15 @@ class BaseController {
 
 		return $curl;
 	}
+
+	/**
+	* Hashes a given string and adds a salt to it
+	* 
+	* @param string $string
+	* @return string
+	*/
+	protected function hashString($string) {
+		$config = initializeConfig();
+		return md5($string + $config['salt']);
+	}
 }

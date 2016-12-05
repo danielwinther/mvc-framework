@@ -1,8 +1,5 @@
 {% extends "basic_base.php" %}
 
-{% block head %}
-{{ parent() }}
-{% endblock %}
 {% block content %}
 <div class="row">
 	<h2>Showcases user models</h2>

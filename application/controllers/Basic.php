@@ -46,4 +46,7 @@ class Basic extends BaseController {
 	public function returnTwoParameters($parameter1 = '', $parameter2 = '') {
 		return $parameter1 . $parameter2;
 	}
+	public function returnHash() {
+		return $this->hashString('daniel');
+	}
 }
