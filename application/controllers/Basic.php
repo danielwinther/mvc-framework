@@ -1,5 +1,4 @@
 <?php
-use Goutte\Client;
 class Basic extends BaseController {
 	public function index() {
 		$users = $this->loadModel('Users');

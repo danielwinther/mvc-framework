@@ -10,6 +10,7 @@ var searchData=
   ['removeattribute',['removeAttribute',['../classsimple__html__dom__node.html#abbf04707cf678979459a4438e1450876',1,'simple_html_dom_node']]],
   ['renderview',['renderView',['../class_base_controller.html#aa0c49b95cd8e5ff8ff61b4a2c35bf1eb',1,'BaseController']]],
   ['restore_5fnoise',['restore_noise',['../classsimple__html__dom.html#a65768af772cc55c11fc85d4d8697140e',1,'simple_html_dom']]],
+  ['returnhash',['returnHash',['../class_basic.html#a16df2136bd66a75022f350d583e6c060',1,'Basic']]],
   ['returnint',['returnInt',['../class_basic.html#a8d2918087022004ef5ad62d8f76a73d7',1,'Basic']]],
   ['returnmodel',['returnModel',['../class_basic.html#a7cb6a02987f0faaef2ee4aff9198907e',1,'Basic']]],
   ['returnparameter',['returnParameter',['../class_basic.html#ac380e8a432563c6affcfddd43384c1d2',1,'Basic']]],

@@ -12,5 +12,6 @@ var searchData=
   ['copy_5funtil_5fchar',['copy_until_char',['../classsimple__html__dom.html#a0dcd73e05f3cee1eafe3ec6fa347c36b',1,'simple_html_dom']]],
   ['copy_5funtil_5fchar_5fescape',['copy_until_char_escape',['../classsimple__html__dom.html#a2df9f8464f8daf439f9fa740ebdc0ede',1,'simple_html_dom']]],
   ['createelement',['createElement',['../classsimple__html__dom.html#a00ba25421a388987512a3859ff7c2ad9',1,'simple_html_dom']]],
-  ['createtextnode',['createTextNode',['../classsimple__html__dom.html#af9ee904e108e5c1956eec226881a9442',1,'simple_html_dom']]]
+  ['createtextnode',['createTextNode',['../classsimple__html__dom.html#af9ee904e108e5c1956eec226881a9442',1,'simple_html_dom']]],
+  ['createuser',['createUser',['../class_basic.html#a967982ee98f05287bbdba812f6016947',1,'Basic']]]
 ];
