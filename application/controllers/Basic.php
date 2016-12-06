@@ -21,13 +21,31 @@ class Basic extends BaseController {
 
 		return $html->getElementByTagName('title')->plaintext;
 	}
-
 	public function returnModel() {
 		$user = $this->loadModel('User');
 		$user->setFirstName('daniel');
 
 		return $user;
 	}
+	public function returnHash() {
+		return $this->hashString('daniel');
+	}
+	public function deleteUser($id = '') {
+		$user = $this->loadModel('Users');
+		$user = Users::find($id);
+		$user->delete();
+
+		$this->redirectController('Basic');
+	}
+	public function createUser() {
+		$postInput = $this->postInput();
+
+		$user = $this->loadModel('Users');
+		Users::create($postInput);
+
+		$this->redirectController('Basic');
+	}
+
 	public function returnString() {
 		return 'daniel';
 	}
@@ -45,8 +63,5 @@ class Basic extends BaseController {
 	}
 	public function returnTwoParameters($parameter1 = '', $parameter2 = '') {
 		return $parameter1 . $parameter2;
-	}
-	public function returnHash() {
-		return $this->hashString('daniel');
 	}
 }

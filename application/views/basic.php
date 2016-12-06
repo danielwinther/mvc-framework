@@ -12,6 +12,8 @@
 				<th>Age</th>
 				<th>Email</th>
 				<th>Phone</th>
+				<th>Update</th>
+				<th>Delete</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -23,9 +25,40 @@
 				<td>{{user.age}}</td>
 				<td>{{user.email}}</td>
 				<td>{{user.phone}}</td>
+				<td>
+					<a class="btn btn-default btn-xs" href="#">Update</a>
+				</td>
+				<td>
+					<a class="btn btn-danger btn-xs" href="Basic/deleteUser/{{user.id}}">Delete</a>
+				</td>
 			</tr>
 			{% endfor %}
 		</tbody>
 	</table>
+	<form method="POST" action="Basic/createUser">
+		<div class="row">
+			<div class="form-group col-md-6">
+				<input class="form-control input-sm" type="text" name="firstName" placeholder="First name" required="">
+			</div>
+			<div class="form-group col-md-6">
+				<input class="form-control input-sm" type="text" name="lastName" placeholder="Last name" required="">
+			</div>
+		</div>
+		<div class="form-group">
+			<input class="form-control input-sm" type="number" name="age" placeholder="Age" required="">
+		</div>
+		<div class="form-group">
+			<input class="form-control input-sm" type="text" name="avatar" placeholder="Avatar (URL)">
+		</div>
+		<div class="form-group">
+			<input class="form-control input-sm" type="email" name="email" placeholder="Email" required="">
+		</div>
+		<div class="form-group">
+			<input class="form-control input-sm" type="tel" name="phone" placeholder="Phone" required="">
+		</div>
+		<div class="form-group">
+			<input class="btn btn-primary btn-block" type="submit" name="submit" value="Create new user">
+		</div>
+	</form>
 </div>
 {% endblock %}

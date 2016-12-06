@@ -20,6 +20,23 @@ class BaseController {
 	}
 
 	/**
+	* Sanitizes and returns POST data 
+	*
+	* @param string $input
+	* @return string/array
+	*/
+	protected function postInput($input = null) {
+		$post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+		if ($input) {
+			return $post[$input];
+		}
+		else {
+			return $post;
+		}
+	}
+
+	/**
 	* Loads a given view into the controller
 	*
 	* @param string $view
