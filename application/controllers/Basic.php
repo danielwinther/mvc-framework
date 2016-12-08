@@ -1,4 +1,7 @@
 <?php
+use Mailgun\Mailgun;
+use Twilio\Rest\Client;
+
 class Basic extends BaseController {
 	public function index() {
 		$users = $this->loadModel('Users');
@@ -43,6 +46,31 @@ class Basic extends BaseController {
 		Users::create($postInput);
 
 		$this->redirectController('Basic');
+	}
+	public function sendMail() {
+		$config = initializeConfig();
+		$mgClient = new Mailgun($config['mailgunKey']);
+		$domain = $config['mailgunDomain'];
+
+		$result = $mgClient->sendMessage($domain,
+			array('from'    => 'Mailgun Sandbox <postmaster@sandbox5c2500d99acf4cbfa26fa88a596a49bd.mailgun.org>',
+				'to'      => 'Daniel Winther Jensen <danielwinther@hotmail.dk>',
+				'subject' => 'Hello Daniel Winther Jensen',
+				'text'    => 'Congratulations Daniel Winther Jensen, you just sent an email with Mailgun!  You are truly awesome!  You can see a record of this email in your logs: https://mailgun.com/cp/log .  You can send up to 300 emails/day from this sandbox server.  Next, you should add your own domain so you can send 10,000 emails/month for free.'));
+	}
+	public function sendSMS() {
+		$config = initializeConfig();
+		$sid = $config['twilioSid'];
+		$token = $config['twilioToken'];
+		$client = new Client($sid, $token);
+
+		$client->messages->create(
+			'+4542341338',
+			array(
+				'from' => '+46769447755',
+				'body' => 'This is a test'
+				)
+			);
 	}
 
 	public function returnString() {
