@@ -17,7 +17,7 @@ class Basic extends BaseController {
 	}
 	public function scrapeWebsite() {
 		/*$curl = $this->session('https://m.facebook.com/login.php', ['email' => '', 'pass' => '', '_fb_noscript' => 'true']);
-		$html = $this->scrape('GET', 'https://m.facebook.com/danieldk1992/friends/', $curl);*/
+		$html = $this->scrape('GET', 'https://m.facebook.com/danielwintherjensendk/friends/', $curl);*/
 
 		$html = $this->scrape('GET', 'http://ekstrabladet.dk/');
 
