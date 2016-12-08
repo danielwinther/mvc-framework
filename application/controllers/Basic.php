@@ -7,13 +7,13 @@ class Basic extends BaseController {
 		$users = $this->loadModel('Users');
 		$users = Users::all()->sortBy('firstName');
 
-		echo $this->renderView('basic', ['userArray' => $users]);
+		echo $this->renderView('layout/basic', ['userArray' => $users]);
 	}
 	public function user($id = '') {
 		$user = $this->loadModel('Users');
 		$user = Users::find($id);
 
-		echo $this->renderView('basic_detail', ['user' => $user]);
+		echo $this->renderView('layout/basic_detail', ['user' => $user]);
 	}
 	public function scrapeWebsite() {
 		/*$curl = $this->session('https://m.facebook.com/login.php', ['email' => '', 'pass' => '', '_fb_noscript' => 'true']);
@@ -32,18 +32,38 @@ class Basic extends BaseController {
 	public function returnHash() {
 		return $this->hashString('daniel');
 	}
-	public function deleteUser($id = '') {
-		$user = $this->loadModel('Users');
-		$user = Users::find($id);
-		$user->delete();
-
-		$this->redirectController('Basic');
-	}
 	public function createUser() {
 		$postInput = $this->postInput();
 
 		$user = $this->loadModel('Users');
 		Users::create($postInput);
+
+		$this->redirectController('Basic');
+	}
+	public function editUser($id = '') {
+		$user = $this->loadModel('Users');
+		$user = Users::find($id);
+
+		echo $this->renderView('layout/basic_edit', ['user' => $user]);
+	}
+	public function editUserPost() {
+		$user = $this->loadModel('Users');
+		$user = Users::find($this->postInput('id'));
+
+		$user->firstName = $this->postInput('firstName');
+		$user->lastName = $this->postInput('lastName');
+		$user->age = $this->postInput('age');
+		$user->avatar = $this->postInput('avatar');
+		$user->email = $this->postInput('email');
+		$user->phone = $this->postInput('phone');
+		$user->save();
+
+		$this->redirectController('Basic');
+	}
+	public function deleteUser($id = '') {
+		$user = $this->loadModel('Users');
+		$user = Users::find($id);
+		$user->delete();
 
 		$this->redirectController('Basic');
 	}

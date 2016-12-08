@@ -1,4 +1,4 @@
-{% extends "basic_base.php" %}
+{% extends "layout/basic_base.php" %}
 
 {% block content %}
 <div class="row">
@@ -26,7 +26,7 @@
 				<td>{{user.email}}</td>
 				<td>{{user.phone}}</td>
 				<td>
-					<a class="btn btn-default btn-xs" href="#">Update</a>
+					<a class="btn btn-default btn-xs" href="Basic/editUser/{{user.id}}">Update</a>
 				</td>
 				<td>
 					<a class="btn btn-danger btn-xs" href="Basic/deleteUser/{{user.id}}">Delete</a>
@@ -37,24 +37,26 @@
 	</table>
 	<form method="POST" action="Basic/createUser">
 		<div class="row">
-			<div class="form-group col-md-6">
+			<div class="form-group col-md-5">
 				<input class="form-control input-sm" type="text" name="firstName" placeholder="First name" required="">
 			</div>
-			<div class="form-group col-md-6">
+			<div class="form-group col-md-5">
 				<input class="form-control input-sm" type="text" name="lastName" placeholder="Last name" required="">
 			</div>
-		</div>
-		<div class="form-group">
-			<input class="form-control input-sm" type="number" name="age" placeholder="Age" required="">
+			<div class="form-group col-md-2">
+				<input class="form-control input-sm" type="number" name="age" placeholder="Age" min="0" max="100" required="">
+			</div>
 		</div>
 		<div class="form-group">
 			<input class="form-control input-sm" type="text" name="avatar" placeholder="Avatar (URL)">
 		</div>
-		<div class="form-group">
-			<input class="form-control input-sm" type="email" name="email" placeholder="Email" required="">
-		</div>
-		<div class="form-group">
-			<input class="form-control input-sm" type="tel" name="phone" placeholder="Phone" required="">
+		<div class="row">
+			<div class="form-group col-md-6">
+				<input class="form-control input-sm" type="email" name="email" placeholder="Email" required="">
+			</div>
+			<div class="form-group col-md-6">
+				<input class="form-control input-sm" type="tel" name="phone" placeholder="Phone" required="">
+			</div>
 		</div>
 		<div class="form-group">
 			<input class="btn btn-primary btn-block" type="submit" name="submit" value="Create new user">

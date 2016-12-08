@@ -1,4 +1,4 @@
-{% extends "basic_base.php" %}
+{% extends "layout/basic_base.php" %}
 
 {% block content %}
 <h2 class="row">Showcases user model</h2>
