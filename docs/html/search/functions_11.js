@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['xmltext',['xmltext',['../classsimple__html__dom__node.html#aaca21e3e742f813c78857a91f389fa66',1,'simple_html_dom_node']]]
+  ['user',['user',['../class_basic.html#a6603546e99f9519b86989be128736ad6',1,'Basic']]]
 ];

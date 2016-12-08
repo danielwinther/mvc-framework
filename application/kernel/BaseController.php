@@ -61,7 +61,7 @@ class BaseController {
 	*/
 	protected function redirectUrl($url) {
 		header('Location: ' . $url);
-		die();
+		exit();
 	}
 
 	/**
@@ -73,13 +73,13 @@ class BaseController {
 		$atSign = explode('@', $controller);
 
 		if (strpos($controller, '@') !== false) {
-			header('Location:' . realpath(__DIR__ . '/..') . $atSign[0] . '/' . $atSign[1]);
+			header('Location:' . dirname($_SERVER['PHP_SELF']) . '/' . $atSign[0] . '/' . $atSign[1]);
 		}
 		else {
 			$config = initializeConfig();
-			header('Location:'. realpath(__DIR__ . '/..') . $atSign[0] . '/' . $config['defaultMethod']);
+			header('Location:'. dirname($_SERVER['PHP_SELF']) . '/' . $atSign[0]);
 		}
-		die();
+		exit();
 	}
 
 	/**

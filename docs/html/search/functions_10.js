@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['user',['user',['../class_basic.html#a6603546e99f9519b86989be128736ad6',1,'Basic']]]
+  ['text',['text',['../classsimple__html__dom__node.html#a37df362c2f77a0045fa8af094f432238',1,'simple_html_dom_node']]]
 ];

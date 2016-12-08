@@ -94,7 +94,7 @@ Definition at line 10 of file Base\+Controller.\+php.
 
 
 
-Referenced by Basic\textbackslash{}create\+User(), Basic\textbackslash{}delete\+User(), Basic\textbackslash{}index(), Basic\textbackslash{}return\+Model(), and Basic\textbackslash{}user().
+Referenced by Basic\textbackslash{}create\+User(), Basic\textbackslash{}delete\+User(), Basic\textbackslash{}edit\+User(), Basic\textbackslash{}edit\+User\+Post(), Basic\textbackslash{}index(), Basic\textbackslash{}return\+Model(), and Basic\textbackslash{}user().
 
 
 \begin{DoxyCode}
@@ -132,7 +132,7 @@ Definition at line 28 of file Base\+Controller.\+php.
 
 
 
-Referenced by Basic\textbackslash{}create\+User().
+Referenced by Basic\textbackslash{}create\+User(), and Basic\textbackslash{}edit\+User\+Post().
 
 
 \begin{DoxyCode}
@@ -170,7 +170,7 @@ References initialize\+Config().
 
 
 
-Referenced by Basic\textbackslash{}create\+User(), Basic\textbackslash{}delete\+User(), and Basic\textbackslash{}redirect\+To\+Controller().
+Referenced by Basic\textbackslash{}create\+User(), Basic\textbackslash{}delete\+User(), Basic\textbackslash{}edit\+User\+Post(), and Basic\textbackslash{}redirect\+To\+Controller().
 
 
 \begin{DoxyCode}
@@ -178,13 +178,13 @@ Referenced by Basic\textbackslash{}create\+User(), Basic\textbackslash{}delete\+
 73         $atSign = explode(\textcolor{charliteral}{'@'}, $controller);
 74 
 75         \textcolor{keywordflow}{if} (strpos($controller, \textcolor{charliteral}{'@'}) !== \textcolor{keyword}{false}) \{
-76             header(\textcolor{stringliteral}{'Location:'} . realpath(\_\_DIR\_\_ . \textcolor{stringliteral}{'/..'}) . $atSign[0] . \textcolor{charliteral}{'/'} . $atSign[1]);
+76             header(\textcolor{stringliteral}{'Location:'} . dirname($\_SERVER[\textcolor{stringliteral}{'PHP\_SELF'}]) . \textcolor{charliteral}{'/'} . $atSign[0] . \textcolor{charliteral}{'/'} . $atSign[1]);
 77         \}
 78         \textcolor{keywordflow}{else} \{
 79             $config = \hyperlink{config_8php_afeb1d281d402615776fdb0320a5b8d05}{initializeConfig}();
-80             header(\textcolor{stringliteral}{'Location:'}. realpath(\_\_DIR\_\_ . \textcolor{stringliteral}{'/..'}) . $atSign[0] . \textcolor{charliteral}{'/'} . $config[\textcolor{stringliteral}{'defaultMethod'}]);
+80             header(\textcolor{stringliteral}{'Location:'}. dirname($\_SERVER[\textcolor{stringliteral}{'PHP\_SELF'}]) . \textcolor{charliteral}{'/'} . $atSign[0]);
 81         \}
-82         die();
+82         exit();
 83     \}
 \end{DoxyCode}
 \hypertarget{class_base_controller_a9f95c7503770ed9c974005b363ec3d00}{}\label{class_base_controller_a9f95c7503770ed9c974005b363ec3d00} 
@@ -212,7 +212,7 @@ Referenced by Basic\textbackslash{}redirect\+To\+Url().
 \begin{DoxyCode}
 62                                          \{
 63         header(\textcolor{stringliteral}{'Location: '} . $url);
-64         die();
+64         exit();
 65     \}
 \end{DoxyCode}
 \hypertarget{class_base_controller_aa0c49b95cd8e5ff8ff61b4a2c35bf1eb}{}\label{class_base_controller_aa0c49b95cd8e5ff8ff61b4a2c35bf1eb} 
@@ -236,7 +236,7 @@ Definition at line 45 of file Base\+Controller.\+php.
 
 
 
-Referenced by Basic\textbackslash{}index(), and Basic\textbackslash{}user().
+Referenced by Basic\textbackslash{}edit\+User(), Basic\textbackslash{}index(), and Basic\textbackslash{}user().
 
 
 \begin{DoxyCode}
