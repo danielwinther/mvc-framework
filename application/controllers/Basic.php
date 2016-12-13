@@ -23,6 +23,16 @@ class Basic extends BaseController {
 
 		return $html->getElementByTagName('title')->plaintext;
 	}
+	public function scrapePdf() {
+		$pdf = $this->scrape('PDF', 'http://www.begravelsedanmark.dk/wp-content/uploads/2015/10/BDK-butik-prisliste-2015.pdf');
+
+		$text = $pdf->getText();
+		$text = preg_replace('/[\n\r]/', '<br>', $text);
+
+		$string = '2015';
+		$t = explode($string, $text);
+		return $t[0] . $string;
+	}
 	public function returnModel() {
 		$user = $this->loadModel('User');
 		$user->setFirstName('daniel');

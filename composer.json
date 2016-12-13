@@ -4,7 +4,8 @@
 		"illuminate/database": "^5.3",
 		"twig/twig" : "~1.0",
 		"mailgun/mailgun-php" : "~1.7.1",
-		"twilio/sdk": "^5.4"
+		"twilio/sdk": "^5.4",
+		"smalot/pdfparser": "*"
 	},
 	"autolaod": {
 		"classmap": [

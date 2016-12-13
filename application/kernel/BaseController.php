@@ -1,4 +1,5 @@
 <?php
+use \Smalot\PdfParser\Parser;
 class BaseController {
 	/**
 	* Loads a given model into the controller
@@ -106,6 +107,14 @@ class BaseController {
 				$html->load_file($url);
 			}
 			break;
+			
+			case 'PDF':
+			$parser = new Parser();
+			$pdf = $parser->parseFile($url);
+
+			return $pdf;
+			break;
+			
 		}
 
 		return $html;
