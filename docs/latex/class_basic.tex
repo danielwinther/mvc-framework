@@ -15,6 +15,8 @@ Inheritance diagram for Basic\+:\begin{figure}[H]
 \item 
 \hyperlink{class_basic_a48ffe9a27b91ce968b2bcf5e0a9d4069}{scrape\+Website} ()
 \item 
+\hyperlink{class_basic_a67dbb38567401c856d5361d6704874d5}{scrape\+Pdf} ()
+\item 
 \hyperlink{class_basic_a7cb6a02987f0faaef2ee4aff9198907e}{return\+Model} ()
 \item 
 \hyperlink{class_basic_a16df2136bd66a75022f350d583e6c060}{return\+Hash} ()
@@ -62,7 +64,7 @@ Definition at line 5 of file Basic.\+php.
 
 
 
-Definition at line 35 of file Basic.\+php.
+Definition at line 45 of file Basic.\+php.
 
 
 
@@ -70,14 +72,14 @@ References Base\+Controller\textbackslash{}load\+Model(), Base\+Controller\textb
 
 
 \begin{DoxyCode}
-35                                  \{
-36         $postInput = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}();
-37 
-38         $user = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'Users'});
-39         Users::create($postInput);
-40 
-41         $this->\hyperlink{class_base_controller_a85ddb683efc64655be063b697f631beb}{redirectController}(\textcolor{stringliteral}{'Basic'});
-42     \}
+45                                  \{
+46         $postInput = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}();
+47 
+48         $user = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'Users'});
+49         Users::create($postInput);
+50 
+51         $this->\hyperlink{class_base_controller_a85ddb683efc64655be063b697f631beb}{redirectController}(\textcolor{stringliteral}{'Basic'});
+52     \}
 \end{DoxyCode}
 \hypertarget{class_basic_a934aeeec370d904f3a58bde4d514259d}{}\label{class_basic_a934aeeec370d904f3a58bde4d514259d} 
 \index{Basic@{Basic}!delete\+User@{delete\+User}}
@@ -87,7 +89,7 @@ References Base\+Controller\textbackslash{}load\+Model(), Base\+Controller\textb
 
 
 
-Definition at line 63 of file Basic.\+php.
+Definition at line 73 of file Basic.\+php.
 
 
 
@@ -95,13 +97,13 @@ References Base\+Controller\textbackslash{}load\+Model(), and Base\+Controller\t
 
 
 \begin{DoxyCode}
-63                                          \{
-64         $user = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'Users'});
-65         $user = Users::find($id);
-66         $user->delete();
-67 
-68         $this->\hyperlink{class_base_controller_a85ddb683efc64655be063b697f631beb}{redirectController}(\textcolor{stringliteral}{'Basic'});
-69     \}
+73                                          \{
+74         $user = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'Users'});
+75         $user = Users::find($id);
+76         $user->delete();
+77 
+78         $this->\hyperlink{class_base_controller_a85ddb683efc64655be063b697f631beb}{redirectController}(\textcolor{stringliteral}{'Basic'});
+79     \}
 \end{DoxyCode}
 \hypertarget{class_basic_acd3b430aeceba0ebbda62330838d0c0b}{}\label{class_basic_acd3b430aeceba0ebbda62330838d0c0b} 
 \index{Basic@{Basic}!edit\+User@{edit\+User}}
@@ -111,7 +113,7 @@ References Base\+Controller\textbackslash{}load\+Model(), and Base\+Controller\t
 
 
 
-Definition at line 43 of file Basic.\+php.
+Definition at line 53 of file Basic.\+php.
 
 
 
@@ -119,12 +121,12 @@ References Base\+Controller\textbackslash{}load\+Model(), and Base\+Controller\t
 
 
 \begin{DoxyCode}
-43                                        \{
-44         $user = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'Users'});
-45         $user = Users::find($id);
-46 
-47         echo $this->\hyperlink{class_base_controller_aa0c49b95cd8e5ff8ff61b4a2c35bf1eb}{renderView}(\textcolor{stringliteral}{'layout/basic\_edit'}, [\textcolor{stringliteral}{'user'} => $user]);
-48     \}
+53                                        \{
+54         $user = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'Users'});
+55         $user = Users::find($id);
+56 
+57         echo $this->\hyperlink{class_base_controller_aa0c49b95cd8e5ff8ff61b4a2c35bf1eb}{renderView}(\textcolor{stringliteral}{'layout/basic\_edit'}, [\textcolor{stringliteral}{'user'} => $user]);
+58     \}
 \end{DoxyCode}
 \hypertarget{class_basic_a445a1f2f42c756bf451de087e36b7193}{}\label{class_basic_a445a1f2f42c756bf451de087e36b7193} 
 \index{Basic@{Basic}!edit\+User\+Post@{edit\+User\+Post}}
@@ -134,7 +136,7 @@ References Base\+Controller\textbackslash{}load\+Model(), and Base\+Controller\t
 
 
 
-Definition at line 49 of file Basic.\+php.
+Definition at line 59 of file Basic.\+php.
 
 
 
@@ -142,20 +144,20 @@ References Base\+Controller\textbackslash{}load\+Model(), Base\+Controller\textb
 
 
 \begin{DoxyCode}
-49                                    \{
-50         $user = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'Users'});
-51         $user = Users::find($this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'id'}));
-52 
-53         $user->firstName = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'firstName'});
-54         $user->lastName = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'lastName'});
-55         $user->age = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'age'});
-56         $user->avatar = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'avatar'});
-57         $user->email = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'email'});
-58         $user->phone = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'phone'});
-59         $user->save();
-60 
-61         $this->\hyperlink{class_base_controller_a85ddb683efc64655be063b697f631beb}{redirectController}(\textcolor{stringliteral}{'Basic'});
-62     \}
+59                                    \{
+60         $user = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'Users'});
+61         $user = Users::find($this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'id'}));
+62 
+63         $user->firstName = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'firstName'});
+64         $user->lastName = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'lastName'});
+65         $user->age = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'age'});
+66         $user->avatar = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'avatar'});
+67         $user->email = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'email'});
+68         $user->phone = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'phone'});
+69         $user->save();
+70 
+71         $this->\hyperlink{class_base_controller_a85ddb683efc64655be063b697f631beb}{redirectController}(\textcolor{stringliteral}{'Basic'});
+72     \}
 \end{DoxyCode}
 \hypertarget{class_basic_a149eb92716c1084a935e04a8d95f7347}{}\label{class_basic_a149eb92716c1084a935e04a8d95f7347} 
 \index{Basic@{Basic}!index@{index}}
@@ -188,7 +190,7 @@ References Base\+Controller\textbackslash{}load\+Model(), and Base\+Controller\t
 
 
 
-Definition at line 105 of file Basic.\+php.
+Definition at line 115 of file Basic.\+php.
 
 
 
@@ -196,9 +198,9 @@ References Base\+Controller\textbackslash{}redirect\+Controller().
 
 
 \begin{DoxyCode}
-105                                            \{
-106         $this->\hyperlink{class_base_controller_a85ddb683efc64655be063b697f631beb}{redirectController}(\textcolor{stringliteral}{'Basic'});
-107     \}
+115                                            \{
+116         $this->\hyperlink{class_base_controller_a85ddb683efc64655be063b697f631beb}{redirectController}(\textcolor{stringliteral}{'Basic'});
+117     \}
 \end{DoxyCode}
 \hypertarget{class_basic_abf786273f796a96f5532dc60f9cec813}{}\label{class_basic_abf786273f796a96f5532dc60f9cec813} 
 \index{Basic@{Basic}!redirect\+To\+Url@{redirect\+To\+Url}}
@@ -208,7 +210,7 @@ References Base\+Controller\textbackslash{}redirect\+Controller().
 
 
 
-Definition at line 102 of file Basic.\+php.
+Definition at line 112 of file Basic.\+php.
 
 
 
@@ -216,9 +218,9 @@ References Base\+Controller\textbackslash{}redirect\+Url().
 
 
 \begin{DoxyCode}
-102                                     \{
-103         $this->\hyperlink{class_base_controller_a9f95c7503770ed9c974005b363ec3d00}{redirectUrl}(\_\_DIR\_\_ . \textcolor{stringliteral}{'/returnString'});
-104     \}
+112                                     \{
+113         $this->\hyperlink{class_base_controller_a9f95c7503770ed9c974005b363ec3d00}{redirectUrl}(\_\_DIR\_\_ . \textcolor{stringliteral}{'/returnString'});
+114     \}
 \end{DoxyCode}
 \hypertarget{class_basic_a16df2136bd66a75022f350d583e6c060}{}\label{class_basic_a16df2136bd66a75022f350d583e6c060} 
 \index{Basic@{Basic}!return\+Hash@{return\+Hash}}
@@ -228,7 +230,7 @@ References Base\+Controller\textbackslash{}redirect\+Url().
 
 
 
-Definition at line 32 of file Basic.\+php.
+Definition at line 42 of file Basic.\+php.
 
 
 
@@ -236,9 +238,9 @@ References Base\+Controller\textbackslash{}hash\+String().
 
 
 \begin{DoxyCode}
-32                                  \{
-33         \textcolor{keywordflow}{return} $this->\hyperlink{class_base_controller_ac7f37d2e13bade1709f5c88b02f0e9d1}{hashString}(\textcolor{stringliteral}{'daniel'});
-34     \}
+42                                  \{
+43         \textcolor{keywordflow}{return} $this->\hyperlink{class_base_controller_ac7f37d2e13bade1709f5c88b02f0e9d1}{hashString}(\textcolor{stringliteral}{'daniel'});
+44     \}
 \end{DoxyCode}
 \hypertarget{class_basic_a8d2918087022004ef5ad62d8f76a73d7}{}\label{class_basic_a8d2918087022004ef5ad62d8f76a73d7} 
 \index{Basic@{Basic}!return\+Int@{return\+Int}}
@@ -248,13 +250,13 @@ References Base\+Controller\textbackslash{}hash\+String().
 
 
 
-Definition at line 99 of file Basic.\+php.
+Definition at line 109 of file Basic.\+php.
 
 
 \begin{DoxyCode}
-99                                 \{
-100         \textcolor{keywordflow}{return} 24;
-101     \}
+109                                 \{
+110         \textcolor{keywordflow}{return} 24;
+111     \}
 \end{DoxyCode}
 \hypertarget{class_basic_a7cb6a02987f0faaef2ee4aff9198907e}{}\label{class_basic_a7cb6a02987f0faaef2ee4aff9198907e} 
 \index{Basic@{Basic}!return\+Model@{return\+Model}}
@@ -264,7 +266,7 @@ Definition at line 99 of file Basic.\+php.
 
 
 
-Definition at line 26 of file Basic.\+php.
+Definition at line 36 of file Basic.\+php.
 
 
 
@@ -272,12 +274,12 @@ References Base\+Controller\textbackslash{}load\+Model().
 
 
 \begin{DoxyCode}
-26                                   \{
-27         $user = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'User'});
-28         $user->setFirstName(\textcolor{stringliteral}{'daniel'});
-29 
-30         \textcolor{keywordflow}{return} $user;
-31     \}
+36                                   \{
+37         $user = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'User'});
+38         $user->setFirstName(\textcolor{stringliteral}{'daniel'});
+39 
+40         \textcolor{keywordflow}{return} $user;
+41     \}
 \end{DoxyCode}
 \hypertarget{class_basic_ac380e8a432563c6affcfddd43384c1d2}{}\label{class_basic_ac380e8a432563c6affcfddd43384c1d2} 
 \index{Basic@{Basic}!return\+Parameter@{return\+Parameter}}
@@ -287,13 +289,13 @@ References Base\+Controller\textbackslash{}load\+Model().
 
 
 
-Definition at line 108 of file Basic.\+php.
+Definition at line 118 of file Basic.\+php.
 
 
 \begin{DoxyCode}
-108                                                      \{
-109         \textcolor{keywordflow}{return} $parameter;
-110     \}
+118                                                      \{
+119         \textcolor{keywordflow}{return} $parameter;
+120     \}
 \end{DoxyCode}
 \hypertarget{class_basic_a5bb666dcea19a9561c2047cfa25936bd}{}\label{class_basic_a5bb666dcea19a9561c2047cfa25936bd} 
 \index{Basic@{Basic}!return\+String@{return\+String}}
@@ -303,13 +305,13 @@ Definition at line 108 of file Basic.\+php.
 
 
 
-Definition at line 96 of file Basic.\+php.
+Definition at line 106 of file Basic.\+php.
 
 
 \begin{DoxyCode}
-96                                    \{
-97         \textcolor{keywordflow}{return} \textcolor{stringliteral}{'daniel'};
-98     \}
+106                                    \{
+107         \textcolor{keywordflow}{return} \textcolor{stringliteral}{'daniel'};
+108     \}
 \end{DoxyCode}
 \hypertarget{class_basic_a2ef87b96abcca966a41e34d077fcc38e}{}\label{class_basic_a2ef87b96abcca966a41e34d077fcc38e} 
 \index{Basic@{Basic}!return\+Two\+Parameters@{return\+Two\+Parameters}}
@@ -319,13 +321,41 @@ Definition at line 96 of file Basic.\+php.
 
 
 
-Definition at line 111 of file Basic.\+php.
+Definition at line 121 of file Basic.\+php.
 
 
 \begin{DoxyCode}
-111                                                                             \{
-112         \textcolor{keywordflow}{return} $parameter1 . $parameter2;
-113     \}
+121                                                                             \{
+122         \textcolor{keywordflow}{return} $parameter1 . $parameter2;
+123     \}
+\end{DoxyCode}
+\hypertarget{class_basic_a67dbb38567401c856d5361d6704874d5}{}\label{class_basic_a67dbb38567401c856d5361d6704874d5} 
+\index{Basic@{Basic}!scrape\+Pdf@{scrape\+Pdf}}
+\index{scrape\+Pdf@{scrape\+Pdf}!Basic@{Basic}}
+\subsubsection{\texorpdfstring{scrape\+Pdf()}{scrapePdf()}}
+{\footnotesize\ttfamily scrape\+Pdf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 26 of file Basic.\+php.
+
+
+
+References Base\+Controller\textbackslash{}scrape().
+
+
+\begin{DoxyCode}
+26                                 \{
+27         $pdf = $this->\hyperlink{class_base_controller_abd4f25604b09a96c254491df97612cc3}{scrape}(\textcolor{stringliteral}{'PDF'}, \textcolor{stringliteral}{'
+      http://www.begravelsedanmark.dk/wp-content/uploads/2015/10/BDK-butik-prisliste-2015.pdf'});
+28 
+29         $text = $pdf->getText();
+30         $text = preg\_replace(\textcolor{stringliteral}{'/[\(\backslash\)n\(\backslash\)r]/'}, \textcolor{stringliteral}{'<br>'}, $text);
+31 
+32         $string = \textcolor{stringliteral}{'2015'};
+33         $t = explode($string, $text);
+34         \textcolor{keywordflow}{return} $t[0] . $string;
+35     \}
 \end{DoxyCode}
 \hypertarget{class_basic_a48ffe9a27b91ce968b2bcf5e0a9d4069}{}\label{class_basic_a48ffe9a27b91ce968b2bcf5e0a9d4069} 
 \index{Basic@{Basic}!scrape\+Website@{scrape\+Website}}
@@ -346,7 +376,7 @@ References Base\+Controller\textbackslash{}scrape().
 18                                     \{
 19         \textcolor{comment}{/*$curl = $this->session('https://m.facebook.com/login.php', ['email' => '', 'pass' => '',
        '\_fb\_noscript' => 'true']);}
-20 \textcolor{comment}{        $html = $this->scrape('GET', 'https://m.facebook.com/danieldk1992/friends/', $curl);*/}
+20 \textcolor{comment}{        $html = $this->scrape('GET', 'https://m.facebook.com/danielwintherjensendk/friends/', $curl);*/}
 21 
 22         $html = $this->\hyperlink{class_base_controller_abd4f25604b09a96c254491df97612cc3}{scrape}(\textcolor{stringliteral}{'GET'}, \textcolor{stringliteral}{'http://ekstrabladet.dk/'});
 23 
@@ -361,7 +391,7 @@ References Base\+Controller\textbackslash{}scrape().
 
 
 
-Definition at line 70 of file Basic.\+php.
+Definition at line 80 of file Basic.\+php.
 
 
 
@@ -369,21 +399,21 @@ References initialize\+Config().
 
 
 \begin{DoxyCode}
-70                                \{
-71         $config = \hyperlink{config_8php_afeb1d281d402615776fdb0320a5b8d05}{initializeConfig}();
-72         $mgClient = \textcolor{keyword}{new} Mailgun($config[\textcolor{stringliteral}{'mailgunKey'}]);
-73         $domain = $config[\textcolor{stringliteral}{'mailgunDomain'}];
-74 
-75         $result = $mgClient->sendMessage($domain,
-76             array(\textcolor{stringliteral}{'from'}    => \textcolor{stringliteral}{'Mailgun Sandbox
+80                                \{
+81         $config = \hyperlink{config_8php_afeb1d281d402615776fdb0320a5b8d05}{initializeConfig}();
+82         $mgClient = \textcolor{keyword}{new} Mailgun($config[\textcolor{stringliteral}{'mailgunKey'}]);
+83         $domain = $config[\textcolor{stringliteral}{'mailgunDomain'}];
+84 
+85         $result = $mgClient->sendMessage($domain,
+86             array(\textcolor{stringliteral}{'from'}    => \textcolor{stringliteral}{'Mailgun Sandbox
        <postmaster@sandbox5c2500d99acf4cbfa26fa88a596a49bd.mailgun.org>'},
-77                 \textcolor{stringliteral}{'to'}      => \textcolor{stringliteral}{'Daniel Winther Jensen <danielwinther@hotmail.dk>'},
-78                 \textcolor{stringliteral}{'subject'} => \textcolor{stringliteral}{'Hello Daniel Winther Jensen'},
-79                 \textcolor{stringliteral}{'text'}    => \textcolor{stringliteral}{'Congratulations Daniel Winther Jensen, you just sent an email with Mailgun! 
+87                 \textcolor{stringliteral}{'to'}      => \textcolor{stringliteral}{'Daniel Winther Jensen <danielwinther@hotmail.dk>'},
+88                 \textcolor{stringliteral}{'subject'} => \textcolor{stringliteral}{'Hello Daniel Winther Jensen'},
+89                 \textcolor{stringliteral}{'text'}    => \textcolor{stringliteral}{'Congratulations Daniel Winther Jensen, you just sent an email with Mailgun! 
        You are truly awesome!  You can see a record of this email in your logs: https://mailgun.com/cp/log .  You
        can send up to 300 emails/day from this sandbox server.  Next, you should add your own domain so you can send
        10,000 emails/month for free.'}));
-80     \}
+90     \}
 \end{DoxyCode}
 \hypertarget{class_basic_a624b6482127c1e3ea78392e7e93db949}{}\label{class_basic_a624b6482127c1e3ea78392e7e93db949} 
 \index{Basic@{Basic}!send\+S\+MS@{send\+S\+MS}}
@@ -393,7 +423,7 @@ References initialize\+Config().
 
 
 
-Definition at line 81 of file Basic.\+php.
+Definition at line 91 of file Basic.\+php.
 
 
 
@@ -401,20 +431,20 @@ References initialize\+Config().
 
 
 \begin{DoxyCode}
-81                               \{
-82         $config = \hyperlink{config_8php_afeb1d281d402615776fdb0320a5b8d05}{initializeConfig}();
-83         $sid = $config[\textcolor{stringliteral}{'twilioSid'}];
-84         $token = $config[\textcolor{stringliteral}{'twilioToken'}];
-85         $client = \textcolor{keyword}{new} Client($sid, $token);
-86 
-87         $client->messages->create(
-88             \textcolor{stringliteral}{'+4542341338'},
-89             array(
-90                 \textcolor{stringliteral}{'from'} => \textcolor{stringliteral}{'+46769447755'},
-91                 \textcolor{stringliteral}{'body'} => \textcolor{stringliteral}{'This is a test'}
-92                 )
-93             );
-94     \}
+91                               \{
+92         $config = \hyperlink{config_8php_afeb1d281d402615776fdb0320a5b8d05}{initializeConfig}();
+93         $sid = $config[\textcolor{stringliteral}{'twilioSid'}];
+94         $token = $config[\textcolor{stringliteral}{'twilioToken'}];
+95         $client = \textcolor{keyword}{new} Client($sid, $token);
+96 
+97         $client->messages->create(
+98             \textcolor{stringliteral}{'+4542341338'},
+99             array(
+100                 \textcolor{stringliteral}{'from'} => \textcolor{stringliteral}{'+46769447755'},
+101                 \textcolor{stringliteral}{'body'} => \textcolor{stringliteral}{'This is a test'}
+102                 )
+103             );
+104     \}
 \end{DoxyCode}
 \hypertarget{class_basic_a6603546e99f9519b86989be128736ad6}{}\label{class_basic_a6603546e99f9519b86989be128736ad6} 
 \index{Basic@{Basic}!user@{user}}

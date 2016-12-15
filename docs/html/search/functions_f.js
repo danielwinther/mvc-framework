@@ -2,6 +2,7 @@ var searchData=
 [
   ['save',['save',['../classsimple__html__dom.html#a6e80614bedc0513a210906c36f608fa8',1,'simple_html_dom']]],
   ['scrape',['scrape',['../class_base_controller.html#abd4f25604b09a96c254491df97612cc3',1,'BaseController']]],
+  ['scrapepdf',['scrapePdf',['../class_basic.html#a67dbb38567401c856d5361d6704874d5',1,'Basic']]],
   ['scrapewebsite',['scrapeWebsite',['../class_basic.html#a48ffe9a27b91ce968b2bcf5e0a9d4069',1,'Basic']]],
   ['search_5fnoise',['search_noise',['../classsimple__html__dom.html#a7bcdfb5fa10cf704553ff32f5f5d693f',1,'simple_html_dom']]],
   ['seek',['seek',['../classsimple__html__dom__node.html#a55c896ff710c8cb226a17ff3d6e0c17a',1,'simple_html_dom_node']]],
