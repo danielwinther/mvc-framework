@@ -13,6 +13,9 @@ var hierarchy =
       [ "ModelNotFound", "class_model_not_found.html", null ],
       [ "ViewNotFound", "class_view_not_found.html", null ]
     ] ],
+    [ "Hash", "class_hash.html", null ],
+    [ "Redirect", "class_redirect.html", null ],
+    [ "Session", "class_session.html", null ],
     [ "simple_html_dom", "classsimple__html__dom.html", null ],
     [ "simple_html_dom_node", "classsimple__html__dom__node.html", null ],
     [ "User", "class_user.html", null ]

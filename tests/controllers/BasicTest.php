@@ -2,6 +2,7 @@
 	require_once '/../../application/kernel/BaseController.php';
 	require_once '/../../application/controllers/Basic.php';
 	require_once '/../../application/libraries/simple_html_dom.php';
+	require_once '/../../application/libraries/Hash.php';
 
 	class BasicTest extends PHPUnit_Framework_TestCase
 	{
@@ -70,15 +71,17 @@
 		}
 	}*/
 	public function testHashCorrect() {
-		$test = 'cfcd208495d565ef66e7dff9f98764da';
+		$test = 'daniel';
+		$hash = $this->basic->returnHash();
 
-		$this->assertEquals($this->basic->returnHash(), $test);
+		$this->assertEquals(password_verify($test, $hash), 1);
 	}
 	public function testHashWrong() {
-		$test = 'cfcd208495d565ef66e7dff9f98764daa';
+		$test = 'daniel';
+		$hash = $this->basic->returnHash();
 
 		try {
-			$this->assertEquals($this->basic->returnHash(), $test);
+			$this->assertEquals(password_verify($test, $hash), 0);
 		} catch (Exception $e) {
 			
 		}

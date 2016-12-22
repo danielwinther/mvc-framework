@@ -19,10 +19,9 @@ class Application {
 	* Initializes the application
 	*/
 	public function __construct() {
-		$config = initializeConfig();
-		$this->controller = $config['defaultController'];
-		$this->method = $config['defaultMethod'];
-		$this->parameter = $config['defaultParameters'];
+		$this->controller = CONTROLLER;
+		$this->method = METHOD;
+		$this->parameter = PARAMETER;
 
 		$this->load($this->parseUrl());
 	}

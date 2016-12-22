@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['simple_5fhtml_5fdom_2ephp',['simple_html_dom.php',['../simple__html__dom_8php.html',1,'']]]
+  ['methodnotfound_2ephp',['MethodNotFound.php',['../_method_not_found_8php.html',1,'']]],
+  ['modelnotfound_2ephp',['ModelNotFound.php',['../_model_not_found_8php.html',1,'']]]
 ];

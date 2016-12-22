@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['github_5fissue',['GITHUB_ISSUE',['../bootstrap797_8php.html#a1e9a77ea5d230a69c9678f16e302ae0d',1,'bootstrap797.php']]]
+  ['parameter',['PARAMETER',['../config_8php.html#a75466fbd8ac40be3d3c185c9974118e7',1,'config.php']]]
 ];

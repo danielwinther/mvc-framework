@@ -36,18 +36,17 @@ Definition at line 21 of file Application.\+php.
 
 
 
-References \$controller, and initialize\+Config().
+References \$controller, C\+O\+N\+T\+R\+O\+L\+L\+ER, M\+E\+T\+H\+OD, and P\+A\+R\+A\+M\+E\+T\+ER.
 
 
 \begin{DoxyCode}
 21                                   \{
-22         $config = \hyperlink{config_8php_afeb1d281d402615776fdb0320a5b8d05}{initializeConfig}();
-23         $this->controller = $config[\textcolor{stringliteral}{'defaultController'}];
-24         $this->method = $config[\textcolor{stringliteral}{'defaultMethod'}];
-25         $this->parameter = $config[\textcolor{stringliteral}{'defaultParameters'}];
-26 
-27         $this->load($this->parseUrl());
-28     \}
+22         $this->controller = \hyperlink{config_8php_afa55a6839ec4ad32fc00879d78229356}{CONTROLLER};
+23         $this->method = \hyperlink{config_8php_a9d70943cac2f50debb62d2008a6e768d}{METHOD};
+24         $this->parameter = \hyperlink{config_8php_a75466fbd8ac40be3d3c185c9974118e7}{PARAMETER};
+25 
+26         $this->load($this->parseUrl());
+27     \}
 \end{DoxyCode}
 
 

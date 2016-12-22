@@ -1,0 +1,88 @@
+\hypertarget{class_redirect}{}\section{Redirect Class Reference}
+\label{class_redirect}\index{Redirect@{Redirect}}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_redirect_a8c51feb32df9ae35002451714b7a9a73}{url} (\$url)
+\item 
+static \hyperlink{class_redirect_ab7d0d268b6aaa9a5470b7cb8c7eb1b61}{controller} (\$controller)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 2 of file Redirect.\+php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_redirect_ab7d0d268b6aaa9a5470b7cb8c7eb1b61}{}\label{class_redirect_ab7d0d268b6aaa9a5470b7cb8c7eb1b61} 
+\index{Redirect@{Redirect}!controller@{controller}}
+\index{controller@{controller}!Redirect@{Redirect}}
+\subsubsection{\texorpdfstring{controller()}{controller()}}
+{\footnotesize\ttfamily static controller (\begin{DoxyParamCaption}\item[{}]{\$controller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Redirects to given controller and method
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$controller} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 19 of file Redirect.\+php.
+
+
+
+Referenced by Basic\textbackslash{}create\+User(), Basic\textbackslash{}delete\+User(), Basic\textbackslash{}edit\+User\+Post(), and Basic\textbackslash{}redirect\+To\+Controller().
+
+
+\begin{DoxyCode}
+19                                                    \{
+20         $atSign = explode(\textcolor{charliteral}{'@'}, $controller);
+21 
+22         \textcolor{keywordflow}{if} (strpos($controller, \textcolor{charliteral}{'@'}) !== \textcolor{keyword}{false}) \{
+23             header(\textcolor{stringliteral}{'Location:'} . dirname($\_SERVER[\textcolor{stringliteral}{'PHP\_SELF'}]) . \textcolor{charliteral}{'/'} . $atSign[0] . \textcolor{charliteral}{'/'} . $atSign[1]);
+24         \}
+25         \textcolor{keywordflow}{else} \{
+26             $config = initializeConfig();
+27             header(\textcolor{stringliteral}{'Location:'}. dirname($\_SERVER[\textcolor{stringliteral}{'PHP\_SELF'}]) . \textcolor{charliteral}{'/'} . $atSign[0]);
+28         \}
+29         exit();
+30     \}
+\end{DoxyCode}
+\hypertarget{class_redirect_a8c51feb32df9ae35002451714b7a9a73}{}\label{class_redirect_a8c51feb32df9ae35002451714b7a9a73} 
+\index{Redirect@{Redirect}!url@{url}}
+\index{url@{url}!Redirect@{Redirect}}
+\subsubsection{\texorpdfstring{url()}{url()}}
+{\footnotesize\ttfamily static url (\begin{DoxyParamCaption}\item[{}]{\$url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Redirects to given U\+RL
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$url} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 9 of file Redirect.\+php.
+
+
+
+Referenced by Basic\textbackslash{}redirect\+To\+Url().
+
+
+\begin{DoxyCode}
+9                                      \{
+10         header(\textcolor{stringliteral}{'Location: '} . $url);
+11         exit();
+12     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/xampp/htdocs/mvc-\/framework/application/libraries/\hyperlink{_redirect_8php}{Redirect.\+php}\end{DoxyCompactItemize}

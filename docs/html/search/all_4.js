@@ -1,9 +1,11 @@
 var searchData=
 [
+  ['charset',['CHARSET',['../config_8php.html#a4ca86066304d2cbb779bd8afd1efe17b',1,'config.php']]],
   ['childnodes',['childNodes',['../classsimple__html__dom__node.html#a543b9f022b4d71d19a8f055b3b87bb77',1,'simple_html_dom_node\childNodes()'],['../classsimple__html__dom.html#a543b9f022b4d71d19a8f055b3b87bb77',1,'simple_html_dom\childNodes()']]],
   ['children',['children',['../classsimple__html__dom__node.html#a42d02529839611cba362c6b5ce58f719',1,'simple_html_dom_node']]],
   ['clear',['clear',['../classsimple__html__dom__node.html#aa821bec12eaa7e0f649397c9675ff505',1,'simple_html_dom_node\clear()'],['../classsimple__html__dom.html#aa821bec12eaa7e0f649397c9675ff505',1,'simple_html_dom\clear()']]],
   ['config_2ephp',['config.php',['../config_8php.html',1,'']]],
+  ['controller',['controller',['../class_redirect.html#ab7d0d268b6aaa9a5470b7cb8c7eb1b61',1,'Redirect\controller()'],['../config_8php.html#afa55a6839ec4ad32fc00879d78229356',1,'CONTROLLER():&#160;config.php']]],
   ['controllernotfound',['ControllerNotFound',['../class_controller_not_found.html',1,'']]],
   ['controllernotfound_2ephp',['ControllerNotFound.php',['../_controller_not_found_8php.html',1,'']]],
   ['convert_5ftext',['convert_text',['../classsimple__html__dom__node.html#a23887642cd0616d2eed24d7c39c821fc',1,'simple_html_dom_node']]],
@@ -11,6 +13,7 @@ var searchData=
   ['copy_5funtil',['copy_until',['../classsimple__html__dom.html#a607299237161af9369abc2d2605715d5',1,'simple_html_dom']]],
   ['copy_5funtil_5fchar',['copy_until_char',['../classsimple__html__dom.html#a0dcd73e05f3cee1eafe3ec6fa347c36b',1,'simple_html_dom']]],
   ['copy_5funtil_5fchar_5fescape',['copy_until_char_escape',['../classsimple__html__dom.html#a2df9f8464f8daf439f9fa740ebdc0ede',1,'simple_html_dom']]],
+  ['create',['create',['../class_hash.html#a8e076eebb2dc8fc9cb289212c79ad9b8',1,'Hash']]],
   ['createelement',['createElement',['../classsimple__html__dom.html#a00ba25421a388987512a3859ff7c2ad9',1,'simple_html_dom']]],
   ['createtextnode',['createTextNode',['../classsimple__html__dom.html#af9ee904e108e5c1956eec226881a9442',1,'simple_html_dom']]],
   ['createuser',['createUser',['../class_basic.html#a967982ee98f05287bbdba812f6016947',1,'Basic']]]

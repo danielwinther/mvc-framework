@@ -1,0 +1,54 @@
+\hypertarget{class_hash}{}\section{Hash Class Reference}
+\label{class_hash}\index{Hash@{Hash}}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_hash_a8e076eebb2dc8fc9cb289212c79ad9b8}{create} (\$password, \$algorithm)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 2 of file Hash.\+php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_hash_a8e076eebb2dc8fc9cb289212c79ad9b8}{}\label{class_hash_a8e076eebb2dc8fc9cb289212c79ad9b8} 
+\index{Hash@{Hash}!create@{create}}
+\index{create@{create}!Hash@{Hash}}
+\subsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily static create (\begin{DoxyParamCaption}\item[{}]{\$password,  }\item[{}]{\$algorithm }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a hashed string
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$password} & \\
+\hline
+string & {\em \$algorithm} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 11 of file Hash.\+php.
+
+
+
+Referenced by Basic\textbackslash{}return\+Hash().
+
+
+\begin{DoxyCode}
+11                                                          \{
+12         \textcolor{keywordflow}{return} password\_hash($password, $algorithm, array(\textcolor{stringliteral}{'cost'} => 10));
+13     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/xampp/htdocs/mvc-\/framework/application/libraries/\hyperlink{_hash_8php}{Hash.\+php}\end{DoxyCompactItemize}

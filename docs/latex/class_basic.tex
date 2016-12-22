@@ -68,7 +68,7 @@ Definition at line 45 of file Basic.\+php.
 
 
 
-References Base\+Controller\textbackslash{}load\+Model(), Base\+Controller\textbackslash{}post\+Input(), and Base\+Controller\textbackslash{}redirect\+Controller().
+References Redirect\textbackslash{}controller(), Base\+Controller\textbackslash{}load\+Model(), and Base\+Controller\textbackslash{}post\+Input().
 
 
 \begin{DoxyCode}
@@ -78,7 +78,7 @@ References Base\+Controller\textbackslash{}load\+Model(), Base\+Controller\textb
 48         $user = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'Users'});
 49         Users::create($postInput);
 50 
-51         $this->\hyperlink{class_base_controller_a85ddb683efc64655be063b697f631beb}{redirectController}(\textcolor{stringliteral}{'Basic'});
+51         \hyperlink{class_redirect_ab7d0d268b6aaa9a5470b7cb8c7eb1b61}{Redirect::controller}(\textcolor{stringliteral}{'Basic'});
 52     \}
 \end{DoxyCode}
 \hypertarget{class_basic_a934aeeec370d904f3a58bde4d514259d}{}\label{class_basic_a934aeeec370d904f3a58bde4d514259d} 
@@ -93,7 +93,7 @@ Definition at line 73 of file Basic.\+php.
 
 
 
-References Base\+Controller\textbackslash{}load\+Model(), and Base\+Controller\textbackslash{}redirect\+Controller().
+References Redirect\textbackslash{}controller(), and Base\+Controller\textbackslash{}load\+Model().
 
 
 \begin{DoxyCode}
@@ -102,7 +102,7 @@ References Base\+Controller\textbackslash{}load\+Model(), and Base\+Controller\t
 75         $user = Users::find($id);
 76         $user->delete();
 77 
-78         $this->\hyperlink{class_base_controller_a85ddb683efc64655be063b697f631beb}{redirectController}(\textcolor{stringliteral}{'Basic'});
+78         \hyperlink{class_redirect_ab7d0d268b6aaa9a5470b7cb8c7eb1b61}{Redirect::controller}(\textcolor{stringliteral}{'Basic'});
 79     \}
 \end{DoxyCode}
 \hypertarget{class_basic_acd3b430aeceba0ebbda62330838d0c0b}{}\label{class_basic_acd3b430aeceba0ebbda62330838d0c0b} 
@@ -140,7 +140,7 @@ Definition at line 59 of file Basic.\+php.
 
 
 
-References Base\+Controller\textbackslash{}load\+Model(), Base\+Controller\textbackslash{}post\+Input(), and Base\+Controller\textbackslash{}redirect\+Controller().
+References Redirect\textbackslash{}controller(), Base\+Controller\textbackslash{}load\+Model(), and Base\+Controller\textbackslash{}post\+Input().
 
 
 \begin{DoxyCode}
@@ -156,7 +156,7 @@ References Base\+Controller\textbackslash{}load\+Model(), Base\+Controller\textb
 68         $user->phone = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'phone'});
 69         $user->save();
 70 
-71         $this->\hyperlink{class_base_controller_a85ddb683efc64655be063b697f631beb}{redirectController}(\textcolor{stringliteral}{'Basic'});
+71         \hyperlink{class_redirect_ab7d0d268b6aaa9a5470b7cb8c7eb1b61}{Redirect::controller}(\textcolor{stringliteral}{'Basic'});
 72     \}
 \end{DoxyCode}
 \hypertarget{class_basic_a149eb92716c1084a935e04a8d95f7347}{}\label{class_basic_a149eb92716c1084a935e04a8d95f7347} 
@@ -194,12 +194,12 @@ Definition at line 115 of file Basic.\+php.
 
 
 
-References Base\+Controller\textbackslash{}redirect\+Controller().
+References Redirect\textbackslash{}controller().
 
 
 \begin{DoxyCode}
 115                                            \{
-116         $this->\hyperlink{class_base_controller_a85ddb683efc64655be063b697f631beb}{redirectController}(\textcolor{stringliteral}{'Basic'});
+116         \hyperlink{class_redirect_ab7d0d268b6aaa9a5470b7cb8c7eb1b61}{Redirect::controller}(\textcolor{stringliteral}{'Basic'});
 117     \}
 \end{DoxyCode}
 \hypertarget{class_basic_abf786273f796a96f5532dc60f9cec813}{}\label{class_basic_abf786273f796a96f5532dc60f9cec813} 
@@ -214,12 +214,12 @@ Definition at line 112 of file Basic.\+php.
 
 
 
-References Base\+Controller\textbackslash{}redirect\+Url().
+References Redirect\textbackslash{}url().
 
 
 \begin{DoxyCode}
 112                                     \{
-113         $this->\hyperlink{class_base_controller_a9f95c7503770ed9c974005b363ec3d00}{redirectUrl}(\_\_DIR\_\_ . \textcolor{stringliteral}{'/returnString'});
+113         \hyperlink{class_redirect_a8c51feb32df9ae35002451714b7a9a73}{Redirect::url}(\_\_DIR\_\_ . \textcolor{stringliteral}{'/returnString'});
 114     \}
 \end{DoxyCode}
 \hypertarget{class_basic_a16df2136bd66a75022f350d583e6c060}{}\label{class_basic_a16df2136bd66a75022f350d583e6c060} 
@@ -234,12 +234,12 @@ Definition at line 42 of file Basic.\+php.
 
 
 
-References Base\+Controller\textbackslash{}hash\+String().
+References Hash\textbackslash{}create().
 
 
 \begin{DoxyCode}
 42                                  \{
-43         \textcolor{keywordflow}{return} $this->\hyperlink{class_base_controller_ac7f37d2e13bade1709f5c88b02f0e9d1}{hashString}(\textcolor{stringliteral}{'daniel'});
+43         \textcolor{keywordflow}{return} \hyperlink{class_hash_a8e076eebb2dc8fc9cb289212c79ad9b8}{Hash::create}(\textcolor{stringliteral}{'daniel'}, PASSWORD\_BCRYPT);
 44     \}
 \end{DoxyCode}
 \hypertarget{class_basic_a8d2918087022004ef5ad62d8f76a73d7}{}\label{class_basic_a8d2918087022004ef5ad62d8f76a73d7} 
@@ -394,13 +394,9 @@ References Base\+Controller\textbackslash{}scrape().
 Definition at line 80 of file Basic.\+php.
 
 
-
-References initialize\+Config().
-
-
 \begin{DoxyCode}
 80                                \{
-81         $config = \hyperlink{config_8php_afeb1d281d402615776fdb0320a5b8d05}{initializeConfig}();
+81         $config = initializeConfig();
 82         $mgClient = \textcolor{keyword}{new} Mailgun($config[\textcolor{stringliteral}{'mailgunKey'}]);
 83         $domain = $config[\textcolor{stringliteral}{'mailgunDomain'}];
 84 
@@ -426,13 +422,9 @@ References initialize\+Config().
 Definition at line 91 of file Basic.\+php.
 
 
-
-References initialize\+Config().
-
-
 \begin{DoxyCode}
 91                               \{
-92         $config = \hyperlink{config_8php_afeb1d281d402615776fdb0320a5b8d05}{initializeConfig}();
+92         $config = initializeConfig();
 93         $sid = $config[\textcolor{stringliteral}{'twilioSid'}];
 94         $token = $config[\textcolor{stringliteral}{'twilioToken'}];
 95         $client = \textcolor{keyword}{new} Client($sid, $token);

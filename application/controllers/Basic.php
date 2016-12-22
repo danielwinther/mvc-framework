@@ -40,7 +40,7 @@ class Basic extends BaseController {
 		return $user;
 	}
 	public function returnHash() {
-		return $this->hashString('daniel');
+		return Hash::create('daniel', PASSWORD_BCRYPT);
 	}
 	public function createUser() {
 		$postInput = $this->postInput();
@@ -48,7 +48,7 @@ class Basic extends BaseController {
 		$user = $this->loadModel('Users');
 		Users::create($postInput);
 
-		$this->redirectController('Basic');
+		Redirect::controller('Basic');
 	}
 	public function editUser($id = '') {
 		$user = $this->loadModel('Users');
@@ -68,14 +68,14 @@ class Basic extends BaseController {
 		$user->phone = $this->postInput('phone');
 		$user->save();
 
-		$this->redirectController('Basic');
+		Redirect::controller('Basic');
 	}
 	public function deleteUser($id = '') {
 		$user = $this->loadModel('Users');
 		$user = Users::find($id);
 		$user->delete();
 
-		$this->redirectController('Basic');
+		Redirect::controller('Basic');
 	}
 	public function sendMail() {
 		$config = initializeConfig();
@@ -110,10 +110,10 @@ class Basic extends BaseController {
 		return 24;
 	}
 	public function redirectToUrl() {
-		$this->redirectUrl(__DIR__ . '/returnString');
+		Redirect::url(__DIR__ . '/returnString');
 	}
 	public function redirectToController() {
-		$this->redirectController('Basic');
+		Redirect::controller('Basic');
 	}
 	public function returnParameter($parameter = '') {
 		return $parameter;

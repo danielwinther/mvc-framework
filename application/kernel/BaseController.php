@@ -1,6 +1,11 @@
 <?php
 use \Smalot\PdfParser\Parser;
+
 class BaseController {
+	public function __construct() {
+		error_reporting(ERROR_REPORTING);
+	}
+
 	/**
 	* Loads a given model into the controller
 	*
@@ -56,34 +61,6 @@ class BaseController {
 	}
 
 	/**
-	* Redirects to given URL
-	*
-	* @param string $url
-	*/
-	protected function redirectUrl($url) {
-		header('Location: ' . $url);
-		exit();
-	}
-
-	/**
-	* Redirects to given controller and method
-	*
-	* @param string $controller
-	*/
-	protected function redirectController($controller) {
-		$atSign = explode('@', $controller);
-
-		if (strpos($controller, '@') !== false) {
-			header('Location:' . dirname($_SERVER['PHP_SELF']) . '/' . $atSign[0] . '/' . $atSign[1]);
-		}
-		else {
-			$config = initializeConfig();
-			header('Location:'. dirname($_SERVER['PHP_SELF']) . '/' . $atSign[0]);
-		}
-		exit();
-	}
-
-	/**
 	* Scrapes HTML source code from the given URL
 	*
 	* @param string $url
@@ -92,10 +69,9 @@ class BaseController {
 	* @return string $html
 	*/
 	protected function scrape($action, $url, $curl = null) {
-		$html = new simple_html_dom();
-
 		switch (strtoupper($action)) {
 			case 'GET':
+			$html = new simple_html_dom();
 			if ($curl) {
 				curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1); 
 				curl_setopt($curl, CURLOPT_POST, 0);
@@ -106,6 +82,7 @@ class BaseController {
 			else {
 				$html->load_file($url);
 			}
+			return $html;
 			break;
 			
 			case 'PDF':
@@ -114,10 +91,7 @@ class BaseController {
 
 			return $pdf;
 			break;
-			
 		}
-
-		return $html;
 	}
 
 	/**
@@ -150,16 +124,5 @@ class BaseController {
 		curl_exec($curl);
 
 		return $curl;
-	}
-
-	/**
-	* Hashes a given string and adds a salt to it
-	* 
-	* @param string $string
-	* @return string
-	*/
-	protected function hashString($string) {
-		$config = initializeConfig();
-		return md5($string + $config['salt']);
 	}
 }
