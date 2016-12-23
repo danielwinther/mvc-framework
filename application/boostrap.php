@@ -12,5 +12,6 @@ foreach (glob(realpath(__DIR__) . '/config/*.php') as $config) {
 require_once realpath(__DIR__) . '/libraries/simple_html_dom.php';
 require_once realpath(__DIR__) . '/libraries/Hash.php';
 require_once realpath(__DIR__) . '/libraries/Redirect.php';
+require_once realpath(__DIR__) . '/libraries/Session.php';
 require_once realpath(__DIR__) . '/kernel/Application.php';
 require_once realpath(__DIR__) . '/kernel/BaseController.php';
