@@ -2,6 +2,9 @@
 use \Smalot\PdfParser\Parser;
 
 class BaseController {
+	/*
+	* Base constructor for all controllers
+	*/
 	public function __construct() {
 		error_reporting(ERROR_REPORTING);
 	}
