@@ -7,6 +7,7 @@
 		<thead>
 			<tr>
 				<th>ID</th>
+				<th>User name</th>
 				<th>First name</th>
 				<th>Last name</th>
 				<th>Age</th>
@@ -20,7 +21,8 @@
 			{% for user in data['userArray'] %}
 			<tr>
 				<td>#{{user.id}}</td>
-				<td><a href='Basic/user/{{user.id}}'>{{user.firstName}}</a></td>
+				<td><a href='Basic/user/{{user.id}}'>{{user.userName}}</a></td>
+				<td>{{user.firstName}}</td>
 				<td>{{user.lastName}}</td>
 				<td>{{user.age}}</td>
 				<td>{{user.email}}</td>
@@ -36,6 +38,14 @@
 		</tbody>
 	</table>
 	<form method="POST" action="Basic/createUser">
+		<div class="row">
+			<div class="form-group col-md-6">
+				<input class="form-control input-sm" type="text" name="userName" placeholder="User name" required="">
+			</div>
+			<div class="form-group col-md-6">
+				<input class="form-control input-sm" type="text" name="password" placeholder="Password" required="">
+			</div>
+		</div>
 		<div class="row">
 			<div class="form-group col-md-5">
 				<input class="form-control input-sm" type="text" name="firstName" placeholder="First name" required="">

@@ -23,7 +23,6 @@ class Redirect
 			header('Location:' . dirname($_SERVER['PHP_SELF']) . '/' . $atSign[0] . '/' . $atSign[1]);
 		}
 		else {
-			$config = initializeConfig();
 			header('Location:'. dirname($_SERVER['PHP_SELF']) . '/' . $atSign[0]);
 		}
 		exit();

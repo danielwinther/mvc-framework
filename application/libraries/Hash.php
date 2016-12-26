@@ -9,6 +9,12 @@ class Hash
 	* @return string
 	*/
 	public static function create($password, $algorithm) {
-		return password_hash($password, $algorithm, array('cost' => 10));
+		return password_hash($password, $algorithm, array('cost' => 10, 'salt' => SALT));
+	}
+	public static function verify($password, $algorithm) {
+		$hash = Hash::create($password, PASSWORD_BCRYPT);
+		if (password_verify($password, $hash)) {
+			return $hash;	
+		}
 	}
 }

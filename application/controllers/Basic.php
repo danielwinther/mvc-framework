@@ -7,6 +7,10 @@ class Basic extends BaseController {
 		$users = $this->loadModel('Users');
 		$users = Users::all()->sortBy('firstName');
 
+		Auth::login('daniel', 'admin');
+		print_r(Auth::user());
+		//Auth::logout();
+
 		echo $this->renderView('layout/basic', ['userArray' => $users]);
 	}
 	public function user($id = '') {
@@ -60,6 +64,8 @@ class Basic extends BaseController {
 		$user = $this->loadModel('Users');
 		$user = Users::find($this->postInput('id'));
 
+		$user->userName = $this->postInput('userName');
+		$user->password = Hash::create($this->postInput('password'), PASSWORD_BCRYPT);
 		$user->firstName = $this->postInput('firstName');
 		$user->lastName = $this->postInput('lastName');
 		$user->age = $this->postInput('age');

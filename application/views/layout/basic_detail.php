@@ -3,7 +3,7 @@
 {% block content %}
 <h2 class="row">Showcases user model</h2>
 <div class="panel panel-info row">
-	<div class="panel-heading">{{data['user'].firstName}}</div>
+	<div class="panel-heading">{{data['user'].userName}}</div>
 	<div class="panel-body">
 		<ul class="list-group col-md-10">
 			<li class="list-group-item"><strong>Name:</strong> {{data['user'].firstName}} {{data['user'].lastName}}</li>
