@@ -1,6 +1,7 @@
 var hierarchy =
 [
     [ "Application", "class_application.html", null ],
+    [ "Auth", "class_auth.html", null ],
     [ "BaseController", "class_base_controller.html", [
       [ "Basic", "class_basic.html", null ]
     ] ],

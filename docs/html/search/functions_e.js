@@ -11,7 +11,7 @@ var searchData=
   ['returnhash',['returnHash',['../class_basic.html#a16df2136bd66a75022f350d583e6c060',1,'Basic']]],
   ['returnint',['returnInt',['../class_basic.html#a8d2918087022004ef5ad62d8f76a73d7',1,'Basic']]],
   ['returnmodel',['returnModel',['../class_basic.html#a7cb6a02987f0faaef2ee4aff9198907e',1,'Basic']]],
-  ['returnparameter',['returnParameter',['../class_basic.html#ac380e8a432563c6affcfddd43384c1d2',1,'Basic']]],
+  ['returnparameter',['returnParameter',['../class_basic.html#ab5cca41d57b6457b974025ce9e2160a0',1,'Basic']]],
   ['returnstring',['returnString',['../class_basic.html#a5bb666dcea19a9561c2047cfa25936bd',1,'Basic']]],
-  ['returntwoparameters',['returnTwoParameters',['../class_basic.html#a2ef87b96abcca966a41e34d077fcc38e',1,'Basic']]]
+  ['returntwoparameters',['returnTwoParameters',['../class_basic.html#a3127aa274a2b885e0b94ea8bc8697adb',1,'Basic']]]
 ];

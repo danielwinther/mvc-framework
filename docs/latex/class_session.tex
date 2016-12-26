@@ -1,5 +1,16 @@
 \hypertarget{class_session}{}\section{Session Class Reference}
 \label{class_session}\index{Session@{Session}}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_session_a9f0be6ae273d3669e11c29910a0be338}{init} ()
+\item 
+static \hyperlink{class_session_aa485369b2925858d92e468d405bd0798}{set} (\$key, \$value)
+\item 
+static \hyperlink{class_session_a15e2679f2a8f6fa4d60757f4d65413ac}{get} (\$key)
+\item 
+static \hyperlink{class_session_a84a343032e96995b7c252c719ddc764b}{destroy} (\$key)
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -7,6 +18,104 @@
 
 Definition at line 2 of file Session.\+php.
 
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_session_a84a343032e96995b7c252c719ddc764b}{}\index{Session@{Session}!destroy@{destroy}}
+\index{destroy@{destroy}!Session@{Session}}
+\subsubsection[{destroy}]{\setlength{\rightskip}{0pt plus 5cm}static destroy (
+\begin{DoxyParamCaption}
+\item[{}]{\$key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_session_a84a343032e96995b7c252c719ddc764b}
+Destroys session 
+
+Definition at line 30 of file Session.\+php.
+
+
+
+Referenced by Auth\textbackslash{}logout().
+
+
+\begin{DoxyCode}
+30                                          \{
+31         \textcolor{keywordflow}{if} (isset($\_SESSION[$key])) \{
+32             unset($\_SESSION[$key]);
+33             session\_destroy();
+34         \}
+35     \}
+\end{DoxyCode}
+\hypertarget{class_session_a15e2679f2a8f6fa4d60757f4d65413ac}{}\index{Session@{Session}!get@{get}}
+\index{get@{get}!Session@{Session}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}static get (
+\begin{DoxyParamCaption}
+\item[{}]{\$key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_session_a15e2679f2a8f6fa4d60757f4d65413ac}
+Gets session value
+
+\begin{DoxyReturn}{Returns}
+string array 
+\end{DoxyReturn}
+
+
+Definition at line 22 of file Session.\+php.
+
+
+
+Referenced by Auth\textbackslash{}user().
+
+
+\begin{DoxyCode}
+22                                      \{
+23         \textcolor{keywordflow}{if} (isset($\_SESSION[$key])) \{
+24             \textcolor{keywordflow}{return} $\_SESSION[$key];
+25         \}
+26     \}
+\end{DoxyCode}
+\hypertarget{class_session_a9f0be6ae273d3669e11c29910a0be338}{}\index{Session@{Session}!init@{init}}
+\index{init@{init}!Session@{Session}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}static init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_session_a9f0be6ae273d3669e11c29910a0be338}
+Initializes session 
+
+Definition at line 7 of file Session.\+php.
+
+
+
+Referenced by Auth\textbackslash{}login().
+
+
+\begin{DoxyCode}
+7                                   \{
+8         session\_start();
+9     \}
+\end{DoxyCode}
+\hypertarget{class_session_aa485369b2925858d92e468d405bd0798}{}\index{Session@{Session}!set@{set}}
+\index{set@{set}!Session@{Session}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}static set (
+\begin{DoxyParamCaption}
+\item[{}]{\$key, }
+\item[{}]{\$value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_session_aa485369b2925858d92e468d405bd0798}
+Sets session value 
+
+Definition at line 14 of file Session.\+php.
+
+
+
+Referenced by Auth\textbackslash{}login().
+
+
+\begin{DoxyCode}
+14                                              \{
+15         $\_SESSION[$key] = $value;
+16     \}
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

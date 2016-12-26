@@ -29,40 +29,43 @@ Inheritance diagram for Base\+Controller\+:\begin{figure}[H]
 \subsection{Detailed Description}
 
 
-Definition at line 3 of file Base\+Controller.\+php.
-
-
-
-\subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_base_controller_a095c5d389db211932136b53f25f39685}{}\label{class_base_controller_a095c5d389db211932136b53f25f39685} 
-\index{Base\+Controller@{Base\+Controller}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
-\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!Base\+Controller@{Base\+Controller}}
-\subsubsection{\texorpdfstring{\+\_\+\+\_\+construct()}{\_\_construct()}}
-{\footnotesize\ttfamily \+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
 Definition at line 4 of file Base\+Controller.\+php.
 
 
 
-References E\+R\+R\+O\+R\+\_\+\+R\+E\+P\+O\+R\+T\+I\+NG.
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_base_controller_a095c5d389db211932136b53f25f39685}{}\index{Base\+Controller@{Base\+Controller}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!Base\+Controller@{Base\+Controller}}
+\subsubsection[{\+\_\+\+\_\+construct}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+\+\_\+construct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_base_controller_a095c5d389db211932136b53f25f39685}
+
+
+Definition at line 8 of file Base\+Controller.\+php.
+
+
+
+References E\+R\+R\+O\+R\+\_\+\+R\+E\+P\+O\+R\+T\+I\+N\+G.
 
 
 \begin{DoxyCode}
-4                                   \{
-5         error\_reporting(\hyperlink{config_8php_a80c2f40a4ce1ad3cbfb1978239f63c31}{ERROR\_REPORTING});
-6     \}
+8                                   \{
+9         error\_reporting(\hyperlink{config_8php_a80c2f40a4ce1ad3cbfb1978239f63c31}{ERROR\_REPORTING});
+10     \}
 \end{DoxyCode}
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{}\label{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1} 
-\index{Base\+Controller@{Base\+Controller}!load\+Model@{load\+Model}}
+\hypertarget{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{}\index{Base\+Controller@{Base\+Controller}!load\+Model@{load\+Model}}
 \index{load\+Model@{load\+Model}!Base\+Controller@{Base\+Controller}}
-\subsubsection{\texorpdfstring{load\+Model()}{loadModel()}}
-{\footnotesize\ttfamily load\+Model (\begin{DoxyParamCaption}\item[{}]{\$model,  }\item[{}]{\$constructor = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
-
+\subsubsection[{load\+Model}]{\setlength{\rightskip}{0pt plus 5cm}load\+Model (
+\begin{DoxyParamCaption}
+\item[{}]{\$model, }
+\item[{}]{\$constructor = {\ttfamily \mbox{[}\mbox{]}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}
 Loads a given model into the controller
 
 
@@ -77,7 +80,7 @@ object \$model
 \end{DoxyReturn}
 
 
-Definition at line 15 of file Base\+Controller.\+php.
+Definition at line 19 of file Base\+Controller.\+php.
 
 
 
@@ -85,25 +88,26 @@ Referenced by Basic\textbackslash{}create\+User(), Basic\textbackslash{}delete\+
 
 
 \begin{DoxyCode}
-15                                                             \{
-16         \textcolor{keywordflow}{if} (file\_exists(realpath(\_\_DIR\_\_ . \textcolor{stringliteral}{'/..'}) . \textcolor{stringliteral}{'/models/'} . $model . \textcolor{stringliteral}{'.php'})) \{
-17             require\_once realpath(\_\_DIR\_\_ . \textcolor{stringliteral}{'/..'}) . \textcolor{stringliteral}{'/models/'} . $model . \textcolor{stringliteral}{'.php'};
-18         \}
-19         \textcolor{keywordflow}{else} \{
-20             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} \hyperlink{class_model_not_found}{ModelNotFound}(\textcolor{stringliteral}{'ModelNotFound'}, \textcolor{stringliteral}{'Model "'} . $model . \textcolor{stringliteral}{'" not found.'});
-21             exit();
+19                                                             \{
+20         \textcolor{keywordflow}{if} (file\_exists(realpath(\_\_DIR\_\_ . \textcolor{stringliteral}{'/..'}) . \textcolor{stringliteral}{'/models/'} . $model . \textcolor{stringliteral}{'.php'})) \{
+21             require\_once realpath(\_\_DIR\_\_ . \textcolor{stringliteral}{'/..'}) . \textcolor{stringliteral}{'/models/'} . $model . \textcolor{stringliteral}{'.php'};
 22         \}
-23 
-24         \textcolor{keywordflow}{return} \textcolor{keyword}{new} $model($constructor);
-25     \}
+23         \textcolor{keywordflow}{else} \{
+24             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} \hyperlink{class_model_not_found}{ModelNotFound}(\textcolor{stringliteral}{'ModelNotFound'}, \textcolor{stringliteral}{'Model "'} . $model . \textcolor{stringliteral}{'" not found.'});
+25             exit();
+26         \}
+27 
+28         \textcolor{keywordflow}{return} \textcolor{keyword}{new} $model($constructor);
+29     \}
 \end{DoxyCode}
-\hypertarget{class_base_controller_a170629218b28c1759a89c4978b9323b3}{}\label{class_base_controller_a170629218b28c1759a89c4978b9323b3} 
-\index{Base\+Controller@{Base\+Controller}!post\+Input@{post\+Input}}
+\hypertarget{class_base_controller_a170629218b28c1759a89c4978b9323b3}{}\index{Base\+Controller@{Base\+Controller}!post\+Input@{post\+Input}}
 \index{post\+Input@{post\+Input}!Base\+Controller@{Base\+Controller}}
-\subsubsection{\texorpdfstring{post\+Input()}{postInput()}}
-{\footnotesize\ttfamily post\+Input (\begin{DoxyParamCaption}\item[{}]{\$input = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
-
-Sanitizes and returns P\+O\+ST data
+\subsubsection[{post\+Input}]{\setlength{\rightskip}{0pt plus 5cm}post\+Input (
+\begin{DoxyParamCaption}
+\item[{}]{\$input = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_base_controller_a170629218b28c1759a89c4978b9323b3}
+Sanitizes and returns P\+O\+S\+T data
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -115,7 +119,7 @@ string/array
 \end{DoxyReturn}
 
 
-Definition at line 33 of file Base\+Controller.\+php.
+Definition at line 37 of file Base\+Controller.\+php.
 
 
 
@@ -123,23 +127,25 @@ Referenced by Basic\textbackslash{}create\+User(), and Basic\textbackslash{}edit
 
 
 \begin{DoxyCode}
-33                                                 \{
-34         $post = filter\_input\_array(INPUT\_POST, FILTER\_SANITIZE\_STRING);
-35 
-36         \textcolor{keywordflow}{if} ($input) \{
-37             \textcolor{keywordflow}{return} $post[$input];
-38         \}
-39         \textcolor{keywordflow}{else} \{
-40             \textcolor{keywordflow}{return} $post;
-41         \}
-42     \}
+37                                                 \{
+38         $post = filter\_input\_array(INPUT\_POST, FILTER\_SANITIZE\_STRING);
+39 
+40         \textcolor{keywordflow}{if} ($input) \{
+41             \textcolor{keywordflow}{return} $post[$input];
+42         \}
+43         \textcolor{keywordflow}{else} \{
+44             \textcolor{keywordflow}{return} $post;
+45         \}
+46     \}
 \end{DoxyCode}
-\hypertarget{class_base_controller_aa0c49b95cd8e5ff8ff61b4a2c35bf1eb}{}\label{class_base_controller_aa0c49b95cd8e5ff8ff61b4a2c35bf1eb} 
-\index{Base\+Controller@{Base\+Controller}!render\+View@{render\+View}}
+\hypertarget{class_base_controller_aa0c49b95cd8e5ff8ff61b4a2c35bf1eb}{}\index{Base\+Controller@{Base\+Controller}!render\+View@{render\+View}}
 \index{render\+View@{render\+View}!Base\+Controller@{Base\+Controller}}
-\subsubsection{\texorpdfstring{render\+View()}{renderView()}}
-{\footnotesize\ttfamily render\+View (\begin{DoxyParamCaption}\item[{}]{\$view,  }\item[{}]{\$data = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
-
+\subsubsection[{render\+View}]{\setlength{\rightskip}{0pt plus 5cm}render\+View (
+\begin{DoxyParamCaption}
+\item[{}]{\$view, }
+\item[{}]{\$data = {\ttfamily \mbox{[}\mbox{]}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_base_controller_aa0c49b95cd8e5ff8ff61b4a2c35bf1eb}
 Loads a given view into the controller
 
 
@@ -151,7 +157,7 @@ array & {\em \$data} & \\
 \end{DoxyParams}
 
 
-Definition at line 50 of file Base\+Controller.\+php.
+Definition at line 54 of file Base\+Controller.\+php.
 
 
 
@@ -159,25 +165,28 @@ Referenced by Basic\textbackslash{}edit\+User(), Basic\textbackslash{}index(), a
 
 
 \begin{DoxyCode}
-50                                                      \{
-51         $loader = \textcolor{keyword}{new} Twig\_Loader\_Filesystem(realpath(\_\_DIR\_\_ . \textcolor{stringliteral}{'/..'}) . \textcolor{stringliteral}{'/views'});
-52         $twig = \textcolor{keyword}{new} Twig\_Environment($loader, [
-53             \textcolor{stringliteral}{'debug'} => \textcolor{keyword}{true},
-54             ]);
-55         $twig->addExtension(\textcolor{keyword}{new} Twig\_Extension\_Debug());
-56 
-57         \textcolor{keywordflow}{return} $twig->render($view . \textcolor{stringliteral}{'.php'}, [
-58             \textcolor{stringliteral}{'data'} => $data
-59             ]);
-60     \}
+54                                                      \{
+55         $loader = \textcolor{keyword}{new} Twig\_Loader\_Filesystem(realpath(\_\_DIR\_\_ . \textcolor{stringliteral}{'/..'}) . \textcolor{stringliteral}{'/views'});
+56         $twig = \textcolor{keyword}{new} Twig\_Environment($loader, [
+57             \textcolor{stringliteral}{'debug'} => \textcolor{keyword}{true},
+58             ]);
+59         $twig->addExtension(\textcolor{keyword}{new} Twig\_Extension\_Debug());
+60 
+61         \textcolor{keywordflow}{return} $twig->render($view . \textcolor{stringliteral}{'.php'}, [
+62             \textcolor{stringliteral}{'data'} => $data
+63             ]);
+64     \}
 \end{DoxyCode}
-\hypertarget{class_base_controller_abd4f25604b09a96c254491df97612cc3}{}\label{class_base_controller_abd4f25604b09a96c254491df97612cc3} 
-\index{Base\+Controller@{Base\+Controller}!scrape@{scrape}}
+\hypertarget{class_base_controller_abd4f25604b09a96c254491df97612cc3}{}\index{Base\+Controller@{Base\+Controller}!scrape@{scrape}}
 \index{scrape@{scrape}!Base\+Controller@{Base\+Controller}}
-\subsubsection{\texorpdfstring{scrape()}{scrape()}}
-{\footnotesize\ttfamily scrape (\begin{DoxyParamCaption}\item[{}]{\$action,  }\item[{}]{\$url,  }\item[{}]{\$curl = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
-
-Scrapes H\+T\+ML source code from the given U\+RL
+\subsubsection[{scrape}]{\setlength{\rightskip}{0pt plus 5cm}scrape (
+\begin{DoxyParamCaption}
+\item[{}]{\$action, }
+\item[{}]{\$url, }
+\item[{}]{\$curl = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_base_controller_abd4f25604b09a96c254491df97612cc3}
+Scrapes H\+T\+M\+L source code from the given U\+R\+L
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -193,7 +202,7 @@ string \$html
 \end{DoxyReturn}
 
 
-Definition at line 70 of file Base\+Controller.\+php.
+Definition at line 74 of file Base\+Controller.\+php.
 
 
 
@@ -205,39 +214,41 @@ Referenced by Basic\textbackslash{}scrape\+Pdf(), and Basic\textbackslash{}scrap
 
 
 \begin{DoxyCode}
-70                                                            \{
-71         \textcolor{keywordflow}{switch} (strtoupper($action)) \{
-72             \textcolor{keywordflow}{case} \textcolor{stringliteral}{'GET'}:
-73             $html = \textcolor{keyword}{new} \hyperlink{classsimple__html__dom}{simple\_html\_dom}();
-74             \textcolor{keywordflow}{if} ($curl) \{
-75                 curl\_setopt($curl, CURLOPT\_RETURNTRANSFER, 1); 
-76                 curl\_setopt($curl, CURLOPT\_POST, 0);
-77                 curl\_setopt($curl, CURLOPT\_URL, $url);
-78                 $html = \hyperlink{simple__html__dom_8php_a2a9c7626f0cb0a56eb81709124a08922}{str\_get\_html}(curl\_exec($curl));
-79                 curl\_close($curl);
-80             \}
-81             \textcolor{keywordflow}{else} \{
-82                 $html->load\_file($url);
-83             \}
-84             \textcolor{keywordflow}{return} $html;
-85             \textcolor{keywordflow}{break};
-86             
-87             \textcolor{keywordflow}{case} \textcolor{stringliteral}{'PDF'}:
-88             $parser = \textcolor{keyword}{new} Parser();
-89             $pdf = $parser->parseFile($url);
-90 
-91             \textcolor{keywordflow}{return} $pdf;
-92             \textcolor{keywordflow}{break};
-93         \}
-94     \}
+74                                                            \{
+75         \textcolor{keywordflow}{switch} (strtoupper($action)) \{
+76             \textcolor{keywordflow}{case} \textcolor{stringliteral}{'GET'}:
+77             $html = \textcolor{keyword}{new} \hyperlink{classsimple__html__dom}{simple\_html\_dom}();
+78             \textcolor{keywordflow}{if} ($curl) \{
+79                 curl\_setopt($curl, CURLOPT\_RETURNTRANSFER, 1); 
+80                 curl\_setopt($curl, CURLOPT\_POST, 0);
+81                 curl\_setopt($curl, CURLOPT\_URL, $url);
+82                 $html = \hyperlink{simple__html__dom_8php_a2a9c7626f0cb0a56eb81709124a08922}{str\_get\_html}(curl\_exec($curl));
+83                 curl\_close($curl);
+84             \}
+85             \textcolor{keywordflow}{else} \{
+86                 $html->load\_file($url);
+87             \}
+88             \textcolor{keywordflow}{return} $html;
+89             \textcolor{keywordflow}{break};
+90             
+91             \textcolor{keywordflow}{case} \textcolor{stringliteral}{'PDF'}:
+92             $parser = \textcolor{keyword}{new} Parser();
+93             $pdf = $parser->parseFile($url);
+94 
+95             \textcolor{keywordflow}{return} $pdf;
+96             \textcolor{keywordflow}{break};
+97         \}
+98     \}
 \end{DoxyCode}
-\hypertarget{class_base_controller_a259a554926fc05640c8c711c340cdeac}{}\label{class_base_controller_a259a554926fc05640c8c711c340cdeac} 
-\index{Base\+Controller@{Base\+Controller}!session@{session}}
+\hypertarget{class_base_controller_a259a554926fc05640c8c711c340cdeac}{}\index{Base\+Controller@{Base\+Controller}!session@{session}}
 \index{session@{session}!Base\+Controller@{Base\+Controller}}
-\subsubsection{\texorpdfstring{session()}{session()}}
-{\footnotesize\ttfamily session (\begin{DoxyParamCaption}\item[{}]{\$url,  }\item[{}]{\$post\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
-
-Initializes session with c\+U\+RL and saves session cookies in file for later retrieval
+\subsubsection[{session}]{\setlength{\rightskip}{0pt plus 5cm}session (
+\begin{DoxyParamCaption}
+\item[{}]{\$url, }
+\item[{}]{\$post\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_base_controller_a259a554926fc05640c8c711c340cdeac}
+Initializes session with c\+U\+R\+L and saves session cookies in file for later retrieval
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -251,35 +262,35 @@ array & {\em \$post\+Data} & \\
 \end{DoxyReturn}
 
 
-Definition at line 103 of file Base\+Controller.\+php.
+Definition at line 107 of file Base\+Controller.\+php.
 
 
 \begin{DoxyCode}
-103                                                 \{
-104         $curl = curl\_init();
-105 
-106         curl\_setopt($curl, CURLOPT\_RETURNTRANSFER, 1); 
-107 
-108         curl\_setopt($curl, CURLOPT\_URL, $url);
-109         $cookie = dirname(\_\_FILE\_\_) . \textcolor{stringliteral}{'/cookies.txt'};
-110         $timeout = 30;
+107                                                 \{
+108         $curl = curl\_init();
+109 
+110         curl\_setopt($curl, CURLOPT\_RETURNTRANSFER, 1); 
 111 
-112         curl\_setopt($curl, CURLOPT\_USERAGENT, \textcolor{stringliteral}{'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36
+112         curl\_setopt($curl, CURLOPT\_URL, $url);
+113         $cookie = dirname(\_\_FILE\_\_) . \textcolor{stringliteral}{'/cookies.txt'};
+114         $timeout = 30;
+115 
+116         curl\_setopt($curl, CURLOPT\_USERAGENT, \textcolor{stringliteral}{'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36
        (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36'});
-113         curl\_setopt($curl, CURLOPT\_FOLLOWLOCATION, 1);
-114         curl\_setopt($curl, CURLOPT\_TIMEOUT, 10); 
-115         curl\_setopt($curl, CURLOPT\_CONNECTTIMEOUT, $timeout);
-116         curl\_setopt($curl, CURLOPT\_COOKIEJAR, $cookie);
-117         curl\_setopt($curl, CURLOPT\_COOKIEFILE, $cookie);
-118 
-119         curl\_setopt($curl, CURLOPT\_POST, 1); 
-120         curl\_setopt($curl, CURLOPT\_POSTFIELDS, http\_build\_query($postData));     
-121         curl\_setopt($curl, CURLOPT\_SSL\_VERIFYPEER, 0);
-122         unlink($cookie);
-123         curl\_exec($curl);
-124 
-125         \textcolor{keywordflow}{return} $curl;
-126     \}
+117         curl\_setopt($curl, CURLOPT\_FOLLOWLOCATION, 1);
+118         curl\_setopt($curl, CURLOPT\_TIMEOUT, 10); 
+119         curl\_setopt($curl, CURLOPT\_CONNECTTIMEOUT, $timeout);
+120         curl\_setopt($curl, CURLOPT\_COOKIEJAR, $cookie);
+121         curl\_setopt($curl, CURLOPT\_COOKIEFILE, $cookie);
+122 
+123         curl\_setopt($curl, CURLOPT\_POST, 1); 
+124         curl\_setopt($curl, CURLOPT\_POSTFIELDS, http\_build\_query($postData));     
+125         curl\_setopt($curl, CURLOPT\_SSL\_VERIFYPEER, 0);
+126         unlink($cookie);
+127         curl\_exec($curl);
+128 
+129         \textcolor{keywordflow}{return} $curl;
+130     \}
 \end{DoxyCode}
 
 

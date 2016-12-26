@@ -1,0 +1,178 @@
+\hypertarget{class_auth}{}\section{Auth Class Reference}
+\label{class_auth}\index{Auth@{Auth}}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_auth_a5b58b727794a21b87e23d646eb9ddc6d}{login} (\$user\+Name, \$password)
+\item 
+static \hyperlink{class_auth_a1e34160e903835a43123f538e93457a2}{logout} ()
+\item 
+static \hyperlink{class_auth_a7949f68385a98a60ff42ea3c3a768ec7}{user} ()
+\item 
+static \hyperlink{class_auth_a630afde0cf1e1c509b51e8686c8312ac}{send\+Two\+Factor} ()
+\item 
+static \hyperlink{class_auth_a44cd32430eda0860d3d5a4e4a210a106}{verify\+Two\+Factor} (\$code)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 3 of file Auth.\+php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_auth_a5b58b727794a21b87e23d646eb9ddc6d}{}\index{Auth@{Auth}!login@{login}}
+\index{login@{login}!Auth@{Auth}}
+\subsubsection[{login}]{\setlength{\rightskip}{0pt plus 5cm}static login (
+\begin{DoxyParamCaption}
+\item[{}]{\$user\+Name, }
+\item[{}]{\$password}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_auth_a5b58b727794a21b87e23d646eb9ddc6d}
+Logins to user account
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$user\+Name} & \\
+\hline
+string & {\em \$password} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 11 of file Auth.\+php.
+
+
+
+References Session\textbackslash{}init(), Session\textbackslash{}set(), and Hash\textbackslash{}verify().
+
+
+
+Referenced by Basic\textbackslash{}index().
+
+
+\begin{DoxyCode}
+11                                                        \{
+12         $user = Users::where(\textcolor{stringliteral}{'userName'}, $userName)->where(\textcolor{stringliteral}{'password'}, 
+      \hyperlink{class_hash_a1d9ca7080fd83ecfa8e7aeb5ae5fcee9}{Hash::verify}($password, PASSWORD\_BCRYPT))->first();
+13         \textcolor{keywordflow}{if} ($user) \{
+14             \hyperlink{class_session_a9f0be6ae273d3669e11c29910a0be338}{Session::init}();
+15             \hyperlink{class_session_aa485369b2925858d92e468d405bd0798}{Session::set}(\textcolor{stringliteral}{'id'}, $user->id);
+16         \}
+17     \}
+\end{DoxyCode}
+\hypertarget{class_auth_a1e34160e903835a43123f538e93457a2}{}\index{Auth@{Auth}!logout@{logout}}
+\index{logout@{logout}!Auth@{Auth}}
+\subsubsection[{logout}]{\setlength{\rightskip}{0pt plus 5cm}static logout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_auth_a1e34160e903835a43123f538e93457a2}
+Logouts of user accoubt 
+
+Definition at line 22 of file Auth.\+php.
+
+
+
+References Session\textbackslash{}destroy().
+
+
+\begin{DoxyCode}
+22                                     \{
+23         \hyperlink{class_session_a84a343032e96995b7c252c719ddc764b}{Session::destroy}(\textcolor{stringliteral}{'id'});
+24     \}
+\end{DoxyCode}
+\hypertarget{class_auth_a630afde0cf1e1c509b51e8686c8312ac}{}\index{Auth@{Auth}!send\+Two\+Factor@{send\+Two\+Factor}}
+\index{send\+Two\+Factor@{send\+Two\+Factor}!Auth@{Auth}}
+\subsubsection[{send\+Two\+Factor}]{\setlength{\rightskip}{0pt plus 5cm}static send\+Two\+Factor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_auth_a630afde0cf1e1c509b51e8686c8312ac}
+Sends two-\/factor code via S\+M\+S 
+
+Definition at line 39 of file Auth.\+php.
+
+
+
+References T\+W\+I\+L\+I\+O\+\_\+\+S\+I\+D, T\+W\+I\+L\+I\+O\+\_\+\+T\+O\+K\+E\+N, and user().
+
+
+\begin{DoxyCode}
+39                                            \{
+40         $user = \hyperlink{class_auth_a7949f68385a98a60ff42ea3c3a768ec7}{Auth::user}();
+41 
+42         $client = \textcolor{keyword}{new} Client(\hyperlink{config_8php_a9b6aafbdebd605cd4fb6f5749b53e59f}{TWILIO\_SID}, \hyperlink{config_8php_a0477d5c66524299f08cae7376eb7884c}{TWILIO\_TOKEN});
+43         $client->messages->create(
+44             \textcolor{stringliteral}{'+45'} . $user->phone,
+45             array(
+46                 \textcolor{stringliteral}{'from'} => \textcolor{stringliteral}{'+46769447755'},
+47                 \textcolor{stringliteral}{'body'} => $user->twoFactorCode
+48                 )
+49             );
+50     \}
+\end{DoxyCode}
+\hypertarget{class_auth_a7949f68385a98a60ff42ea3c3a768ec7}{}\index{Auth@{Auth}!user@{user}}
+\index{user@{user}!Auth@{Auth}}
+\subsubsection[{user}]{\setlength{\rightskip}{0pt plus 5cm}static user (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_auth_a7949f68385a98a60ff42ea3c3a768ec7}
+Gets user data from session
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_users}{Users} 
+\end{DoxyReturn}
+
+
+Definition at line 31 of file Auth.\+php.
+
+
+
+References Session\textbackslash{}get().
+
+
+
+Referenced by Basic\textbackslash{}index(), send\+Two\+Factor(), and verify\+Two\+Factor().
+
+
+\begin{DoxyCode}
+31                                   \{
+32         $user = \hyperlink{class_session_a15e2679f2a8f6fa4d60757f4d65413ac}{Session::get}(\textcolor{stringliteral}{'id'});
+33         \textcolor{keywordflow}{return} Users::find($user);
+34     \}
+\end{DoxyCode}
+\hypertarget{class_auth_a44cd32430eda0860d3d5a4e4a210a106}{}\index{Auth@{Auth}!verify\+Two\+Factor@{verify\+Two\+Factor}}
+\index{verify\+Two\+Factor@{verify\+Two\+Factor}!Auth@{Auth}}
+\subsubsection[{verify\+Two\+Factor}]{\setlength{\rightskip}{0pt plus 5cm}static verify\+Two\+Factor (
+\begin{DoxyParamCaption}
+\item[{}]{\$code}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_auth_a44cd32430eda0860d3d5a4e4a210a106}
+Verifies two-\/factor code 
+
+Definition at line 55 of file Auth.\+php.
+
+
+
+References user().
+
+
+\begin{DoxyCode}
+55                                                   \{
+56         $user = \hyperlink{class_auth_a7949f68385a98a60ff42ea3c3a768ec7}{Auth::user}();
+57 
+58         \textcolor{keywordflow}{if} ($user->twoFactorCode == $code) \{
+59             $user->isTwoFactor = \textcolor{keyword}{true};
+60             $user->save();
+61         \}
+62     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/xampp/htdocs/mvc-\/framework/application/libraries/\hyperlink{_auth_8php}{Auth.\+php}\end{DoxyCompactItemize}

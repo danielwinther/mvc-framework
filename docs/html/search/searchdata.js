@@ -4,8 +4,8 @@ var indexSectionsWithContent =
   1: "abchmrsuv",
   2: "p",
   3: "abcdhmrsuv",
-  4: "_acdefghilmnoprstux",
-  5: "$cdefhmpt"
+  4: "_acdefghilmnoprstuvx",
+  5: "$cdefhmpst"
 };
 
 var indexSectionNames =
