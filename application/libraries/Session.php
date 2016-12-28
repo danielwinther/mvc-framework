@@ -1,6 +1,5 @@
 <?php
-class Session
-{
+class Session {
 	/**
 	* Initializes session
 	*/

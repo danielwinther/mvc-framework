@@ -1,6 +1,5 @@
 <?php
-class Redirect
-{
+class Redirect {
 	/**
 	* Redirects to given URL
 	*

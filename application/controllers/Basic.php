@@ -8,15 +8,15 @@ class Basic extends BaseController {
 		$users = Users::all()->sortBy('firstName');
 
 		Auth::login('daniel', 'admin');
-		print_r(Auth::user());
+
 		//Auth::sendTwoFactor();
-		//Auth::verifyTwoFactor('fh45h7tytr');
-		//Auth::logout();
+		//Auth::verifyTwoFactor('');
 
 		echo $this->renderView('layout/basic', ['userArray' => $users]);
 	}
 	public function user($id = '') {
 		$user = $this->loadModel('Users');
+		$users = $this->loadModel('Roles');
 		$user = Users::find($id);
 
 		echo $this->renderView('layout/basic_detail', ['user' => $user]);
@@ -46,7 +46,7 @@ class Basic extends BaseController {
 		return $user;
 	}
 	public function returnHash() {
-		return Hash::create('daniel', PASSWORD_BCRYPT);
+		return Hash::create('daniel', PASSWORD_BCRYPT, SALT);
 	}
 	public function createUser() {
 		$postInput = $this->postInput();
@@ -102,5 +102,31 @@ class Basic extends BaseController {
 	}
 	public function returnTwoParameters($parameter1 = '', $parameter2 = '') {
 		return $parameter1 . $parameter2;
+	}
+	public function returnJson() {
+		$users = $this->loadModel('Users');
+		$users = Users::all();
+		$json = $this->convert('JSON', $users);
+
+		print_r($json);
+	}
+	public function returnXml() {
+		$array = [
+		'name' => 'root',
+		'value' => 'Test'
+		];
+		$xml = $this->convert('XML', $array);
+
+		print_r($xml);
+	}
+	public function returnYaml() {
+		$users = $this->loadModel('Users');
+		$array = [
+		'user' => [
+		'name' => 'daniel',
+		'age' => 24
+		],
+		];
+		echo $yaml = $this->convert('YAML', $array);
 	}
 }

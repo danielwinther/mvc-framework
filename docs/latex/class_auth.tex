@@ -18,19 +18,17 @@ static \hyperlink{class_auth_a44cd32430eda0860d3d5a4e4a210a106}{verify\+Two\+Fac
 \subsection{Detailed Description}
 
 
-Definition at line 3 of file Auth.\+php.
+Definition at line 4 of file Auth.\+php.
 
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_auth_a5b58b727794a21b87e23d646eb9ddc6d}{}\index{Auth@{Auth}!login@{login}}
+\hypertarget{class_auth_a5b58b727794a21b87e23d646eb9ddc6d}{}\label{class_auth_a5b58b727794a21b87e23d646eb9ddc6d} 
+\index{Auth@{Auth}!login@{login}}
 \index{login@{login}!Auth@{Auth}}
-\subsubsection[{login}]{\setlength{\rightskip}{0pt plus 5cm}static login (
-\begin{DoxyParamCaption}
-\item[{}]{\$user\+Name, }
-\item[{}]{\$password}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\label{class_auth_a5b58b727794a21b87e23d646eb9ddc6d}
+\subsubsection{\texorpdfstring{login()}{login()}}
+{\footnotesize\ttfamily static login (\begin{DoxyParamCaption}\item[{}]{\$user\+Name,  }\item[{}]{\$password }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
 Logins to user account
 
 
@@ -63,14 +61,13 @@ Referenced by Basic\textbackslash{}index().
 16         \}
 17     \}
 \end{DoxyCode}
-\hypertarget{class_auth_a1e34160e903835a43123f538e93457a2}{}\index{Auth@{Auth}!logout@{logout}}
+\hypertarget{class_auth_a1e34160e903835a43123f538e93457a2}{}\label{class_auth_a1e34160e903835a43123f538e93457a2} 
+\index{Auth@{Auth}!logout@{logout}}
 \index{logout@{logout}!Auth@{Auth}}
-\subsubsection[{logout}]{\setlength{\rightskip}{0pt plus 5cm}static logout (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\label{class_auth_a1e34160e903835a43123f538e93457a2}
-Logouts of user accoubt 
+\subsubsection{\texorpdfstring{logout()}{logout()}}
+{\footnotesize\ttfamily static logout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Logouts out of user account 
 
 Definition at line 22 of file Auth.\+php.
 
@@ -84,43 +81,45 @@ References Session\textbackslash{}destroy().
 23         \hyperlink{class_session_a84a343032e96995b7c252c719ddc764b}{Session::destroy}(\textcolor{stringliteral}{'id'});
 24     \}
 \end{DoxyCode}
-\hypertarget{class_auth_a630afde0cf1e1c509b51e8686c8312ac}{}\index{Auth@{Auth}!send\+Two\+Factor@{send\+Two\+Factor}}
+\hypertarget{class_auth_a630afde0cf1e1c509b51e8686c8312ac}{}\label{class_auth_a630afde0cf1e1c509b51e8686c8312ac} 
+\index{Auth@{Auth}!send\+Two\+Factor@{send\+Two\+Factor}}
 \index{send\+Two\+Factor@{send\+Two\+Factor}!Auth@{Auth}}
-\subsubsection[{send\+Two\+Factor}]{\setlength{\rightskip}{0pt plus 5cm}static send\+Two\+Factor (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\label{class_auth_a630afde0cf1e1c509b51e8686c8312ac}
-Sends two-\/factor code via S\+M\+S 
+\subsubsection{\texorpdfstring{send\+Two\+Factor()}{sendTwoFactor()}}
+{\footnotesize\ttfamily static send\+Two\+Factor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Sends two-\/factor code via S\+MS 
 
 Definition at line 39 of file Auth.\+php.
 
 
 
-References T\+W\+I\+L\+I\+O\+\_\+\+S\+I\+D, T\+W\+I\+L\+I\+O\+\_\+\+T\+O\+K\+E\+N, and user().
+References T\+W\+I\+L\+I\+O\+\_\+\+S\+ID, T\+W\+I\+L\+I\+O\+\_\+\+T\+O\+K\+EN, and user().
 
 
 \begin{DoxyCode}
 39                                            \{
 40         $user = \hyperlink{class_auth_a7949f68385a98a60ff42ea3c3a768ec7}{Auth::user}();
-41 
-42         $client = \textcolor{keyword}{new} Client(\hyperlink{config_8php_a9b6aafbdebd605cd4fb6f5749b53e59f}{TWILIO\_SID}, \hyperlink{config_8php_a0477d5c66524299f08cae7376eb7884c}{TWILIO\_TOKEN});
-43         $client->messages->create(
-44             \textcolor{stringliteral}{'+45'} . $user->phone,
-45             array(
-46                 \textcolor{stringliteral}{'from'} => \textcolor{stringliteral}{'+46769447755'},
-47                 \textcolor{stringliteral}{'body'} => $user->twoFactorCode
-48                 )
-49             );
-50     \}
+41         $code = Auth::generateCode();
+42 
+43         $client = \textcolor{keyword}{new} Client(\hyperlink{config_8php_a9b6aafbdebd605cd4fb6f5749b53e59f}{TWILIO\_SID}, \hyperlink{config_8php_a0477d5c66524299f08cae7376eb7884c}{TWILIO\_TOKEN});
+44         $client->messages->create(
+45             \textcolor{stringliteral}{'+45'} . $user->phone,
+46             [   
+47             \textcolor{stringliteral}{'from'} => \textcolor{stringliteral}{'+46769447755'},
+48             \textcolor{stringliteral}{'body'} => \textcolor{stringliteral}{'Two-factor code: '} . $code
+49             ]
+50             );
+51 
+52         $user->twoFactorCode = $code;
+53         $user->save();
+54     \}
 \end{DoxyCode}
-\hypertarget{class_auth_a7949f68385a98a60ff42ea3c3a768ec7}{}\index{Auth@{Auth}!user@{user}}
+\hypertarget{class_auth_a7949f68385a98a60ff42ea3c3a768ec7}{}\label{class_auth_a7949f68385a98a60ff42ea3c3a768ec7} 
+\index{Auth@{Auth}!user@{user}}
 \index{user@{user}!Auth@{Auth}}
-\subsubsection[{user}]{\setlength{\rightskip}{0pt plus 5cm}static user (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\label{class_auth_a7949f68385a98a60ff42ea3c3a768ec7}
+\subsubsection{\texorpdfstring{user()}{user()}}
+{\footnotesize\ttfamily static user (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
 Gets user data from session
 
 \begin{DoxyReturn}{Returns}
@@ -136,7 +135,7 @@ References Session\textbackslash{}get().
 
 
 
-Referenced by Basic\textbackslash{}index(), send\+Two\+Factor(), and verify\+Two\+Factor().
+Referenced by send\+Two\+Factor(), and verify\+Two\+Factor().
 
 
 \begin{DoxyCode}
@@ -145,16 +144,15 @@ Referenced by Basic\textbackslash{}index(), send\+Two\+Factor(), and verify\+Two
 33         \textcolor{keywordflow}{return} Users::find($user);
 34     \}
 \end{DoxyCode}
-\hypertarget{class_auth_a44cd32430eda0860d3d5a4e4a210a106}{}\index{Auth@{Auth}!verify\+Two\+Factor@{verify\+Two\+Factor}}
+\hypertarget{class_auth_a44cd32430eda0860d3d5a4e4a210a106}{}\label{class_auth_a44cd32430eda0860d3d5a4e4a210a106} 
+\index{Auth@{Auth}!verify\+Two\+Factor@{verify\+Two\+Factor}}
 \index{verify\+Two\+Factor@{verify\+Two\+Factor}!Auth@{Auth}}
-\subsubsection[{verify\+Two\+Factor}]{\setlength{\rightskip}{0pt plus 5cm}static verify\+Two\+Factor (
-\begin{DoxyParamCaption}
-\item[{}]{\$code}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\label{class_auth_a44cd32430eda0860d3d5a4e4a210a106}
+\subsubsection{\texorpdfstring{verify\+Two\+Factor()}{verifyTwoFactor()}}
+{\footnotesize\ttfamily static verify\+Two\+Factor (\begin{DoxyParamCaption}\item[{}]{\$code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
 Verifies two-\/factor code 
 
-Definition at line 55 of file Auth.\+php.
+Definition at line 68 of file Auth.\+php.
 
 
 
@@ -162,14 +160,17 @@ References user().
 
 
 \begin{DoxyCode}
-55                                                   \{
-56         $user = \hyperlink{class_auth_a7949f68385a98a60ff42ea3c3a768ec7}{Auth::user}();
-57 
-58         \textcolor{keywordflow}{if} ($user->twoFactorCode == $code) \{
-59             $user->isTwoFactor = \textcolor{keyword}{true};
-60             $user->save();
-61         \}
-62     \}
+68                                                   \{
+69         $user = \hyperlink{class_auth_a7949f68385a98a60ff42ea3c3a768ec7}{Auth::user}();
+70 
+71         \textcolor{keywordflow}{if} ($user->twoFactorCode == $code) \{
+72             $user->isTwoFactor = \textcolor{keyword}{true};
+73         \}
+74         \textcolor{keywordflow}{else} \{
+75             $user->isTwoFactor = \textcolor{keyword}{false};
+76         \}
+77         $user->save();
+78     \}
 \end{DoxyCode}
 
 

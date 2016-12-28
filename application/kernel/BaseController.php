@@ -128,4 +128,64 @@ class BaseController {
 
 		return $curl;
 	}
+
+	/**
+	* Converts data to given format
+	*
+	* @param string $format
+	* @param object/array
+	* @return string
+	*/
+	public function convert($format, $data) {
+		switch ($format) {
+			case 'JSON':
+			return json_encode($data, JSON_PRETTY_PRINT | JSON_NUMERIC_CHECK);
+			break;
+
+			case 'XML':
+			$doc = new DOMDocument();
+			$child = $this->toXml($doc, $data);
+			if ($child)
+				$doc->appendChild($child);
+			$doc->formatOutput = true; 
+			return $xml = $doc->saveXML();
+			break;
+
+			case 'YAML':
+			return yaml_emit($data, YAML_UTF8_ENCODING);
+			break;
+		}
+	}
+
+	/**
+	* Converts data to XML format
+	*
+	* @param DOMDocument $dom
+	* @param object/array $data
+	* @return string $element
+	*/
+	private function toXml($dom, $data) {
+		if (empty($data['name']))
+			return false;
+
+		$elementValue = (!empty( $data['value'])) ? $data['value'] : null;
+		$element = $dom->createElement( $data['name'], $elementValue);
+
+		if (!empty( $data['attributes']) && is_array( $data['attributes'])) {
+			foreach ($data['attributes'] as $attributeKey => $attributeValue) {
+				$element->setAttribute($attributeKey, $attributeValue);
+			}
+		}
+
+		foreach ($data as $dataKey => $childData) {
+			if (!is_numeric($dataKey))
+				continue;
+
+			$child = $this->toXml($dom, $childData);
+			if ($child)
+				$element->appendChild($child);
+		}
+
+		return $element;
+	}
 }

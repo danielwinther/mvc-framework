@@ -43,7 +43,7 @@
 				<input class="form-control input-sm" type="text" name="userName" placeholder="User name" required="">
 			</div>
 			<div class="form-group col-md-6">
-				<input class="form-control input-sm" type="text" name="password" placeholder="Password" required="">
+				<input class="form-control input-sm" type="password" name="password" placeholder="Password" required="">
 			</div>
 		</div>
 		<div class="row">

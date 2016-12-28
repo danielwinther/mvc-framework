@@ -1,7 +1,7 @@
 <?php
 use Twilio\Rest\Client;
-class Auth
-{
+
+class Auth {
 	/**
 	* Logins to user account
 	*
@@ -17,7 +17,7 @@ class Auth
 	}
 
 	/**
-	* Logouts of user accoubt
+	* Logouts out of user account
 	*/
 	public static function logout() {
 		Session::destroy('id');
@@ -38,15 +38,28 @@ class Auth
 	*/
 	public static function sendTwoFactor() {
 		$user = Auth::user();
+		$code = Auth::generateCode();
 
 		$client = new Client(TWILIO_SID, TWILIO_TOKEN);
 		$client->messages->create(
 			'+45' . $user->phone,
-			array(
-				'from' => '+46769447755',
-				'body' => $user->twoFactorCode
-				)
+			[	
+			'from' => '+46769447755',
+			'body' => 'Two-factor code: ' . $code
+			]
 			);
+
+		$user->twoFactorCode = $code;
+		$user->save();
+	}
+
+	/**
+	* Generate Two-factor code
+	* 
+	* @return string
+	*/
+	private static function generateCode($length = 10) {
+		return substr(str_shuffle(str_repeat($code = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length / strlen($code)) )), 1, $length);
 	}
 
 	/**
@@ -57,7 +70,10 @@ class Auth
 
 		if ($user->twoFactorCode == $code) {
 			$user->isTwoFactor = true;
-			$user->save();
 		}
+		else {
+			$user->isTwoFactor = false;
+		}
+		$user->save();
 	}
 }

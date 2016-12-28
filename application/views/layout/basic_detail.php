@@ -10,6 +10,7 @@
 			<li class="list-group-item"><strong>Age:</strong> {{data['user'].age}}</li>
 			<li class="list-group-item"><strong>Email:</strong> {{data['user'].email}}</li>
 			<li class="list-group-item"><strong>Phone:</strong> {{data['user'].phone}}</li>
+			<li class="list-group-item"><strong>Role:</strong> {{data['user'].role.roleName}}</li>
 		</ul>
 		<img class="img-responsive col-md-2" src="{{data['user'].avatar}}" alt="{{data['user'].firstName}}">
 	</div>

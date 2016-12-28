@@ -17,13 +17,12 @@ Definition at line 2 of file Redirect.\+php.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_redirect_ab7d0d268b6aaa9a5470b7cb8c7eb1b61}{}\index{Redirect@{Redirect}!controller@{controller}}
+\hypertarget{class_redirect_ab7d0d268b6aaa9a5470b7cb8c7eb1b61}{}\label{class_redirect_ab7d0d268b6aaa9a5470b7cb8c7eb1b61} 
+\index{Redirect@{Redirect}!controller@{controller}}
 \index{controller@{controller}!Redirect@{Redirect}}
-\subsubsection[{controller}]{\setlength{\rightskip}{0pt plus 5cm}static controller (
-\begin{DoxyParamCaption}
-\item[{}]{\$controller}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\label{class_redirect_ab7d0d268b6aaa9a5470b7cb8c7eb1b61}
+\subsubsection{\texorpdfstring{controller()}{controller()}}
+{\footnotesize\ttfamily static controller (\begin{DoxyParamCaption}\item[{}]{\$controller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
 Redirects to given controller and method
 
 
@@ -33,7 +32,7 @@ string & {\em \$controller} & \\
 \end{DoxyParams}
 
 
-Definition at line 19 of file Redirect.\+php.
+Definition at line 18 of file Redirect.\+php.
 
 
 
@@ -41,26 +40,25 @@ Referenced by Basic\textbackslash{}create\+User(), Basic\textbackslash{}delete\+
 
 
 \begin{DoxyCode}
-19                                                    \{
-20         $atSign = explode(\textcolor{charliteral}{'@'}, $controller);
-21 
-22         \textcolor{keywordflow}{if} (strpos($controller, \textcolor{charliteral}{'@'}) !== \textcolor{keyword}{false}) \{
-23             header(\textcolor{stringliteral}{'Location:'} . dirname($\_SERVER[\textcolor{stringliteral}{'PHP\_SELF'}]) . \textcolor{charliteral}{'/'} . $atSign[0] . \textcolor{charliteral}{'/'} . $atSign[1]);
-24         \}
-25         \textcolor{keywordflow}{else} \{
-26             header(\textcolor{stringliteral}{'Location:'}. dirname($\_SERVER[\textcolor{stringliteral}{'PHP\_SELF'}]) . \textcolor{charliteral}{'/'} . $atSign[0]);
-27         \}
-28         exit();
-29     \}
+18                                                    \{
+19         $atSign = explode(\textcolor{charliteral}{'@'}, $controller);
+20 
+21         \textcolor{keywordflow}{if} (strpos($controller, \textcolor{charliteral}{'@'}) !== \textcolor{keyword}{false}) \{
+22             header(\textcolor{stringliteral}{'Location:'} . dirname($\_SERVER[\textcolor{stringliteral}{'PHP\_SELF'}]) . \textcolor{charliteral}{'/'} . $atSign[0] . \textcolor{charliteral}{'/'} . $atSign[1]);
+23         \}
+24         \textcolor{keywordflow}{else} \{
+25             header(\textcolor{stringliteral}{'Location:'}. dirname($\_SERVER[\textcolor{stringliteral}{'PHP\_SELF'}]) . \textcolor{charliteral}{'/'} . $atSign[0]);
+26         \}
+27         exit();
+28     \}
 \end{DoxyCode}
-\hypertarget{class_redirect_a8c51feb32df9ae35002451714b7a9a73}{}\index{Redirect@{Redirect}!url@{url}}
+\hypertarget{class_redirect_a8c51feb32df9ae35002451714b7a9a73}{}\label{class_redirect_a8c51feb32df9ae35002451714b7a9a73} 
+\index{Redirect@{Redirect}!url@{url}}
 \index{url@{url}!Redirect@{Redirect}}
-\subsubsection[{url}]{\setlength{\rightskip}{0pt plus 5cm}static url (
-\begin{DoxyParamCaption}
-\item[{}]{\$url}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\label{class_redirect_a8c51feb32df9ae35002451714b7a9a73}
-Redirects to given U\+R\+L
+\subsubsection{\texorpdfstring{url()}{url()}}
+{\footnotesize\ttfamily static url (\begin{DoxyParamCaption}\item[{}]{\$url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Redirects to given U\+RL
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -69,7 +67,7 @@ string & {\em \$url} & \\
 \end{DoxyParams}
 
 
-Definition at line 9 of file Redirect.\+php.
+Definition at line 8 of file Redirect.\+php.
 
 
 
@@ -77,10 +75,10 @@ Referenced by Basic\textbackslash{}redirect\+To\+Url().
 
 
 \begin{DoxyCode}
-9                                      \{
-10         header(\textcolor{stringliteral}{'Location: '} . $url);
-11         exit();
-12     \}
+8                                      \{
+9         header(\textcolor{stringliteral}{'Location: '} . $url);
+10         exit();
+11     \}
 \end{DoxyCode}
 
 

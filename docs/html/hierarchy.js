@@ -6,6 +6,7 @@ var hierarchy =
       [ "Basic", "class_basic.html", null ]
     ] ],
     [ "Eloquent", null, [
+      [ "Roles", "class_roles.html", null ],
       [ "Users", "class_users.html", null ]
     ] ],
     [ "Exception", null, [

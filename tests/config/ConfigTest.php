@@ -59,6 +59,20 @@ class ConfigTest extends PHPUnit_Framework_TestCase
 			
 		}
 	}
+	public function testConfigCorrectSalt() {
+		$test = '9EHxZnEEJ#$m*kRp6IJ-nLxTPAkUoCA*Bm72H%SrmTTgFoTKss4)RuwAmOcEgar(';
+
+		$this->assertEquals(SALT, $test);
+	}
+	public function testConfigWrongSalt() {
+		$test = '9EHxZnEEJ#$m*kRp6IJ-nLxTPAkUoCA*Bm72H%SrmTTgFoTKss4)RuwAmOcEgar(dfsd';
+
+		try {
+			$this->assertEquals(SALT, $test);
+		} catch (Exception $e) {
+
+		}
+	}
 	public function testConfigCorrectMailgunKey() {
 		$test = 'key-ba1878e0cc7ef6ff386e54a3adc246e4';
 

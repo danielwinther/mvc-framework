@@ -3,7 +3,7 @@
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static \hyperlink{class_hash_a8e076eebb2dc8fc9cb289212c79ad9b8}{create} (\$password, \$algorithm)
+static \hyperlink{class_hash_a0a163e3c00c0e2a4b2f90b35f82adf49}{create} (\$password, \$algorithm, \$salt)
 \item 
 static \hyperlink{class_hash_a1d9ca7080fd83ecfa8e7aeb5ae5fcee9}{verify} (\$password, \$algorithm)
 \end{DoxyCompactItemize}
@@ -17,14 +17,12 @@ Definition at line 2 of file Hash.\+php.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_hash_a8e076eebb2dc8fc9cb289212c79ad9b8}{}\index{Hash@{Hash}!create@{create}}
+\hypertarget{class_hash_a0a163e3c00c0e2a4b2f90b35f82adf49}{}\label{class_hash_a0a163e3c00c0e2a4b2f90b35f82adf49} 
+\index{Hash@{Hash}!create@{create}}
 \index{create@{create}!Hash@{Hash}}
-\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}static create (
-\begin{DoxyParamCaption}
-\item[{}]{\$password, }
-\item[{}]{\$algorithm}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\label{class_hash_a8e076eebb2dc8fc9cb289212c79ad9b8}
+\subsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily static create (\begin{DoxyParamCaption}\item[{}]{\$password,  }\item[{}]{\$algorithm,  }\item[{}]{\$salt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
 Creates a hashed string
 
 
@@ -39,11 +37,7 @@ string
 \end{DoxyReturn}
 
 
-Definition at line 11 of file Hash.\+php.
-
-
-
-References S\+A\+L\+T.
+Definition at line 10 of file Hash.\+php.
 
 
 
@@ -51,19 +45,16 @@ Referenced by Basic\textbackslash{}edit\+User\+Post(), Basic\textbackslash{}retu
 
 
 \begin{DoxyCode}
-11                                                          \{
-12         \textcolor{keywordflow}{return} password\_hash($password, $algorithm, array(\textcolor{stringliteral}{'cost'} => 10, \textcolor{stringliteral}{'salt'} => 
-      \hyperlink{config_8php_a6d448b74f10f8080293b329a47a046b4}{SALT}));
-13     \}
+10                                                                 \{
+11         \textcolor{keywordflow}{return} password\_hash($password, $algorithm, array(\textcolor{stringliteral}{'cost'} => 10, \textcolor{stringliteral}{'salt'} => $salt));
+12     \}
 \end{DoxyCode}
-\hypertarget{class_hash_a1d9ca7080fd83ecfa8e7aeb5ae5fcee9}{}\index{Hash@{Hash}!verify@{verify}}
+\hypertarget{class_hash_a1d9ca7080fd83ecfa8e7aeb5ae5fcee9}{}\label{class_hash_a1d9ca7080fd83ecfa8e7aeb5ae5fcee9} 
+\index{Hash@{Hash}!verify@{verify}}
 \index{verify@{verify}!Hash@{Hash}}
-\subsubsection[{verify}]{\setlength{\rightskip}{0pt plus 5cm}static verify (
-\begin{DoxyParamCaption}
-\item[{}]{\$password, }
-\item[{}]{\$algorithm}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\label{class_hash_a1d9ca7080fd83ecfa8e7aeb5ae5fcee9}
+\subsubsection{\texorpdfstring{verify()}{verify()}}
+{\footnotesize\ttfamily static verify (\begin{DoxyParamCaption}\item[{}]{\$password,  }\item[{}]{\$algorithm }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
 Verify a hashed string
 
 
@@ -78,11 +69,11 @@ string \$hash
 \end{DoxyReturn}
 
 
-Definition at line 22 of file Hash.\+php.
+Definition at line 21 of file Hash.\+php.
 
 
 
-References create().
+References create(), and S\+A\+LT.
 
 
 
@@ -90,12 +81,12 @@ Referenced by Auth\textbackslash{}login().
 
 
 \begin{DoxyCode}
-22                                                          \{
-23         $hash = \hyperlink{class_hash_a8e076eebb2dc8fc9cb289212c79ad9b8}{Hash::create}($password, PASSWORD\_BCRYPT);
-24         \textcolor{keywordflow}{if} (password\_verify($password, $hash)) \{
-25             \textcolor{keywordflow}{return} $hash;   
-26         \}
-27     \}
+21                                                          \{
+22         $hash = \hyperlink{class_hash_a0a163e3c00c0e2a4b2f90b35f82adf49}{Hash::create}($password, PASSWORD\_BCRYPT, \hyperlink{config_8php_a6d448b74f10f8080293b329a47a046b4}{SALT});
+23         \textcolor{keywordflow}{if} (password\_verify($password, $hash)) \{
+24             \textcolor{keywordflow}{return} $hash;   
+25         \}
+26     \}
 \end{DoxyCode}
 
 

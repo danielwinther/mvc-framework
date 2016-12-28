@@ -5,5 +5,5 @@ var searchData=
   ['find_5fancestor_5ftag',['find_ancestor_tag',['../classsimple__html__dom__node.html#a03d7c0efb45d013cc1421612c719e867',1,'simple_html_dom_node']]],
   ['first_5fchild',['first_child',['../classsimple__html__dom__node.html#ade851eb21476ec16857ed56d166f6afc',1,'simple_html_dom_node']]],
   ['firstchild',['firstChild',['../classsimple__html__dom__node.html#a2e7ff3e4db465652634f86004ccb83db',1,'simple_html_dom_node\firstChild()'],['../classsimple__html__dom.html#a2e7ff3e4db465652634f86004ccb83db',1,'simple_html_dom\firstChild()']]],
-  ['foreach',['foreach',['../boostrap_8php.html#a082ff60a5613c40db3435a164f1d4aca',1,'boostrap.php']]]
+  ['foreach',['foreach',['../boostrap_8php.html#a43c3747e487b786ca7ccb692c4504c72',1,'boostrap.php']]]
 ];
