@@ -127,6 +127,8 @@ class Basic extends BaseController {
 		'age' => 24
 		],
 		];
-		echo $yaml = $this->convert('YAML', $array);
+		$yaml = $this->convert('YAML', $array);
+
+		print_r($yaml);
 	}
 }
