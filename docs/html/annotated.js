@@ -5,6 +5,7 @@ var annotated =
     [ "Auth", "class_auth.html", "class_auth" ],
     [ "BaseController", "class_base_controller.html", "class_base_controller" ],
     [ "Basic", "class_basic.html", "class_basic" ],
+    [ "ControllerFactory", "class_controller_factory.html", "class_controller_factory" ],
     [ "ControllerNotFound", "class_controller_not_found.html", "class_controller_not_found" ],
     [ "ConvertJSON", "class_convert_j_s_o_n.html", "class_convert_j_s_o_n" ],
     [ "ConvertStrategy", "interface_convert_strategy.html", "interface_convert_strategy" ],

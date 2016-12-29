@@ -37,7 +37,7 @@ Definition at line 21 of file Application.\+php.
 
 
 
-References C\+O\+N\+T\+R\+O\+L\+L\+E\+R, M\+E\+T\+H\+O\+D, and P\+A\+R\+A\+M\+E\+T\+E\+R.
+References C\+O\+N\+T\+R\+O\+L\+L\+E\+R, Controller\+Factory\textbackslash{}create(), M\+E\+T\+H\+O\+D, and P\+A\+R\+A\+M\+E\+T\+E\+R.
 
 
 \begin{DoxyCode}
@@ -46,7 +46,8 @@ References C\+O\+N\+T\+R\+O\+L\+L\+E\+R, M\+E\+T\+H\+O\+D, and P\+A\+R\+A\+M\+E\
 23         $this->method = \hyperlink{config_8php_a9d70943cac2f50debb62d2008a6e768d}{METHOD};
 24         $this->parameter = \hyperlink{config_8php_a75466fbd8ac40be3d3c185c9974118e7}{PARAMETER};
 25 
-26         $this->load($this->parseUrl());
+26         \hyperlink{class_controller_factory_a7b8f01cd850e4e6f33e60f81a4d99ae6}{ControllerFactory::create}($this->parseUrl(), $this->controller, $this->
+      method, $this->parameter);
 27     \}
 \end{DoxyCode}
 

@@ -9,6 +9,9 @@ var dir_f291bc7445136b250e4ee6e8f3a7d000 =
     [ "BaseController.php", "_base_controller_8php.html", [
       [ "BaseController", "class_base_controller.html", "class_base_controller" ]
     ] ],
+    [ "ControllerFactory.php", "_controller_factory_8php.html", [
+      [ "ControllerFactory", "class_controller_factory.html", "class_controller_factory" ]
+    ] ],
     [ "ConvertJSON.php", "_convert_j_s_o_n_8php.html", [
       [ "ConvertJSON", "class_convert_j_s_o_n.html", "class_convert_j_s_o_n" ]
     ] ],

@@ -1,10 +1,12 @@
 var hierarchy =
 [
     [ "Application", "class_application.html", null ],
+    [ "ApplicationSingleton", "class_application_singleton.html", null ],
     [ "Auth", "class_auth.html", null ],
     [ "BaseController", "class_base_controller.html", [
       [ "Basic", "class_basic.html", null ]
     ] ],
+    [ "ControllerFactory", "class_controller_factory.html", null ],
     [ "ConvertStrategy", "interface_convert_strategy.html", [
       [ "ConvertJSON", "class_convert_j_s_o_n.html", null ],
       [ "ConvertXML", "class_convert_x_m_l.html", null ],
@@ -26,8 +28,6 @@ var hierarchy =
     [ "Session", "class_session.html", null ],
     [ "simple_html_dom", "classsimple__html__dom.html", null ],
     [ "simple_html_dom_node", "classsimple__html__dom__node.html", null ],
-    [ "SingletonInterface", "interface_singleton_interface.html", [
-      [ "ApplicationSingleton", "class_application_singleton.html", null ]
-    ] ],
+    [ "SingletonInterface", "interface_singleton_interface.html", null ],
     [ "User", "class_user.html", null ]
 ];
