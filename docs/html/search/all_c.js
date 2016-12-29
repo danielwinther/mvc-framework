@@ -8,6 +8,8 @@ var searchData=
   ['method',['METHOD',['../config_8php.html#a9d70943cac2f50debb62d2008a6e768d',1,'config.php']]],
   ['methodnotfound',['MethodNotFound',['../class_method_not_found.html',1,'']]],
   ['methodnotfound_2ephp',['MethodNotFound.php',['../_method_not_found_8php.html',1,'']]],
+  ['modelfactory',['ModelFactory',['../class_model_factory.html',1,'']]],
+  ['modelfactory_2ephp',['ModelFactory.php',['../_model_factory_8php.html',1,'']]],
   ['modelnotfound',['ModelNotFound',['../class_model_not_found.html',1,'']]],
   ['modelnotfound_2ephp',['ModelNotFound.php',['../_model_not_found_8php.html',1,'']]]
 ];

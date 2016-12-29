@@ -1,0 +1,63 @@
+\hypertarget{class_convert_y_a_m_l}{}\section{Convert\+Y\+A\+M\+L Class Reference}
+\label{class_convert_y_a_m_l}\index{Convert\+Y\+A\+M\+L@{Convert\+Y\+A\+M\+L}}
+Inheritance diagram for Convert\+Y\+A\+M\+L\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_convert_y_a_m_l}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_convert_y_a_m_l_a41444ea294bbd35a6c07ef4e9faeae10}{convert} (\$data)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 2 of file Convert\+Y\+A\+M\+L.\+php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_convert_y_a_m_l_a41444ea294bbd35a6c07ef4e9faeae10}{}\index{Convert\+Y\+A\+M\+L@{Convert\+Y\+A\+M\+L}!convert@{convert}}
+\index{convert@{convert}!Convert\+Y\+A\+M\+L@{Convert\+Y\+A\+M\+L}}
+\subsubsection[{convert}]{\setlength{\rightskip}{0pt plus 5cm}convert (
+\begin{DoxyParamCaption}
+\item[{}]{\$data}
+\end{DoxyParamCaption}
+)}\label{class_convert_y_a_m_l_a41444ea294bbd35a6c07ef4e9faeae10}
+Converts data to Y\+A\+M\+L
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$data} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_convert_strategy_a41444ea294bbd35a6c07ef4e9faeae10}{Convert\+Strategy}.
+
+
+
+Definition at line 9 of file Convert\+Y\+A\+M\+L.\+php.
+
+
+
+Referenced by Base\+Controller\textbackslash{}convert().
+
+
+\begin{DoxyCode}
+9                                    \{
+10         \textcolor{keywordflow}{return} yaml\_emit($data, YAML\_UTF8\_ENCODING);
+11     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/xampp/htdocs/mvc-\/framework/application/kernel/\hyperlink{_convert_y_a_m_l_8php}{Convert\+Y\+A\+M\+L.\+php}\end{DoxyCompactItemize}

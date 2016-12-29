@@ -1,0 +1,59 @@
+\hypertarget{class_convert_j_s_o_n}{}\section{Convert\+J\+S\+O\+N Class Reference}
+\label{class_convert_j_s_o_n}\index{Convert\+J\+S\+O\+N@{Convert\+J\+S\+O\+N}}
+Inheritance diagram for Convert\+J\+S\+O\+N\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_convert_j_s_o_n}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_convert_j_s_o_n_a41444ea294bbd35a6c07ef4e9faeae10}{convert} (\$data)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 2 of file Convert\+J\+S\+O\+N.\+php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_convert_j_s_o_n_a41444ea294bbd35a6c07ef4e9faeae10}{}\index{Convert\+J\+S\+O\+N@{Convert\+J\+S\+O\+N}!convert@{convert}}
+\index{convert@{convert}!Convert\+J\+S\+O\+N@{Convert\+J\+S\+O\+N}}
+\subsubsection[{convert}]{\setlength{\rightskip}{0pt plus 5cm}convert (
+\begin{DoxyParamCaption}
+\item[{}]{\$data}
+\end{DoxyParamCaption}
+)}\label{class_convert_j_s_o_n_a41444ea294bbd35a6c07ef4e9faeae10}
+Converts data to J\+S\+O\+N
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$data} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_convert_strategy_a41444ea294bbd35a6c07ef4e9faeae10}{Convert\+Strategy}.
+
+
+
+Definition at line 9 of file Convert\+J\+S\+O\+N.\+php.
+
+
+\begin{DoxyCode}
+9                                    \{
+10         \textcolor{keywordflow}{return} json\_encode($data, JSON\_PRETTY\_PRINT | JSON\_NUMERIC\_CHECK);
+11     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/xampp/htdocs/mvc-\/framework/application/kernel/\hyperlink{_convert_j_s_o_n_8php}{Convert\+J\+S\+O\+N.\+php}\end{DoxyCompactItemize}

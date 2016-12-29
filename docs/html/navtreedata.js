@@ -4,8 +4,8 @@ var NAVTREE =
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ]
     ] ],
-    [ "Data Structures", "annotated.html", [
-      [ "Data Structures", "annotated.html", "annotated_dup" ],
+    [ "Data Structures", null, [
+      [ "Data Structures", "annotated.html", "annotated" ],
       [ "Data Structure Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Data Fields", "functions.html", [
@@ -28,7 +28,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_application_8php.html",
-"config_8php.html#ad320bd8d96c22e094fb9b774f269aaef"
+"classsimple__html__dom__node.html#abc8e9e31bb15c8a44c3210ec551407c8"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

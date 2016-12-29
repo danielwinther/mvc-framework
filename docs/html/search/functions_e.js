@@ -12,9 +12,9 @@ var searchData=
   ['returnint',['returnInt',['../class_basic.html#a8d2918087022004ef5ad62d8f76a73d7',1,'Basic']]],
   ['returnjson',['returnJson',['../class_basic.html#aab9c1fc26dd9ab7939d5eb9e77c2c4a5',1,'Basic']]],
   ['returnmodel',['returnModel',['../class_basic.html#a7cb6a02987f0faaef2ee4aff9198907e',1,'Basic']]],
-  ['returnparameter',['returnParameter',['../class_basic.html#ac380e8a432563c6affcfddd43384c1d2',1,'Basic']]],
+  ['returnparameter',['returnParameter',['../class_basic.html#ab5cca41d57b6457b974025ce9e2160a0',1,'Basic']]],
   ['returnstring',['returnString',['../class_basic.html#a5bb666dcea19a9561c2047cfa25936bd',1,'Basic']]],
-  ['returntwoparameters',['returnTwoParameters',['../class_basic.html#a2ef87b96abcca966a41e34d077fcc38e',1,'Basic']]],
+  ['returntwoparameters',['returnTwoParameters',['../class_basic.html#a3127aa274a2b885e0b94ea8bc8697adb',1,'Basic']]],
   ['returnxml',['returnXml',['../class_basic.html#ab7183791265fc4aa7b57f81ed4cbf791',1,'Basic']]],
   ['returnyaml',['returnYaml',['../class_basic.html#a1728e20001f09f21fbf27251f3eeff52',1,'Basic']]],
   ['role',['role',['../class_users.html#a4a492898ef6d04f34f38e12fab5dcf57',1,'Users']]]

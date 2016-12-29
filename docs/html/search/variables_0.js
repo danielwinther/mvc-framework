@@ -15,6 +15,7 @@ var searchData=
   ['_24default_5fspan_5ftext',['$default_span_text',['../classsimple__html__dom.html#a0da61a0f0e8ff00f0ba83b363d7badda',1,'simple_html_dom']]],
   ['_24doc',['$doc',['../classsimple__html__dom.html#afc5e9ce512cd97cf2e0e25bb20dcd39b',1,'simple_html_dom']]],
   ['_24fillable',['$fillable',['../class_roles.html#a6a90e74ccdf5efd70d51d10c906f8e32',1,'Roles\$fillable()'],['../class_users.html#a6a90e74ccdf5efd70d51d10c906f8e32',1,'Users\$fillable()']]],
+  ['_24instance',['$instance',['../class_application_singleton.html#a9cfc19b3b4f25b2a9007673c57d2f58c',1,'ApplicationSingleton']]],
   ['_24lowercase',['$lowercase',['../classsimple__html__dom.html#a8e20508789d34bc35e3b00ad58159d1c',1,'simple_html_dom']]],
   ['_24method',['$method',['../class_application.html#a12661b2fc0f57f97e30a1620889ce9c6',1,'Application']]],
   ['_24nodes',['$nodes',['../classsimple__html__dom__node.html#afc84f46342a660cca8589570197bc421',1,'simple_html_dom_node\$nodes()'],['../classsimple__html__dom.html#afc84f46342a660cca8589570197bc421',1,'simple_html_dom\$nodes()']]],
