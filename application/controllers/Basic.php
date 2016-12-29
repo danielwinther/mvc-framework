@@ -119,7 +119,7 @@ class Basic extends BaseController {
 
 		print_r($xml);
 	}
-	public function returnYaml() {
+	public function returnYaml() {	
 		$users = $this->loadModel('Users');
 		$array = [
 		'user' => [

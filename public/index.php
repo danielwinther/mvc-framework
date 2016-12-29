@@ -2,6 +2,6 @@
 require_once realpath(__DIR__ . '/..') . '/application/boostrap.php';
 
 /**
-* Creates instance of application
+* Creates singleton instance of application
 */
-$application = new Application;
+$application = ApplicationSingleton::getInstance();

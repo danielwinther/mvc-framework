@@ -17,15 +17,7 @@ class BaseController {
 	* @return object $model
 	*/
 	protected function loadModel($model, $constructor = []) {
-		if (file_exists(realpath(__DIR__ . '/..') . '/models/' . $model . '.php')) {
-			require_once realpath(__DIR__ . '/..') . '/models/' . $model . '.php';
-		}
-		else {
-			throw new ModelNotFound('ModelNotFound', 'Model "' . $model . '" not found.');
-			exit();
-		}
-
-		return new $model($constructor);
+		return ModelFactory::create($model, $constructor);
 	}
 
 	/**
@@ -139,53 +131,19 @@ class BaseController {
 	public function convert($format, $data) {
 		switch ($format) {
 			case 'JSON':
-			return json_encode($data, JSON_PRETTY_PRINT | JSON_NUMERIC_CHECK);
+			$convert = new ConvertJSON;
 			break;
 
 			case 'XML':
-			$doc = new DOMDocument();
-			$child = $this->toXml($doc, $data);
-			if ($child)
-				$doc->appendChild($child);
-			$doc->formatOutput = true; 
-			return $xml = $doc->saveXML();
+			$convert = new ConvertXML;
 			break;
 
 			case 'YAML':
-			return yaml_emit($data, YAML_UTF8_ENCODING);
+			$convert = new ConvertYAML;
 			break;
 		}
+
+		return $convert->convert($data);
 	}
 
-	/**
-	* Converts data to XML format
-	*
-	* @param DOMDocument $dom
-	* @param object/array $data
-	* @return string $element
-	*/
-	private function toXml($dom, $data) {
-		if (empty($data['name']))
-			return false;
-
-		$elementValue = (!empty( $data['value'])) ? $data['value'] : null;
-		$element = $dom->createElement( $data['name'], $elementValue);
-
-		if (!empty( $data['attributes']) && is_array( $data['attributes'])) {
-			foreach ($data['attributes'] as $attributeKey => $attributeValue) {
-				$element->setAttribute($attributeKey, $attributeValue);
-			}
-		}
-
-		foreach ($data as $dataKey => $childData) {
-			if (!is_numeric($dataKey))
-				continue;
-
-			$child = $this->toXml($dom, $childData);
-			if ($child)
-				$element->appendChild($child);
-		}
-
-		return $element;
-	}
 }
