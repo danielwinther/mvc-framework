@@ -1,4 +1,5 @@
 <?php
+require_once '/../../application/kernel/ModelFactory.php';
 require_once '/../../application/kernel/BaseController.php';
 require_once '/../../application/controllers/Basic.php';
 require_once '/../../application/libraries/simple_html_dom.php';
@@ -77,11 +78,11 @@ class BasicTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals(password_verify($test, $hash), 1);
 	}
 	public function testHashWrong() {
-		$test = 'daniel';
+		$test = 'daniels';
 		$hash = $this->basic->returnHash();
 
 		try {
-			$this->assertEquals(password_verify($test, $hash), 0);
+			$this->assertEquals(password_verify($test, $hash), 1);
 		} catch (Exception $e) {
 			
 		}
