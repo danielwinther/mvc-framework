@@ -30,6 +30,7 @@ class Auth {
 	*/
 	public static function user() {
 		$user = Session::get('id');
+		
 		return Users::find($user);
 	}
 
