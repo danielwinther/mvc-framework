@@ -1,5 +1,5 @@
 <?php
-class ApplicationSingleton {
+class ApplicationSingleton implements SingletonInterface {
 	/**
 	* @var Application $instance
 	*/
@@ -22,5 +22,4 @@ class ApplicationSingleton {
 
 		return ApplicationSingleton::$instance;
 	}
-
 }

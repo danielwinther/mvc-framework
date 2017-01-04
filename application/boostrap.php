@@ -17,6 +17,7 @@ require_once realpath(__DIR__) . '/libraries/Auth.php';
 require_once realpath(__DIR__) . '/kernel/ControllerFactory.php';
 require_once realpath(__DIR__) . '/kernel/ModelFactory.php';
 require_once realpath(__DIR__) . '/kernel/Application.php';
+require_once realpath(__DIR__) . '/kernel/SingletonInterface.php';
 require_once realpath(__DIR__) . '/kernel/ApplicationSingleton.php';
 require_once realpath(__DIR__) . '/kernel/BaseController.php';
 require_once realpath(__DIR__) . '/kernel/ConvertStrategy.php';
