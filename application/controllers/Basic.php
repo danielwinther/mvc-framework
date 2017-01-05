@@ -7,7 +7,9 @@ class Basic extends BaseController {
 		$users = $this->loadModel('Users');
 		$users = Users::all()->sortBy('firstName');
 
-		Auth::login('daniel', 'admin');
+		//Auth::login('daniel', 'admin');
+		//print_r(Auth::user());
+		//Auth::logout();
 
 		//Auth::sendTwoFactor();
 		//Auth::verifyTwoFactor('');

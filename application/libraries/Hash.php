@@ -7,8 +7,8 @@ class Hash {
 	* @param string $algorithm
 	* @return string
 	*/
-	public static function create($password, $algorithm, $salt) {
-		return password_hash($password, $algorithm, array('cost' => 10, 'salt' => $salt));
+	public static function create($password, $algorithm) {
+		return password_hash($password, $algorithm, array('cost' => 10, 'salt' => SALT));
 	}
 
 	/**
@@ -19,7 +19,7 @@ class Hash {
 	* @return string $hash
 	*/
 	public static function verify($password, $algorithm) {
-		$hash = Hash::create($password, PASSWORD_BCRYPT, SALT);
+		$hash = Hash::create($password, $algorithm, SALT);
 		if (password_verify($password, $hash)) {
 			return $hash;	
 		}
