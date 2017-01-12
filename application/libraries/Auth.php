@@ -21,6 +21,7 @@ class Auth {
 	* Logouts out of user account
 	*/
 	public static function logout() {
+		Session::init();
 		Session::destroy('id');
 	}
 

@@ -8,14 +8,15 @@ class Basic extends BaseController {
 	}
 	public function loginPost() {
 		$user = $this->loadModel('Users');
-
 		Auth::login($this->postInput('userName'), $this->postInput('password'));
 		$user = Auth::user();
+
 		if ($user) {
 			Redirect::controller('Basic@index');
 		}
 		else {
 			Auth::login();
+			
 			Redirect::controller('Basic@login');
 		}
 	}
@@ -26,8 +27,14 @@ class Basic extends BaseController {
 	}
 	public function index() {
 		$user = $this->loadModel('Users');
+		$user = Auth::user();
 
-		echo $this->renderView('layout/index', ['user' => Auth::user()]);
+		if ($user) {
+			echo $this->renderView('layout/index', ['user' => $user]);			
+		}
+		else {
+			Redirect::controller('Basic@login');
+		}
 	}
 
 	public function returnString() {

@@ -13,6 +13,7 @@ class Session {
 	public static function set($key, $value) {
 		$_SESSION[$key] = $value;
 	}
+	
 	/**
 	* Gets session value
 	*
@@ -23,6 +24,7 @@ class Session {
 			return $_SESSION[$key];
 		}
 	}
+
 	/**
 	* Destroys session
 	*/
