@@ -10,6 +10,7 @@ class Auth {
 	*/
 	public static function login($userName, $password) {
 		$user = Users::where('userName', $userName)->where('password', Hash::verify($password, PASSWORD_BCRYPT))->first();
+
 		if ($user) {
 			Session::init();
 			Session::set('id', $user->id);
@@ -29,6 +30,7 @@ class Auth {
 	* @return Users
 	*/
 	public static function user() {
+		Session::init();
 		$user = Session::get('id');
 		
 		return Users::find($user);
