@@ -46,7 +46,7 @@ class Auth {
 
 		$client = new Client(TWILIO_SID, TWILIO_TOKEN);
 		$client->messages->create(
-			'+45' . $user->phone,
+			$user->phone,
 			[	
 			'from' => '+46769447755',
 			'body' => 'Two-factor code: ' . $code

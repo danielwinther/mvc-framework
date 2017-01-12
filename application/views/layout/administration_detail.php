@@ -1,4 +1,4 @@
-{% extends "layout/basic_base.php" %}
+{% extends "layout/base.php" %}
 
 {% block content %}
 <h2 class="row">Showcases user model</h2>
@@ -16,7 +16,7 @@
 	</div>
 </div>
 <div class="row">
-	<a href="/mvc-framework/public/Basic" class="btn btn-default btn-lg btn-block">
+	<a href="/mvc-framework/public/Administration/index" class="btn btn-default btn-lg btn-block">
 		<span class="glyphicon glyphicon-arrow-left"></span> Return to list of users
 	</a>
 </div>

@@ -1,9 +1,9 @@
-{% extends "layout/basic_base.php" %}
+{% extends "layout/base.php" %}
 
 {% block content %}
 <div class="row">
 	<h2>Showcases user edit model</h2>
-	<form method="POST" action="/mvc-framework/public/Basic/editUserPost">
+	<form method="POST" action="/mvc-framework/public/Administration/editUserPost">
 		<div class="form-group">
 			<input class="form-control" type="hidden" name="id" value="{{data['user'].id}}" placeholder="ID" required="">
 		</div>

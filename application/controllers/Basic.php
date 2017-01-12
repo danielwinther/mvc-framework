@@ -1,42 +1,5 @@
 <?php
-use Mailgun\Mailgun;
-use Twilio\Rest\Client;
-
 class Basic extends BaseController {
-	public function login() {
-		echo $this->renderView('layout/login');
-	}
-	public function loginPost() {
-		$user = $this->loadModel('Users');
-		Auth::login($this->postInput('userName'), $this->postInput('password'));
-		$user = Auth::user();
-
-		if ($user) {
-			Redirect::controller('Basic@index');
-		}
-		else {
-			Auth::login();
-			
-			Redirect::controller('Basic@login');
-		}
-	}
-	public function logout() {
-		Auth::logout();
-
-		Redirect::controller('Basic@login');
-	}
-	public function index() {
-		$user = $this->loadModel('Users');
-		$user = Auth::user();
-
-		if ($user) {
-			echo $this->renderView('layout/index', ['user' => $user]);			
-		}
-		else {
-			Redirect::controller('Basic@login');
-		}
-	}
-
 	public function returnString() {
 		return 'daniel';
 	}

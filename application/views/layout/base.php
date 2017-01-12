@@ -22,14 +22,14 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="index">MVC Framework</a>
+					<a class="navbar-brand" href="../Home/index">MVC Framework</a>
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li><a href="index">Index</a></li>
-						<li><a href="obituaries">Obituaries</a></li>
-						<li><a href="administration">Administration</a></li>
-						<li><a href="contact">Contact</a></li>
+						<li><a href="../Home/index">Home</a></li>
+						<li><a href="../Obituaries/index">Obituaries</a></li>
+						<li><a href="../Administration/index">Administration</a></li>
+						<li><a href="../Contact/index">Contact</a></li>
 						<!-- <li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
 							<ul class="dropdown-menu">
@@ -38,7 +38,7 @@
 						</li> -->
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="logout">Logout</a></li>
+						<li><a href="../Login/logout">Logout</a></li>
 					</ul>
 				</div>
 			</div>

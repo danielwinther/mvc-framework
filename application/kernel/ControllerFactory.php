@@ -9,6 +9,7 @@ class ControllerFactory {
 	* @param string $parameter
 	*/
 	public static function create($url, $controller, $method, $parameter) {
+
 		if (isset($url[0])) {
 			if (file_exists(realpath(__DIR__ . '/..') . '/controllers/' . $url[0] . '.php')) {
 				$controller = $url[0];
@@ -20,7 +21,6 @@ class ControllerFactory {
 				exit();
 			}
 		}
-		
 		require_once realpath(__DIR__ . '/..') . '/controllers/' . $controller . '.php';
 		$controller = new $controller;
 
@@ -35,7 +35,6 @@ class ControllerFactory {
 				exit();
 			}
 		}
-
 		$parameter = $url ? array_values($url) : [];
 
 		call_user_func_array([$controller, $method], $parameter);
