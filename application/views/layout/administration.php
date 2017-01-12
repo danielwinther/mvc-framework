@@ -13,8 +13,10 @@
 				<th>Age</th>
 				<th>Email</th>
 				<th>Phone</th>
+				{% if data['user'].roleId == 1 %}
 				<th>Update</th>
 				<th>Delete</th>
+				{% endif %}
 			</tr>
 		</thead>
 		<tbody>
@@ -27,16 +29,19 @@
 				<td>{{user.age}}</td>
 				<td>{{user.email}}</td>
 				<td>{{user.phone}}</td>
+				{% if data['user'].roleId == 1 %}
 				<td>
 					<a class="btn btn-default btn-xs" href="../Administration/editUser/{{user.id}}">Update</a>
 				</td>
 				<td>
 					<a class="btn btn-danger btn-xs" href="../Administration/deleteUser/{{user.id}}">Delete</a>
 				</td>
+				{% endif %}
 			</tr>
 			{% endfor %}
 		</tbody>
 	</table>
+	{% if data['user'].roleId == 1 %}
 	<div class="form-group">
 		<button class="btn btn-default btn-block" data-toggle="collapse" data-target="#createUser">Create new user</button>
 	</div>
@@ -72,8 +77,16 @@
 			</div>
 		</div>
 		<div class="form-group">
+			<select class="form-control" name="role">
+				{% for role in data['roles'] %}
+				<option value="{{role.id}}">{{role.roleName}}</option>
+				{% endfor %}
+			</select>
+		</div>
+		<div class="form-group">
 			<input class="btn btn-primary btn-block" type="submit" name="submit" value="Create">
 		</div>
 	</form>
+	{% endif %}
 </div>
 {% endblock %}

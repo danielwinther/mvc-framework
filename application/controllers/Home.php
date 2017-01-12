@@ -4,11 +4,11 @@ use Twilio\Rest\Client;
 class Home extends BaseController {
 	public function index() {
 		$user = $this->loadModel('Users');
-		$user = $this->loadModel('Roles');
+		$this->loadModel('Roles');
 		$user = Auth::user();
 
 		if ($user) {
-			echo $this->renderView('layout/index', ['user' => $user]);
+			echo $this->renderView('layout/home', ['user' => $user]);
 		}
 		else {
 			Redirect::controller('Login@index');

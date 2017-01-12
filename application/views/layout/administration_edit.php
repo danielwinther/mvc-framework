@@ -2,7 +2,6 @@
 
 {% block content %}
 <div class="row">
-	<h2>Showcases user edit model</h2>
 	<form method="POST" action="/mvc-framework/public/Administration/editUserPost">
 		<div class="form-group">
 			<input class="form-control" type="hidden" name="id" value="{{data['user'].id}}" placeholder="ID" required="">
@@ -36,6 +35,13 @@
 			<div class="form-group col-md-6">
 				<input class="form-control input-sm" type="tel" name="phone" value="{{data['user'].phone}}" placeholder="Phone" required="">
 			</div>
+		</div>
+		<div class="form-group">
+			<select class="form-control" name="role">
+				{% for role in data['roles'] %}
+				<option value="{{role.id}}">{{role.roleName}}</option>
+				{% endfor %}
+			</select>
 		</div>
 		<div class="form-group">
 			<input class="btn btn-success btn-block" type="submit" name="submit" value="Save changes">

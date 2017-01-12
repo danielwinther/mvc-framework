@@ -3,7 +3,6 @@ use Mailgun\Mailgun;
 
 class Contact extends BaseController {
 	public function index() {
-
 		$user = $this->loadModel('Users');
 		$user = Auth::user();
 
