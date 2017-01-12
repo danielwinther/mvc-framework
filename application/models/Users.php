@@ -6,6 +6,6 @@ class Users extends Eloquent {
 
 	public function role()
 	{
-		return $this->hasOne('Roles', 'id');
+		return $this->belongsTo('Roles', 'roleId');
 	}
 }
