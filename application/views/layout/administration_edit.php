@@ -1,7 +1,7 @@
 {% extends "layout/base.php" %}
 
 {% block content %}
-<div class="row">
+<div class="col-md-12">
 	<form method="POST" action="/mvc-framework/public/Administration/editUserPost">
 		<div class="form-group">
 			<input class="form-control" type="hidden" name="id" value="{{data['user'].id}}" placeholder="ID" required="">

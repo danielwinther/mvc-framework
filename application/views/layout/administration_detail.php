@@ -1,7 +1,8 @@
 {% extends "layout/base.php" %}
 
 {% block content %}
-<div class="panel panel-info row">
+<div class="col-md-12">
+	<div class="panel panel-info">
 	<div class="panel-heading">{{data['user'].userName}}</div>
 	<div class="panel-body">
 		<ul class="list-group col-md-10">
@@ -14,9 +15,10 @@
 		<img class="img-responsive col-md-2" src="{{data['user'].avatar}}" alt="{{data['user'].firstName}}">
 	</div>
 </div>
-<div class="row">
+<div>
 	<a href="/mvc-framework/public/Administration/index" class="btn btn-default btn-lg btn-block">
 		<span class="glyphicon glyphicon-arrow-left"></span> Return to list of users
 	</a>
+</div>
 </div>
 {% endblock %}
