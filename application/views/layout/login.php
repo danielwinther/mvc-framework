@@ -1,4 +1,4 @@
-{% extends "layout/base.php" %}
+{% extends "base/base.php" %}
 
 {% block content %}
 <div class="row">

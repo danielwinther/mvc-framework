@@ -26,7 +26,7 @@
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
 					<li><a href="../Home/index">Home</a></li>
-					<li><a href="../Obituaries/index">Obituaries</a></li>
+					<li><a href="../Prices/index">Prices</a></li>
 					<li><a href="../Administration/index">Administration</a></li>
 					<li><a href="../Contact/index">Contact</a></li>
 						<!-- <li class="dropdown">
