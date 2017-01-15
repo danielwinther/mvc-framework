@@ -18,5 +18,7 @@
 			<input class="btn btn-primary btn-block" type="submit" name="login" value="Login">
 		</div>
 	</form>
+	{% block footer %}
+	{% endblock %}
 </div>
 {% endblock %}
