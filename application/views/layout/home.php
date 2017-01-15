@@ -30,10 +30,10 @@
 		<input type="text" class="form-control" value="{{data['user'].phone}}" name="phone" placeholder="Phone number" disabled>
 	</div>
 	<div class="form-group">
-		<a class="btn btn-default btn-block" href="../Basic/sendTwoFactor">Send two-factor code</a>
+		<a class="btn btn-default btn-block" href="../Home/sendTwoFactor">Send two-factor code</a>
 	</div>
 	<hr>
-	<form action="../Index/verifyTwoFactor" method="POST">
+	<form action="../Home/verifyTwoFactor" method="POST">
 		<div class="form-group">
 			<input type="text" class="form-control" name="code" placeholder="Type two-factor verification code">
 		</div>

@@ -18,12 +18,12 @@ class Home extends BaseController {
 		$user = $this->loadModel('Users');
 		Auth::sendTwoFactor();
 
-		Redirect::controller('Login@index');
+		Redirect::controller('Home@index');
 	}
 	public function verifyTwoFactor() {
 		$user = $this->loadModel('Users');
 		Auth::verifyTwoFactor($this->postInput('code'));
 
-		Redirect::controller('Login@index');
+		Redirect::controller('Home@index');
 	}
 }

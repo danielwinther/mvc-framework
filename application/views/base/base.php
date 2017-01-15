@@ -49,7 +49,10 @@
 	</div>
 	{% block footer %}
 	<div class="container">
-		<h5 class="pull-right"><em>&copy; Copyright {{'now'|date('Y')}}</em></h5>
+		<div class="col-md-12">
+		<h5 class="pull-left"><a href="../Api/index">REST API</a></h5>
+			<h5 class="pull-right"><em>&copy; Copyright {{'now'|date('Y')}}</em></h5>
+		</div>
 	</div>
 	{% endblock %}
 </body>

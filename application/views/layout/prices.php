@@ -16,8 +16,8 @@
 			{% for product in data['html'] %}
 			<tr>
 				<td>{{product.find('p', 0).plaintext | default('Ingen tekst fundet')}}</td>
-				<td>{{product.find('a', 0).getAttribute('title') | default('Ingen tekst fundet')}}</td>
-				<td><img width="150" class="img-thumbnail" src="https://www.bedrebegravelse.dk/{{product.find('img', 0).src}}" alt="{{product.find('a', 0).getAttribute('title')}}"></td>
+				<td>{{product.find('a', 0).title | default('Ingen tekst fundet')}}</td>
+				<td><img width="150" class="img-thumbnail" src="https://www.bedrebegravelse.dk/{{product.find('img', 0).src}}" alt="{{product.find('a', 0).title}}"></td>
 			</tr>
 			{% endfor %}
 		</tbody>
