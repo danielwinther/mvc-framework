@@ -6,14 +6,14 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 
 $capsule = new Capsule();
 $capsule->addConnection([
-	'driver' => 'mysql',
-	'host' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'mvc-framework',
-	'charset' => 'utf8',
-	'collation' => 'utf8_unicode_ci',
-	'prefix' => ''
+	'driver' => DRIVER,
+	'host' => HOST,
+	'username' => USERNAME,
+	'password' => PASSWORD,
+	'database' => DATABASE,
+	'charset' => CHARSET,
+	'collation' => COLLATION,
+	'prefix' => PREFIX
 ]);
 
 $capsule->bootEloquent();
