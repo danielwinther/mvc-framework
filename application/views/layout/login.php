@@ -1,7 +1,7 @@
 {% extends "base/base.php" %}
 
 {% block content %}
-<div class="row">
+<section class="row">
 	{% block header %}
 	{% endblock %}
 	<h2>Login</h2>
@@ -20,5 +20,5 @@
 	</form>
 	{% block footer %}
 	{% endblock %}
-</div>
+</section>
 {% endblock %}

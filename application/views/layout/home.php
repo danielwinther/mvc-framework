@@ -1,7 +1,7 @@
 {% extends "base/base.php" %}
 
 {% block content %}
-<div class="col-md-8">
+<article class="col-md-8">
 	<h2>You are logged in as<em>: {{data['user'].userName}} ({{data['user'].role.roleName}})</em></h2>
 	<div class="well">
 		<p>
@@ -23,8 +23,8 @@
 			Integer libero purus, pulvinar eu magna at, semper ornare lorem. Nam purus velit, malesuada in mi nec, pretium congue nulla. Vivamus lacinia, tortor in interdum finibus, arcu enim ultricies erat, nec malesuada magna lorem ac urna. Nulla egestas metus mi, ac hendrerit felis hendrerit nec. Proin tincidunt magna sed velit cursus sollicitudin. Mauris luctus nisi vitae nisl finibus interdum. Cras vehicula dictum lectus at imperdiet. Nam ut placerat ex.
 		</p>
 	</div>
-</div>
-<div class="col-md-4">
+</article>
+<aside class="col-md-4">
 	<h2>Two-factor</h2>
 	<div class="form-group">
 		<input type="text" class="form-control" value="{{data['user'].phone}}" name="phone" placeholder="Phone number" disabled>
@@ -47,5 +47,5 @@
 		<em><p>Two-factor verification enabled</p></em>
 	</div>
 	{% endif %}
-</div>
+</aside>
 {% endblock %}

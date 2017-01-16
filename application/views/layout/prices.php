@@ -1,7 +1,7 @@
 {% extends "base/base.php" %}
 
 {% block content %}
-<div class="col-md-12">
+<section class="col-md-12">
 	<table class="table table-hover table-responsive">
 		<h2>Prices</h2>
 		<h3>BedreBegravelse.dk</h3>
@@ -22,5 +22,5 @@
 			{% endfor %}
 		</tbody>
 	</table>
-</div>
+</section>
 {% endblock %}

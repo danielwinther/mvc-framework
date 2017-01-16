@@ -43,16 +43,16 @@
 		</div>
 	</nav>
 	{% endblock%}
-	<div class="container">
+	<main class="container">
 		{% block content %}{% endblock %}
-	</div>
+	</main>
 	{% block footer %}
-	<div class="container">
+	<footer class="container">
 		<div class="col-md-12">
-		<h5 class="pull-left"><a href="../Api/index" target="_blank">REST API</a></h5>
+			<h5 class="pull-left"><a href="../Api/index" target="_blank">REST API</a></h5>
 			<h5 class="pull-right"><em>&copy; Copyright {{'now'|date('Y')}}</em></h5>
 		</div>
-	</div>
+	</footer>
 	{% endblock %}
 </body>
 </html>
