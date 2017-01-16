@@ -29,7 +29,8 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Prices <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="../Prices/bedregravelse">BedreBegravelse.dk</a></li>
+							<li><a href="../Prices/bedreBegravelse">BedreBegravelse.dk</a></li>
+							<li><a href="../Prices/dkBegravelse">DK Begravelse</a></li>
 						</ul>
 					</li>
 					<li><a href="../Administration/index">Administration</a></li>
