@@ -1,5 +1,13 @@
 <?php
 class Basic extends BaseController {
+	public function returnModel() {
+		$user = $this->loadModel('User');
+		$user->setFirstName('daniel');
+		return $user;
+	}
+	public function returnHash() {
+		return Hash::create('daniel', PASSWORD_BCRYPT, SALT);
+	}
 	public function returnString() {
 		return 'daniel';
 	}
