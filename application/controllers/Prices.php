@@ -1,6 +1,6 @@
 <?php
 class Prices extends BaseController {
-	public function index() {
+	public function bedregravelse() {
 		$user = $this->loadModel('Users');
 		$user = Auth::user();
 

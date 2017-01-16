@@ -26,15 +26,14 @@
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
 					<li><a href="../Home/index">Home</a></li>
-					<li><a href="../Prices/index">Prices</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Prices <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="../Prices/bedregravelse">BedreBegravelse.dk</a></li>
+						</ul>
+					</li>
 					<li><a href="../Administration/index">Administration</a></li>
 					<li><a href="../Contact/index">Contact</a></li>
-						<!-- <li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Action</a></li>
-							</ul>
-						</li> -->
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="../Login/logout">Logout</a></li>
