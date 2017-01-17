@@ -17,7 +17,7 @@ class Contact extends BaseController {
 		$client = new Mailgun(MAILGUN_KEY);
 		$domain = MAILGUN_DOMAIN;
 
-		$result = $client->sendMessage($domain,
+		$client->sendMessage($domain,
 			array('from'    => 'Mailgun Sandbox <postmaster@sandbox5c2500d99acf4cbfa26fa88a596a49bd.mailgun.org>',
 				'to'      => 'danielwinther@hotmail.dk',
 				'subject' => $this->postInput('subject'),

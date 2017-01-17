@@ -31,18 +31,20 @@ class Administration extends BaseController {
 		$user = $this->loadModel('Users');
 		$this->loadModel('Roles');
 
-		$user->userName = $this->postInput('userName');
-		$user->password = Hash::create($this->postInput('password'), PASSWORD_BCRYPT);
-		$user->firstName = $this->postInput('firstName');
-		$user->lastName = $this->postInput('lastName');
-		$user->age = $this->postInput('age');
-		$user->avatar = $this->postInput('avatar');
-		$user->email = $this->postInput('email');
-		$user->phone = $this->postInput('phone');
-		$user->roleId = $this->postInput('role');
-		$user->save();
+		if (!Users::where('userName', $this->postInput('userName'))->first()) {
+			$user->userName = $this->postInput('userName');
+			$user->password = Hash::create($this->postInput('password'), PASSWORD_BCRYPT);
+			$user->firstName = $this->postInput('firstName');
+			$user->lastName = $this->postInput('lastName');
+			$user->age = $this->postInput('age');
+			$user->avatar = $this->postInput('avatar');
+			$user->email = $this->postInput('email');
+			$user->phone = $this->postInput('phone');
+			$user->roleId = $this->postInput('role');
+			$user->save();
+		}
 
-		Redirect::controller('Administration/index');
+		Redirect::controller('Administration@index');
 	}
 	public function editUser($id = '') {
 		$user = $this->loadModel('Users');
@@ -63,7 +65,6 @@ class Administration extends BaseController {
 		$this->loadModel('Roles');
 		$user = Users::find($this->postInput('id'));
 
-		$user->userName = $this->postInput('userName');
 		$user->password = Hash::create($this->postInput('password'), PASSWORD_BCRYPT);
 		$user->firstName = $this->postInput('firstName');
 		$user->lastName = $this->postInput('lastName');
@@ -74,7 +75,7 @@ class Administration extends BaseController {
 		$user->roleId = $this->postInput('role');
 		$user->save();
 
-		Redirect::controller('Administration/index');
+		Redirect::controller('Administration@index');
 	}
 	public function deleteUser($id = '') {
 		$user = $this->loadModel('Users');

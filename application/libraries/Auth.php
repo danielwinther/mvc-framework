@@ -62,7 +62,7 @@ class Auth {
 	* 
 	* @return string
 	*/
-	private static function generateCode($length = 10) {
+	public static function generateCode($length = 10) {
 		return substr(str_shuffle(str_repeat($code = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length / strlen($code)) )), 1, $length);
 	}
 
