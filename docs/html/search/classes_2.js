@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['contact',['Contact',['../class_contact.html',1,'']]],
   ['controllerfactory',['ControllerFactory',['../class_controller_factory.html',1,'']]],
   ['controllernotfound',['ControllerNotFound',['../class_controller_not_found.html',1,'']]],
   ['convertjson',['ConvertJSON',['../class_convert_j_s_o_n.html',1,'']]],

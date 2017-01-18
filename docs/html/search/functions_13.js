@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['xmltext',['xmltext',['../classsimple__html__dom__node.html#aaca21e3e742f813c78857a91f389fa66',1,'simple_html_dom_node']]]
+  ['verify',['verify',['../class_hash.html#a1d9ca7080fd83ecfa8e7aeb5ae5fcee9',1,'Hash']]],
+  ['verifytwofactor',['verifyTwoFactor',['../class_home.html#a16f4f4a606ac2b46c064188b783da88c',1,'Home\verifyTwoFactor()'],['../class_auth.html#a44cd32430eda0860d3d5a4e4a210a106',1,'Auth\verifyTwoFactor()']]]
 ];

@@ -21,16 +21,15 @@ Definition at line 2 of file Session.\+php.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_session_a84a343032e96995b7c252c719ddc764b}{}\index{Session@{Session}!destroy@{destroy}}
+\hypertarget{class_session_a84a343032e96995b7c252c719ddc764b}{}\label{class_session_a84a343032e96995b7c252c719ddc764b} 
+\index{Session@{Session}!destroy@{destroy}}
 \index{destroy@{destroy}!Session@{Session}}
-\subsubsection[{destroy}]{\setlength{\rightskip}{0pt plus 5cm}static destroy (
-\begin{DoxyParamCaption}
-\item[{}]{\$key}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\label{class_session_a84a343032e96995b7c252c719ddc764b}
+\subsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily static destroy (\begin{DoxyParamCaption}\item[{}]{\$key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
 Destroys session 
 
-Definition at line 29 of file Session.\+php.
+Definition at line 31 of file Session.\+php.
 
 
 
@@ -38,20 +37,19 @@ Referenced by Auth\textbackslash{}logout().
 
 
 \begin{DoxyCode}
-29                                          \{
-30         \textcolor{keywordflow}{if} (isset($\_SESSION[$key])) \{
-31             unset($\_SESSION[$key]);
-32             session\_destroy();
-33         \}
-34     \}
+31                                          \{
+32         \textcolor{keywordflow}{if} (isset($\_SESSION[$key])) \{
+33             unset($\_SESSION[$key]);
+34             session\_destroy();
+35         \}
+36     \}
 \end{DoxyCode}
-\hypertarget{class_session_a15e2679f2a8f6fa4d60757f4d65413ac}{}\index{Session@{Session}!get@{get}}
+\hypertarget{class_session_a15e2679f2a8f6fa4d60757f4d65413ac}{}\label{class_session_a15e2679f2a8f6fa4d60757f4d65413ac} 
+\index{Session@{Session}!get@{get}}
 \index{get@{get}!Session@{Session}}
-\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}static get (
-\begin{DoxyParamCaption}
-\item[{}]{\$key}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\label{class_session_a15e2679f2a8f6fa4d60757f4d65413ac}
+\subsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily static get (\begin{DoxyParamCaption}\item[{}]{\$key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
 Gets session value
 
 \begin{DoxyReturn}{Returns}
@@ -59,7 +57,7 @@ string array
 \end{DoxyReturn}
 
 
-Definition at line 21 of file Session.\+php.
+Definition at line 22 of file Session.\+php.
 
 
 
@@ -67,26 +65,25 @@ Referenced by Auth\textbackslash{}user().
 
 
 \begin{DoxyCode}
-21                                      \{
-22         \textcolor{keywordflow}{if} (isset($\_SESSION[$key])) \{
-23             \textcolor{keywordflow}{return} $\_SESSION[$key];
-24         \}
-25     \}
+22                                      \{
+23         \textcolor{keywordflow}{if} (isset($\_SESSION[$key])) \{
+24             \textcolor{keywordflow}{return} $\_SESSION[$key];
+25         \}
+26     \}
 \end{DoxyCode}
-\hypertarget{class_session_a9f0be6ae273d3669e11c29910a0be338}{}\index{Session@{Session}!init@{init}}
+\hypertarget{class_session_a9f0be6ae273d3669e11c29910a0be338}{}\label{class_session_a9f0be6ae273d3669e11c29910a0be338} 
+\index{Session@{Session}!init@{init}}
 \index{init@{init}!Session@{Session}}
-\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}static init (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\label{class_session_a9f0be6ae273d3669e11c29910a0be338}
+\subsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily static init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
 Initializes session 
 
 Definition at line 6 of file Session.\+php.
 
 
 
-Referenced by Auth\textbackslash{}login().
+Referenced by Auth\textbackslash{}login(), Auth\textbackslash{}logout(), and Auth\textbackslash{}user().
 
 
 \begin{DoxyCode}
@@ -94,14 +91,12 @@ Referenced by Auth\textbackslash{}login().
 7         session\_start();
 8     \}
 \end{DoxyCode}
-\hypertarget{class_session_aa485369b2925858d92e468d405bd0798}{}\index{Session@{Session}!set@{set}}
+\hypertarget{class_session_aa485369b2925858d92e468d405bd0798}{}\label{class_session_aa485369b2925858d92e468d405bd0798} 
+\index{Session@{Session}!set@{set}}
 \index{set@{set}!Session@{Session}}
-\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}static set (
-\begin{DoxyParamCaption}
-\item[{}]{\$key, }
-\item[{}]{\$value}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\label{class_session_aa485369b2925858d92e468d405bd0798}
+\subsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily static set (\begin{DoxyParamCaption}\item[{}]{\$key,  }\item[{}]{\$value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
 Sets session value 
 
 Definition at line 13 of file Session.\+php.

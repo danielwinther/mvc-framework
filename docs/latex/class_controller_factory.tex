@@ -15,16 +15,12 @@ Definition at line 2 of file Controller\+Factory.\+php.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_controller_factory_a7b8f01cd850e4e6f33e60f81a4d99ae6}{}\index{Controller\+Factory@{Controller\+Factory}!create@{create}}
+\hypertarget{class_controller_factory_a7b8f01cd850e4e6f33e60f81a4d99ae6}{}\label{class_controller_factory_a7b8f01cd850e4e6f33e60f81a4d99ae6} 
+\index{Controller\+Factory@{Controller\+Factory}!create@{create}}
 \index{create@{create}!Controller\+Factory@{Controller\+Factory}}
-\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}static create (
-\begin{DoxyParamCaption}
-\item[{}]{\$url, }
-\item[{}]{\$controller, }
-\item[{}]{\$method, }
-\item[{}]{\$parameter}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\label{class_controller_factory_a7b8f01cd850e4e6f33e60f81a4d99ae6}
+\subsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily static create (\begin{DoxyParamCaption}\item[{}]{\$url,  }\item[{}]{\$controller,  }\item[{}]{\$method,  }\item[{}]{\$parameter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
 Creates instance of controller
 
 
@@ -49,19 +45,19 @@ Referenced by Application\textbackslash{}\+\_\+\+\_\+construct().
 
 \begin{DoxyCode}
 11                                                                           \{
-12         \textcolor{keywordflow}{if} (isset($url[0])) \{
-13             \textcolor{keywordflow}{if} (file\_exists(realpath(\_\_DIR\_\_ . \textcolor{stringliteral}{'/..'}) . \textcolor{stringliteral}{'/controllers/'} . $url[0] . \textcolor{stringliteral}{'.php'})) \{
-14                 $controller = $url[0];
-15                 unset($url[0]);
-16             \}
-17             \textcolor{keywordflow}{else} \{
-18                 $controller = $url[0];
-19                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} \hyperlink{class_controller_not_found}{ControllerNotFound}(\textcolor{stringliteral}{'ControllerNotFound'}, \textcolor{stringliteral}{'Controller "'} . 
+12 
+13         \textcolor{keywordflow}{if} (isset($url[0])) \{
+14             \textcolor{keywordflow}{if} (file\_exists(realpath(\_\_DIR\_\_ . \textcolor{stringliteral}{'/..'}) . \textcolor{stringliteral}{'/controllers/'} . $url[0] . \textcolor{stringliteral}{'.php'})) \{
+15                 $controller = $url[0];
+16                 unset($url[0]);
+17             \}
+18             \textcolor{keywordflow}{else} \{
+19                 $controller = $url[0];
+20                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} \hyperlink{class_controller_not_found}{ControllerNotFound}(\textcolor{stringliteral}{'ControllerNotFound'}, \textcolor{stringliteral}{'Controller "'} . 
       $controller . \textcolor{stringliteral}{'" not found.'});
-20                 exit();
-21             \}
-22         \}
-23         
+21                 exit();
+22             \}
+23         \}
 24         require\_once realpath(\_\_DIR\_\_ . \textcolor{stringliteral}{'/..'}) . \textcolor{stringliteral}{'/controllers/'} . $controller . \textcolor{stringliteral}{'.php'};
 25         $controller = \textcolor{keyword}{new} $controller;
 26 
@@ -77,11 +73,10 @@ Referenced by Application\textbackslash{}\+\_\+\+\_\+construct().
 35                 exit();
 36             \}
 37         \}
-38 
-39         $parameter = $url ? array\_values($url) : [];
-40 
-41         call\_user\_func\_array([$controller, $method], $parameter);
-42     \}
+38         $parameter = $url ? array\_values($url) : [];
+39 
+40         call\_user\_func\_array([$controller, $method], $parameter);
+41     \}
 \end{DoxyCode}
 
 

@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="/mvc-framework/public/css/bootstrap-theme.min.css">
 	<script type="text/javascript" src="/mvc-framework/public/js/jquery.min.js"></script>
 	<script type="text/javascript" src="/mvc-framework/public/js/bootstrap.min.js"></script>
-	<title>MVC Framework</title>
+	<title>MVC framework</title>
 	{% endblock %}
 </head>
 <body>
@@ -21,7 +21,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="../Home/index">MVC Framework</a>
+				<a class="navbar-brand" href="../Home/index">MVC framework</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">

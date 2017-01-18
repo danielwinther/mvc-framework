@@ -1,0 +1,191 @@
+\hypertarget{class_login}{}\section{Login Class Reference}
+\label{class_login}\index{Login@{Login}}
+Inheritance diagram for Login\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_login}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_login_a149eb92716c1084a935e04a8d95f7347}{index} ()
+\item 
+\hyperlink{class_login_a94f6c4408a4c944655e54b36a33ae4b9}{login\+Post} ()
+\item 
+\hyperlink{class_login_a082405d89acd6835c3a7c7a08a7adbab}{logout} ()
+\item 
+\hyperlink{class_login_a967982ee98f05287bbdba812f6016947}{create\+User} ()
+\item 
+\hyperlink{class_login_a2ee0222a0eb00f2530a3281462ca0e46}{forgotten\+Password} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 4 of file Login.\+php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_login_a967982ee98f05287bbdba812f6016947}{}\label{class_login_a967982ee98f05287bbdba812f6016947} 
+\index{Login@{Login}!create\+User@{create\+User}}
+\index{create\+User@{create\+User}!Login@{Login}}
+\subsubsection{\texorpdfstring{create\+User()}{createUser()}}
+{\footnotesize\ttfamily create\+User (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 27 of file Login.\+php.
+
+
+
+References Redirect\textbackslash{}controller(), Hash\textbackslash{}create(), Base\+Controller\textbackslash{}load\+Model(), and Base\+Controller\textbackslash{}post\+Input().
+
+
+\begin{DoxyCode}
+27                                  \{
+28         $user = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'Users'});
+29         $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'Roles'});
+30 
+31         \textcolor{keywordflow}{if} (!Users::where(\textcolor{stringliteral}{'userName'}, $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'userName'}))->first()) \{
+32             $user->userName = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'userName'});
+33             $user->password = \hyperlink{class_hash_a8e076eebb2dc8fc9cb289212c79ad9b8}{Hash::create}($this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'password'}), 
+      PASSWORD\_BCRYPT);
+34             $user->firstName = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'firstName'});
+35             $user->lastName = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'lastName'});
+36             $user->age = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'age'});
+37             $user->avatar = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'avatar'});
+38             $user->email = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'email'});
+39             $user->phone = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'phone'});
+40             $user->roleId = 1;
+41             $user->save();
+42         \}
+43 
+44 
+45         \hyperlink{class_redirect_ab7d0d268b6aaa9a5470b7cb8c7eb1b61}{Redirect::controller}(\textcolor{stringliteral}{'Login@index'});
+46     \}
+\end{DoxyCode}
+\hypertarget{class_login_a2ee0222a0eb00f2530a3281462ca0e46}{}\label{class_login_a2ee0222a0eb00f2530a3281462ca0e46} 
+\index{Login@{Login}!forgotten\+Password@{forgotten\+Password}}
+\index{forgotten\+Password@{forgotten\+Password}!Login@{Login}}
+\subsubsection{\texorpdfstring{forgotten\+Password()}{forgottenPassword()}}
+{\footnotesize\ttfamily forgotten\+Password (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 47 of file Login.\+php.
+
+
+
+References Redirect\textbackslash{}controller(), Hash\textbackslash{}create(), Auth\textbackslash{}generate\+Code(), Base\+Controller\textbackslash{}load\+Model(), M\+A\+I\+L\+G\+U\+N\+\_\+\+D\+O\+M\+A\+IN, M\+A\+I\+L\+G\+U\+N\+\_\+\+K\+EY, and Base\+Controller\textbackslash{}post\+Input().
+
+
+\begin{DoxyCode}
+47                                         \{
+48         $user = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'Users'});
+49         $user = Users::where(\textcolor{stringliteral}{'userName'}, $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'userName'}))->first();
+50 
+51         \textcolor{keywordflow}{if} ($user) \{
+52             $password = \hyperlink{class_auth_aefee13cde7ae75c5e007f9e50f94b76c}{Auth::generateCode}(10);
+53             $user->password = \hyperlink{class_hash_a8e076eebb2dc8fc9cb289212c79ad9b8}{Hash::create}($password, PASSWORD\_BCRYPT);
+54 
+55             $client = \textcolor{keyword}{new} Mailgun(\hyperlink{config_8php_ad320bd8d96c22e094fb9b774f269aaef}{MAILGUN\_KEY});
+56             $domain = \hyperlink{config_8php_a2de069ac064bb137af53d99e3fcff3c8}{MAILGUN\_DOMAIN};
+57 
+58             $client->sendMessage($domain,
+59                 array(\textcolor{stringliteral}{'from'}    => \textcolor{stringliteral}{'Mailgun Sandbox
+       <postmaster@sandbox5c2500d99acf4cbfa26fa88a596a49bd.mailgun.org>'},
+60                     \textcolor{stringliteral}{'to'}      => $user->email,
+61                     \textcolor{stringliteral}{'subject'} => \textcolor{stringliteral}{'MVC Framework - new password'},
+62                     \textcolor{stringliteral}{'text'}    => \textcolor{stringliteral}{'Your new password is: '} . $password));
+63             $user->save();
+64 
+65             \hyperlink{class_redirect_ab7d0d268b6aaa9a5470b7cb8c7eb1b61}{Redirect::controller}(\textcolor{stringliteral}{'Login@index'});
+66         \}
+67         \textcolor{keywordflow}{else} \{
+68             \hyperlink{class_redirect_ab7d0d268b6aaa9a5470b7cb8c7eb1b61}{Redirect::controller}(\textcolor{stringliteral}{'Login@index'});
+69         \}
+70     \}
+\end{DoxyCode}
+\hypertarget{class_login_a149eb92716c1084a935e04a8d95f7347}{}\label{class_login_a149eb92716c1084a935e04a8d95f7347} 
+\index{Login@{Login}!index@{index}}
+\index{index@{index}!Login@{Login}}
+\subsubsection{\texorpdfstring{index()}{index()}}
+{\footnotesize\ttfamily index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file Login.\+php.
+
+
+
+References Base\+Controller\textbackslash{}render\+View().
+
+
+\begin{DoxyCode}
+5                             \{
+6         echo $this->\hyperlink{class_base_controller_aa0c49b95cd8e5ff8ff61b4a2c35bf1eb}{renderView}(\textcolor{stringliteral}{'layout/login'});
+7     \}
+\end{DoxyCode}
+\hypertarget{class_login_a94f6c4408a4c944655e54b36a33ae4b9}{}\label{class_login_a94f6c4408a4c944655e54b36a33ae4b9} 
+\index{Login@{Login}!login\+Post@{login\+Post}}
+\index{login\+Post@{login\+Post}!Login@{Login}}
+\subsubsection{\texorpdfstring{login\+Post()}{loginPost()}}
+{\footnotesize\ttfamily login\+Post (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 8 of file Login.\+php.
+
+
+
+References Redirect\textbackslash{}controller(), Base\+Controller\textbackslash{}load\+Model(), Auth\textbackslash{}login(), Base\+Controller\textbackslash{}post\+Input(), and Auth\textbackslash{}user().
+
+
+\begin{DoxyCode}
+8                                 \{
+9         $user = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'Users'});
+10         \hyperlink{class_auth_a5b58b727794a21b87e23d646eb9ddc6d}{Auth::login}($this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'userName'}), $this->
+      \hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'password'}));
+11         $user = \hyperlink{class_auth_a7949f68385a98a60ff42ea3c3a768ec7}{Auth::user}();
+12 
+13         \textcolor{keywordflow}{if} ($user) \{
+14             \hyperlink{class_redirect_ab7d0d268b6aaa9a5470b7cb8c7eb1b61}{Redirect::controller}(\textcolor{stringliteral}{'Home@index'});
+15         \}
+16         \textcolor{keywordflow}{else} \{
+17             \hyperlink{class_auth_a5b58b727794a21b87e23d646eb9ddc6d}{Auth::login}();
+18 
+19             \hyperlink{class_redirect_ab7d0d268b6aaa9a5470b7cb8c7eb1b61}{Redirect::controller}(\textcolor{stringliteral}{'Login@index'});
+20         \}
+21     \}
+\end{DoxyCode}
+\hypertarget{class_login_a082405d89acd6835c3a7c7a08a7adbab}{}\label{class_login_a082405d89acd6835c3a7c7a08a7adbab} 
+\index{Login@{Login}!logout@{logout}}
+\index{logout@{logout}!Login@{Login}}
+\subsubsection{\texorpdfstring{logout()}{logout()}}
+{\footnotesize\ttfamily logout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 22 of file Login.\+php.
+
+
+
+References Redirect\textbackslash{}controller(), and Auth\textbackslash{}logout().
+
+
+\begin{DoxyCode}
+22                              \{
+23         \hyperlink{class_auth_a1e34160e903835a43123f538e93457a2}{Auth::logout}();
+24 
+25         \hyperlink{class_redirect_ab7d0d268b6aaa9a5470b7cb8c7eb1b61}{Redirect::controller}(\textcolor{stringliteral}{'Login@index'});
+26     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/xampp/htdocs/mvc-\/framework/application/controllers/\hyperlink{controllers_2_login_8php}{Login.\+php}\end{DoxyCompactItemize}

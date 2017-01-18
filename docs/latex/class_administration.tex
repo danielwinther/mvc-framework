@@ -1,0 +1,234 @@
+\hypertarget{class_administration}{}\section{Administration Class Reference}
+\label{class_administration}\index{Administration@{Administration}}
+Inheritance diagram for Administration\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_administration}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_administration_a149eb92716c1084a935e04a8d95f7347}{index} ()
+\item 
+\hyperlink{class_administration_a6603546e99f9519b86989be128736ad6}{user} (\$id=\textquotesingle{}\textquotesingle{})
+\item 
+\hyperlink{class_administration_a967982ee98f05287bbdba812f6016947}{create\+User} ()
+\item 
+\hyperlink{class_administration_acd3b430aeceba0ebbda62330838d0c0b}{edit\+User} (\$id=\textquotesingle{}\textquotesingle{})
+\item 
+\hyperlink{class_administration_a445a1f2f42c756bf451de087e36b7193}{edit\+User\+Post} ()
+\item 
+\hyperlink{class_administration_a934aeeec370d904f3a58bde4d514259d}{delete\+User} (\$id=\textquotesingle{}\textquotesingle{})
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 2 of file Administration.\+php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_administration_a967982ee98f05287bbdba812f6016947}{}\label{class_administration_a967982ee98f05287bbdba812f6016947} 
+\index{Administration@{Administration}!create\+User@{create\+User}}
+\index{create\+User@{create\+User}!Administration@{Administration}}
+\subsubsection{\texorpdfstring{create\+User()}{createUser()}}
+{\footnotesize\ttfamily create\+User (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 30 of file Administration.\+php.
+
+
+
+References Redirect\textbackslash{}controller(), Hash\textbackslash{}create(), Base\+Controller\textbackslash{}load\+Model(), and Base\+Controller\textbackslash{}post\+Input().
+
+
+\begin{DoxyCode}
+30                                  \{
+31         $user = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'Users'});
+32         $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'Roles'});
+33 
+34         \textcolor{keywordflow}{if} (!Users::where(\textcolor{stringliteral}{'userName'}, $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'userName'}))->first()) \{
+35             $user->userName = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'userName'});
+36             $user->password = \hyperlink{class_hash_a8e076eebb2dc8fc9cb289212c79ad9b8}{Hash::create}($this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'password'}), 
+      PASSWORD\_BCRYPT);
+37             $user->firstName = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'firstName'});
+38             $user->lastName = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'lastName'});
+39             $user->age = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'age'});
+40             $user->avatar = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'avatar'});
+41             $user->email = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'email'});
+42             $user->phone = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'phone'});
+43             $user->roleId = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'role'});
+44             $user->save();
+45         \}
+46 
+47         \hyperlink{class_redirect_ab7d0d268b6aaa9a5470b7cb8c7eb1b61}{Redirect::controller}(\textcolor{stringliteral}{'Administration@index'});
+48     \}
+\end{DoxyCode}
+\hypertarget{class_administration_a934aeeec370d904f3a58bde4d514259d}{}\label{class_administration_a934aeeec370d904f3a58bde4d514259d} 
+\index{Administration@{Administration}!delete\+User@{delete\+User}}
+\index{delete\+User@{delete\+User}!Administration@{Administration}}
+\subsubsection{\texorpdfstring{delete\+User()}{deleteUser()}}
+{\footnotesize\ttfamily delete\+User (\begin{DoxyParamCaption}\item[{}]{\$id = {\ttfamily \textquotesingle{}\textquotesingle{}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 80 of file Administration.\+php.
+
+
+
+References Redirect\textbackslash{}controller(), and Base\+Controller\textbackslash{}load\+Model().
+
+
+\begin{DoxyCode}
+80                                          \{
+81         $user = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'Users'});
+82 
+83         \textcolor{keywordflow}{if} ($user) \{
+84             $user = Users::find($id);
+85             $user->delete();
+86 
+87             \hyperlink{class_redirect_ab7d0d268b6aaa9a5470b7cb8c7eb1b61}{Redirect::controller}(\textcolor{stringliteral}{'Administration/index'});
+88         \}
+89         \textcolor{keywordflow}{else} \{
+90             \hyperlink{class_redirect_ab7d0d268b6aaa9a5470b7cb8c7eb1b61}{Redirect::controller}(\textcolor{stringliteral}{'Login@index'});
+91         \}
+92     \}
+\end{DoxyCode}
+\hypertarget{class_administration_acd3b430aeceba0ebbda62330838d0c0b}{}\label{class_administration_acd3b430aeceba0ebbda62330838d0c0b} 
+\index{Administration@{Administration}!edit\+User@{edit\+User}}
+\index{edit\+User@{edit\+User}!Administration@{Administration}}
+\subsubsection{\texorpdfstring{edit\+User()}{editUser()}}
+{\footnotesize\ttfamily edit\+User (\begin{DoxyParamCaption}\item[{}]{\$id = {\ttfamily \textquotesingle{}\textquotesingle{}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 49 of file Administration.\+php.
+
+
+
+References Redirect\textbackslash{}controller(), Base\+Controller\textbackslash{}load\+Model(), Base\+Controller\textbackslash{}render\+View(), and Auth\textbackslash{}user().
+
+
+\begin{DoxyCode}
+49                                        \{
+50         $user = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'Users'});
+51         $roles = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'Roles'});
+52         $user = \hyperlink{class_auth_a7949f68385a98a60ff42ea3c3a768ec7}{Auth::user}();
+53 
+54         \textcolor{keywordflow}{if} ($user) \{
+55             $user = Users::find($id);
+56             $roles = Roles::all();
+57             echo $this->\hyperlink{class_base_controller_aa0c49b95cd8e5ff8ff61b4a2c35bf1eb}{renderView}(\textcolor{stringliteral}{'layout/administration\_edit'}, [\textcolor{stringliteral}{'user'} => $user, \textcolor{stringliteral}{'roles'} => 
+      $roles]);
+58         \}
+59         \textcolor{keywordflow}{else} \{
+60             \hyperlink{class_redirect_ab7d0d268b6aaa9a5470b7cb8c7eb1b61}{Redirect::controller}(\textcolor{stringliteral}{'Login@index'});
+61         \}
+62     \}
+\end{DoxyCode}
+\hypertarget{class_administration_a445a1f2f42c756bf451de087e36b7193}{}\label{class_administration_a445a1f2f42c756bf451de087e36b7193} 
+\index{Administration@{Administration}!edit\+User\+Post@{edit\+User\+Post}}
+\index{edit\+User\+Post@{edit\+User\+Post}!Administration@{Administration}}
+\subsubsection{\texorpdfstring{edit\+User\+Post()}{editUserPost()}}
+{\footnotesize\ttfamily edit\+User\+Post (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 63 of file Administration.\+php.
+
+
+
+References Redirect\textbackslash{}controller(), Hash\textbackslash{}create(), Base\+Controller\textbackslash{}load\+Model(), and Base\+Controller\textbackslash{}post\+Input().
+
+
+\begin{DoxyCode}
+63                                    \{
+64         $user = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'Users'});
+65         $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'Roles'});
+66         $user = Users::find($this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'id'}));
+67 
+68         $user->password = \hyperlink{class_hash_a8e076eebb2dc8fc9cb289212c79ad9b8}{Hash::create}($this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'password'}), PASSWORD\_BCRYPT);
+69         $user->firstName = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'firstName'});
+70         $user->lastName = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'lastName'});
+71         $user->age = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'age'});
+72         $user->avatar = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'avatar'});
+73         $user->email = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'email'});
+74         $user->phone = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'phone'});
+75         $user->roleId = $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'role'});
+76         $user->save();
+77 
+78         \hyperlink{class_redirect_ab7d0d268b6aaa9a5470b7cb8c7eb1b61}{Redirect::controller}(\textcolor{stringliteral}{'Administration@index'});
+79     \}
+\end{DoxyCode}
+\hypertarget{class_administration_a149eb92716c1084a935e04a8d95f7347}{}\label{class_administration_a149eb92716c1084a935e04a8d95f7347} 
+\index{Administration@{Administration}!index@{index}}
+\index{index@{index}!Administration@{Administration}}
+\subsubsection{\texorpdfstring{index()}{index()}}
+{\footnotesize\ttfamily index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file Administration.\+php.
+
+
+
+References Redirect\textbackslash{}controller(), Base\+Controller\textbackslash{}load\+Model(), Base\+Controller\textbackslash{}render\+View(), and Auth\textbackslash{}user().
+
+
+\begin{DoxyCode}
+3                             \{
+4         $users = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'Users'});
+5         $roles = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'Roles'});
+6         $user = \hyperlink{class_auth_a7949f68385a98a60ff42ea3c3a768ec7}{Auth::user}();
+7 
+8         \textcolor{keywordflow}{if} ($user) \{
+9             $users = Users::all()->sortBy(\textcolor{stringliteral}{'firstName'});
+10             $roles = Roles::all();
+11             echo $this->\hyperlink{class_base_controller_aa0c49b95cd8e5ff8ff61b4a2c35bf1eb}{renderView}(\textcolor{stringliteral}{'layout/administration'}, [\textcolor{stringliteral}{'userArray'} => $users, \textcolor{stringliteral}{'user'} => 
+      $user, \textcolor{stringliteral}{'roles'} => $roles]);
+12         \}
+13         \textcolor{keywordflow}{else} \{
+14             \hyperlink{class_redirect_ab7d0d268b6aaa9a5470b7cb8c7eb1b61}{Redirect::controller}(\textcolor{stringliteral}{'Login@index'});
+15         \}
+16     \}
+\end{DoxyCode}
+\hypertarget{class_administration_a6603546e99f9519b86989be128736ad6}{}\label{class_administration_a6603546e99f9519b86989be128736ad6} 
+\index{Administration@{Administration}!user@{user}}
+\index{user@{user}!Administration@{Administration}}
+\subsubsection{\texorpdfstring{user()}{user()}}
+{\footnotesize\ttfamily user (\begin{DoxyParamCaption}\item[{}]{\$id = {\ttfamily \textquotesingle{}\textquotesingle{}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 17 of file Administration.\+php.
+
+
+
+References Redirect\textbackslash{}controller(), Base\+Controller\textbackslash{}load\+Model(), Base\+Controller\textbackslash{}render\+View(), and Auth\textbackslash{}user().
+
+
+\begin{DoxyCode}
+17                                    \{
+18         $user = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'Users'});
+19         $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'Roles'});
+20         $user = \hyperlink{class_auth_a7949f68385a98a60ff42ea3c3a768ec7}{Auth::user}();
+21 
+22         \textcolor{keywordflow}{if} ($user) \{
+23             $user = Users::find($id);
+24             echo $this->\hyperlink{class_base_controller_aa0c49b95cd8e5ff8ff61b4a2c35bf1eb}{renderView}(\textcolor{stringliteral}{'layout/administration\_detail'}, [\textcolor{stringliteral}{'user'} => $user]);
+25         \}
+26         \textcolor{keywordflow}{else} \{
+27             \hyperlink{class_redirect_ab7d0d268b6aaa9a5470b7cb8c7eb1b61}{Redirect::controller}(\textcolor{stringliteral}{'Login@index'});
+28         \}
+29     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/xampp/htdocs/mvc-\/framework/application/controllers/\hyperlink{controllers_2_administration_8php}{Administration.\+php}\end{DoxyCompactItemize}

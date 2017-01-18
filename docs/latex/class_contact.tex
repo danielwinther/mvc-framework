@@ -1,0 +1,89 @@
+\hypertarget{class_contact}{}\section{Contact Class Reference}
+\label{class_contact}\index{Contact@{Contact}}
+Inheritance diagram for Contact\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_contact}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_contact_a149eb92716c1084a935e04a8d95f7347}{index} ()
+\item 
+\hyperlink{class_contact_a1f753d67be418d065282360fc5231d05}{send\+Mail} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 4 of file Contact.\+php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_contact_a149eb92716c1084a935e04a8d95f7347}{}\label{class_contact_a149eb92716c1084a935e04a8d95f7347} 
+\index{Contact@{Contact}!index@{index}}
+\index{index@{index}!Contact@{Contact}}
+\subsubsection{\texorpdfstring{index()}{index()}}
+{\footnotesize\ttfamily index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file Contact.\+php.
+
+
+
+References Redirect\textbackslash{}controller(), Base\+Controller\textbackslash{}load\+Model(), Base\+Controller\textbackslash{}render\+View(), and Auth\textbackslash{}user().
+
+
+\begin{DoxyCode}
+5                             \{
+6         $user = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'Users'});
+7         $user = \hyperlink{class_auth_a7949f68385a98a60ff42ea3c3a768ec7}{Auth::user}();
+8 
+9         \textcolor{keywordflow}{if} ($user) \{
+10             echo $this->\hyperlink{class_base_controller_aa0c49b95cd8e5ff8ff61b4a2c35bf1eb}{renderView}(\textcolor{stringliteral}{'layout/contact'});
+11         \}
+12         \textcolor{keywordflow}{else} \{
+13             \hyperlink{class_redirect_ab7d0d268b6aaa9a5470b7cb8c7eb1b61}{Redirect::controller}(\textcolor{stringliteral}{'Login@index'});
+14         \}
+15     \}
+\end{DoxyCode}
+\hypertarget{class_contact_a1f753d67be418d065282360fc5231d05}{}\label{class_contact_a1f753d67be418d065282360fc5231d05} 
+\index{Contact@{Contact}!send\+Mail@{send\+Mail}}
+\index{send\+Mail@{send\+Mail}!Contact@{Contact}}
+\subsubsection{\texorpdfstring{send\+Mail()}{sendMail()}}
+{\footnotesize\ttfamily send\+Mail (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 16 of file Contact.\+php.
+
+
+
+References Redirect\textbackslash{}controller(), M\+A\+I\+L\+G\+U\+N\+\_\+\+D\+O\+M\+A\+IN, M\+A\+I\+L\+G\+U\+N\+\_\+\+K\+EY, and Base\+Controller\textbackslash{}post\+Input().
+
+
+\begin{DoxyCode}
+16                                \{
+17         $client = \textcolor{keyword}{new} Mailgun(\hyperlink{config_8php_ad320bd8d96c22e094fb9b774f269aaef}{MAILGUN\_KEY});
+18         $domain = \hyperlink{config_8php_a2de069ac064bb137af53d99e3fcff3c8}{MAILGUN\_DOMAIN};
+19 
+20         $client->sendMessage($domain,
+21             array(\textcolor{stringliteral}{'from'}    => \textcolor{stringliteral}{'Mailgun Sandbox
+       <postmaster@sandbox5c2500d99acf4cbfa26fa88a596a49bd.mailgun.org>'},
+22                 \textcolor{stringliteral}{'to'}      => \textcolor{stringliteral}{'danielwinther@hotmail.dk'},
+23                 \textcolor{stringliteral}{'subject'} => $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'subject'}),
+24                 \textcolor{stringliteral}{'text'}    => $this->\hyperlink{class_base_controller_a170629218b28c1759a89c4978b9323b3}{postInput}(\textcolor{stringliteral}{'message'})));
+25 
+26         \hyperlink{class_redirect_ab7d0d268b6aaa9a5470b7cb8c7eb1b61}{Redirect::controller}(\textcolor{stringliteral}{'Contact@index'});
+27     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/xampp/htdocs/mvc-\/framework/application/controllers/\hyperlink{controllers_2_contact_8php}{Contact.\+php}\end{DoxyCompactItemize}

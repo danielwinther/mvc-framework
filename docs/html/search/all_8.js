@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['generatecode',['generateCode',['../class_auth.html#aefee13cde7ae75c5e007f9e50f94b76c',1,'Auth']]],
   ['get',['get',['../class_session.html#a15e2679f2a8f6fa4d60757f4d65413ac',1,'Session']]],
   ['get_5fdisplay_5fsize',['get_display_size',['../classsimple__html__dom__node.html#a29f9eadb33488a28542a01215970faca',1,'simple_html_dom_node']]],
   ['getage',['getAge',['../class_user.html#aa45b65846565bea3073f766710582a3f',1,'User']]],

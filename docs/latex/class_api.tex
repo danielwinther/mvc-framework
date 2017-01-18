@@ -1,0 +1,67 @@
+\hypertarget{class_api}{}\section{Api Class Reference}
+\label{class_api}\index{Api@{Api}}
+Inheritance diagram for Api\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_api}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_api_a35a89e327df5738c7786b030eea4fb1a}{index} (\$format=\textquotesingle{}J\+S\+ON\textquotesingle{})
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 2 of file Api.\+php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_api_a35a89e327df5738c7786b030eea4fb1a}{}\label{class_api_a35a89e327df5738c7786b030eea4fb1a} 
+\index{Api@{Api}!index@{index}}
+\index{index@{index}!Api@{Api}}
+\subsubsection{\texorpdfstring{index()}{index()}}
+{\footnotesize\ttfamily index (\begin{DoxyParamCaption}\item[{}]{\$format = {\ttfamily \textquotesingle{}JSON\textquotesingle{}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file Api.\+php.
+
+
+
+References Redirect\textbackslash{}controller(), Base\+Controller\textbackslash{}convert(), Base\+Controller\textbackslash{}load\+Model(), Base\+Controller\textbackslash{}scrape(), and Auth\textbackslash{}user().
+
+
+\begin{DoxyCode}
+3                                             \{
+4         $user = $this->\hyperlink{class_base_controller_a5fa8890bd3a9d20f5c0cc2377dc49eb1}{loadModel}(\textcolor{stringliteral}{'Users'});
+5         $user = \hyperlink{class_auth_a7949f68385a98a60ff42ea3c3a768ec7}{Auth::user}();
+6 
+7         \textcolor{keywordflow}{if} ($user) \{
+8             $html = $this->\hyperlink{class_base_controller_abd4f25604b09a96c254491df97612cc3}{scrape}(\textcolor{stringliteral}{'GET'}, \textcolor{stringliteral}{'
+      https://www.bedrebegravelse.dk/424/bedemand-priser-paa-begravelse-eller-bisaettelse'});
+9             $html = $html->find(\textcolor{stringliteral}{'#divPreview > .fourth'});
+10             
+11             \textcolor{keywordflow}{foreach} ($html as $value) \{
+12                 $products[] = [\textcolor{stringliteral}{'typePrice'} => $value->find(\textcolor{charliteral}{'p'}, 0)->plaintext, \textcolor{stringliteral}{'description'} => $value->
+      find(\textcolor{charliteral}{'a'}, 0)->title, \textcolor{stringliteral}{'image'} => \textcolor{stringliteral}{'https://www.bedrebegravelse.dk/'} . $value->find(\textcolor{stringliteral}{'img'}, 0)->src];
+13             \}
+14 
+15             echo $this->\hyperlink{class_base_controller_a0fd54f433ce0bd8881479f3eb30e13ec}{convert}($format, $products);
+16         \}
+17         \textcolor{keywordflow}{else} \{
+18             \hyperlink{class_redirect_ab7d0d268b6aaa9a5470b7cb8c7eb1b61}{Redirect::controller}(\textcolor{stringliteral}{'Login@index'});
+19         \}
+20 
+21     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/xampp/htdocs/mvc-\/framework/application/controllers/\hyperlink{_api_8php}{Api.\+php}\end{DoxyCompactItemize}

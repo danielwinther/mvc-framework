@@ -21,5 +21,9 @@ var searchData=
   ['hdom_5ftype_5fendtag',['HDOM_TYPE_ENDTAG',['../simple__html__dom_8php.html#a9ede8929bc6af082032dc7fc3becc2f5',1,'simple_html_dom.php']]],
   ['hdom_5ftype_5froot',['HDOM_TYPE_ROOT',['../simple__html__dom_8php.html#a5ac9d18762d1096b83d441660091b94b',1,'simple_html_dom.php']]],
   ['hdom_5ftype_5ftext',['HDOM_TYPE_TEXT',['../simple__html__dom_8php.html#a453ed0a38bfe7684e94b0a2462317581',1,'simple_html_dom.php']]],
-  ['hdom_5ftype_5funknown',['HDOM_TYPE_UNKNOWN',['../simple__html__dom_8php.html#a1dc6000425365b26eb74247a720d3c33',1,'simple_html_dom.php']]]
+  ['hdom_5ftype_5funknown',['HDOM_TYPE_UNKNOWN',['../simple__html__dom_8php.html#a1dc6000425365b26eb74247a720d3c33',1,'simple_html_dom.php']]],
+  ['home',['Home',['../class_home.html',1,'']]],
+  ['home_2ephp',['Home.php',['../controllers_2_home_8php.html',1,'']]],
+  ['home_2ephp',['home.php',['../views_2layout_2_home_8php.html',1,'']]],
+  ['host',['HOST',['../config_8php.html#a6768772c01f2d4f111fabd25012e8259',1,'config.php']]]
 ];

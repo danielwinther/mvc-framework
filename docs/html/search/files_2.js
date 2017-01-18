@@ -1,6 +1,8 @@
 var searchData=
 [
   ['config_2ephp',['config.php',['../config_8php.html',1,'']]],
+  ['contact_2ephp',['Contact.php',['../controllers_2_contact_8php.html',1,'']]],
+  ['contact_2ephp',['contact.php',['../views_2layout_2_contact_8php.html',1,'']]],
   ['controllerfactory_2ephp',['ControllerFactory.php',['../_controller_factory_8php.html',1,'']]],
   ['controllernotfound_2ephp',['ControllerNotFound.php',['../_controller_not_found_8php.html',1,'']]],
   ['convertjson_2ephp',['ConvertJSON.php',['../_convert_j_s_o_n_8php.html',1,'']]],
