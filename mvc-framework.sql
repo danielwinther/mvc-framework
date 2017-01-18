@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.12
+-- version 4.5.0.2
 -- http://www.phpmyadmin.net
 --
 -- Vært: 127.0.0.1
--- Genereringstid: 30. 12 2016 kl. 10:33:42
--- Serverversion: 5.6.25
--- PHP-version: 5.6.11
+-- Genereringstid: 18. 01 2017 kl. 11:25:37
+-- Serverversion: 10.0.17-MariaDB
+-- PHP-version: 5.6.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -26,10 +26,10 @@ SET time_zone = "+00:00";
 -- Struktur-dump for tabellen `roles`
 --
 
-CREATE TABLE IF NOT EXISTS `roles` (
+CREATE TABLE `roles` (
   `id` int(11) NOT NULL,
   `roleName` varchar(150) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Data dump for tabellen `roles`
@@ -38,7 +38,8 @@ CREATE TABLE IF NOT EXISTS `roles` (
 INSERT INTO `roles` (`id`, `roleName`) VALUES
 (1, 'Administrator'),
 (2, 'Supporter'),
-(3, 'Guest');
+(3, 'Undertaker'),
+(4, 'Guest');
 
 -- --------------------------------------------------------
 
@@ -46,7 +47,7 @@ INSERT INTO `roles` (`id`, `roleName`) VALUES
 -- Struktur-dump for tabellen `users`
 --
 
-CREATE TABLE IF NOT EXISTS `users` (
+CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `userName` varchar(150) NOT NULL,
   `password` varchar(150) NOT NULL,
@@ -55,13 +56,13 @@ CREATE TABLE IF NOT EXISTS `users` (
   `age` int(11) NOT NULL,
   `avatar` text NOT NULL,
   `email` varchar(150) NOT NULL,
-  `phone` varchar(8) NOT NULL,
+  `phone` varchar(11) NOT NULL,
   `twoFactorCode` varchar(10) NOT NULL,
   `isTwoFactor` tinyint(1) NOT NULL DEFAULT '0',
   `roleId` int(11) NOT NULL,
-  `created_at` date NOT NULL,
-  `updated_at` date NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+  `updated_at` date NOT NULL,
+  `created_at` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Begrænsninger for dumpede tabeller
@@ -87,12 +88,12 @@ ALTER TABLE `users`
 -- Tilføj AUTO_INCREMENT i tabel `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- Tilføj AUTO_INCREMENT i tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
