@@ -49,7 +49,7 @@ class Login extends BaseController {
 		$user = Users::where('userName', $this->postInput('userName'))->first();
 
 		if ($user) {
-			$password = Auth::generateCode(5);
+			$password = Auth::generateCode(10);
 			$user->password = Hash::create($password, PASSWORD_BCRYPT);
 
 			$client = new Mailgun(MAILGUN_KEY);
