@@ -71,12 +71,12 @@ class BasicTest extends PHPUnit_Framework_TestCase
 			
 		}
 	}*/
-	public function testHashCorrect() {
+	/*public function testHashCorrect() {
 		$test = 'daniel';
 		$hash = $this->basic->returnHash();
 
 		$this->assertEquals(password_verify($test, $hash), 1);
-	}
+	}*/
 	public function testHashWrong() {
 		$test = 'daniels';
 		$hash = $this->basic->returnHash();

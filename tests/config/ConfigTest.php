@@ -46,7 +46,7 @@ class ConfigTest extends PHPUnit_Framework_TestCase
 		}
 	}
 	public function testConfigCorrectCharset() {
-		$test = 'UTF-8';
+		$test = 'utf8';
 
 		$this->assertEquals(CHARSET, $test);
 	}
