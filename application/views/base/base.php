@@ -35,25 +35,26 @@
 					</li>
 					<li><a href="../Administration/index">Administration</a></li>
 					<li><a href="../Contact/index">Contact</a></li>
-					</ul>
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="../Login/logout">Logout</a></li>
-					</ul>
-				</div>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="../Login/logout">Logout</a></li>
+				</ul>
 			</div>
 		</div>
-	</nav>
-	{% endblock%}
-	<main class="container">
-		{% block content %}{% endblock %}
-	</main>
-	{% block footer %}
-	<footer class="container">
-		<div class="col-md-12">
-			<h5 class="pull-left"><a href="../Api/index" target="_blank">REST API</a></h5>
-			<h5 class="pull-right"><em>&copy; Copyright {{'now'|date('Y')}}</em></h5>
-		</div>
-	</footer>
-	{% endblock %}
+	</div>
+</nav>
+{% endblock%}
+<main class="container">
+	{% block content %}{% endblock %}
+</main>
+{% block footer %}
+<footer class="container">
+	<div class="col-md-12">
+		<hr>
+		<h5 class="pull-left"><a href="../Api/index" target="_blank">REST API</a></h5>
+		<h5 class="pull-right"><em>&copy; Copyright {{'now'|date('Y')}}</em></h5>
+	</div>
+</footer>
+{% endblock %}
 </body>
 </html>
