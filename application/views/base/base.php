@@ -2,6 +2,7 @@
 <html>
 <head>
 	{% block head %}
+	<meta name="robots" content="noindex">
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="/mvc-framework/public/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/mvc-framework/public/css/bootstrap-theme.min.css">
